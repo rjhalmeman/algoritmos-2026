@@ -1,51 +1,127 @@
-2026-03-13 (melhor dia possível para a primeira aula de algoritmos)
+## 2026-03-13 (melhor dia possível para a primeira aula de algoritmos)
 
 
 * Terminologia
 
-Precisamos nos comunicar
+## ***Precisamos nos comunicar.***
+
+O que é um algoritmo?
 
 Dinâmica do robô
   linguagem com comandos (levante / sente)
 
-  frente
-  esquerda (giro de 90° )
+- Linguagem que será usada para dinâmica
+  frente (um passo a frente)
+  direita (giro de 90° )
+
+  A sequência de comandos que levam o robô do ponto A ao ponto B é o algoritmo.
 
 
-Software
+## Software
 
-## Hardware
+# 💻 Guia de Hardware para Iniciantes
 
+Entender como um computador funciona é mais simples do que parece. Podemos comparar o funcionamento de uma máquina com um **escritório de estudos**.
 
-Celular
+---
 
+## 🧠 1. CPU (Processador)
+**A Analogia:** É o **Estudante** (A Pessoa).
+O Processador é o cérebro do computador. É ele quem lê os dados, faz as contas e executa as ordens que você dá.
+* **Na prática:** Quanto mais rápido o estudante, mais rápido as tarefas são resolvidas.
 
+## 📏 2. Memória RAM
+**A Analogia:** É a **Mesa de Trabalho**.
+A RAM é o espaço onde o computador coloca tudo o que você está usando **agora** (abas do navegador, um jogo ou um documento). 
+* **Mesa Grande (Muita RAM):** Você consegue abrir vários livros e abas ao mesmo tempo sem lentidão.
+* **Mesa Pequena (Pouca RAM):** O computador "engasga" porque precisa ficar guardando um livro para conseguir abrir outro.
+* **Atenção:** Quando você desliga o computador, a mesa é limpa. Se não salvou, os dados da RAM somem.
 
-CPU
+## 📚 3. Armazenamento Permanente (SSD ou HD)
+**A Analogia:** É a **Biblioteca (Estante)**.
+É aqui que seus arquivos, fotos e o sistema operacional ficam guardados para sempre.
+* **HD (Hard Drive):** Uma biblioteca enorme, mas antiga e lenta para encontrar os livros.
+* **SSD:** Uma biblioteca moderna e ultra veloz. Ter um SSD faz o computador ligar e abrir programas em segundos.
 
+---
 
-Memória RAM
+## 📊 4. Unidades de Medida
+O computador entende o mundo através de **Bytes**. Cada caractere ocupa 1 Byte. A regra é simples: para subir de nível, acrescente **3 zeros** (multiplique por 1.000).
 
+| Nome | Sigla | Valor (Aprox.) | Exemplo real |
+| :--- | :--- | :--- | :--- |
+| **Byte** | B | 1 caractere | Uma letra "A". |
+| **Kilobyte** | KB | 1.000 bytes | Um arquivo de texto leve. |
+| **Megabyte** | MB | 1.000 KB | Uma música em MP3. |
+| **Gigabyte** | GB | 1.000 MB | Um filme em HD. |
+| **Terabyte** | TB | 1.000 GB | Milhares de fotos de alta qualidade. |
+| **Petabyte** | PB | 1.000 TB | Dados de um servidor de rede social. |
+| **Exabyte** | EB | 1.000 PB | Grande parte do tráfego da internet. |
+| **Zettabyte** | ZB | 1.000 EB | Quase todos os dados do mundo digital. |
+| **Yottabyte** | YB | 1.000 ZB | Uma escala colossal para o futuro. |
 
+---
 
-Armazenamento permanente
+## 🎨 5. Placa de Vídeo (GPU)
+**A Analogia:** É o **Desenhista Especialista**.
+Enquanto o estudante (CPU) cuida da lógica, a Placa de Vídeo foca apenas em gerar imagens e vídeos. É essencial para jogos e edição de vídeo pesada.
 
+## 📺 6. Tela (Resolução)
+A imagem é formada por milhões de pontinhos chamados **Pixels**. 
+* **Resolução:** É a quantidade desses pontos. Quanto mais pixels (como no **4K**), mais nítida é a imagem.
 
-Unidades de medida
+## 📷 7. Câmera e Imagem
+A câmera funciona como o olho do dispositivo, transformando a luz em dados digitais.
 
+Megapixels (MP) 
 
-Placa de vídeo
+Megapixel (MP): Mede a quantidade de informação visual. 1 Megapixel = 1 milhão de pontos (pixels) que formam a foto. Quanto mais MP, mais você pode ampliar ou imprimir a foto em tamanhos grandes sem perder a nitidez.
 
+Resolução: A Nitidez da Imagem
+A resolução é a medida de quantos pixels existem na largura e na altura da tela ou da foto.
 
+Densidade: Ter muitos Megapixels em um sensor pequeno nem sempre é bom; o que importa é a qualidade de cada pixel para captar luz.
 
-Tela (resolução)
+### 📺 Resoluções e Pixels
+A resolução define a nitidez da imagem através da quantidade de pontos (pixels) na tela:
 
+* **Full HD:** 1920 x 1080p (Cerca de 2 milhões de pixels ou 2 MP).
+* **4K (Ultra HD):** 3840 x 2160p (Cerca de 8 milhões de pixels ou 8 MP).
+* **8K (FUHD):** 7680 x 4320p (Cerca de 33 milhões de pixels ou 33 MP).
 
-Câmera
+> **Dica didática:** Quanto maior a resolução, mais potente precisa ser a sua **Placa de Vídeo** (o desenhista) e mais rápida a sua **Internet** para carregar todos esses pontos sem travar.
+
+## 🔌 8. Placa-Mãe
+**A Analogia:** É o **Corpo e as Conexões do escritório**.
+É a peça principal que interliga tudo. Nela, o processador se comunica com a memória, que se comunica com o armazenamento e a placa de vídeo. Sem ela, as peças ficariam isoladas.
 
 
 ## Software
 
 ### Sistema Operacional
 
-Linguagem de programação
+O objetivo de um sistema operacional é "tornar um sistema computacional" operacional (usável).
+
+Por exemplo, ao ligar um notebook o windows é carregado e podemos usar o computador.
+Em um celular, o Android é o sistema operacional que permite o uso do aparelho.
+
+Principais sistemas para computadores
+ - Linux
+ - Windows
+ - MacOs
+
+### Aplicativos
+ - programas de computador que são executados em um hardware e usando um sistema operacional. Exemplo, Google Chrome (navegador para internet). Whatsapp, aplicativo de mensagens usado principalmente em dispositivos móveis (celulares).
+
+### Linguagem de programação
+
+Uma linguagem de programação é um conjunto de regras e símbolos que permite a um humano enviar instruções lógicas ao computador. Ela serve como uma ponte de tradução entre a nossa língua e o código binário interpretado pelo hardware. Através dela, definimos como o software deve processar dados e reagir a comandos.
+
+### Algoritmo
+
+Algoritmo é uma sequência finita de instruções lógicas e ordenadas para resolver um problema ou executar uma tarefa.
+
+
+
+
+

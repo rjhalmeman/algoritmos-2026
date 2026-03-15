@@ -1,4 +1,0 @@
-String;codigo;15
-String;nome;50
-float;altura;10
-Date;data_nascimento;10
