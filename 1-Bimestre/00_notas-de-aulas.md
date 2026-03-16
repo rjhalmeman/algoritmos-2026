@@ -196,4 +196,9 @@ escreva(soma)
 </html>
 ``` 
 
+[Use o exemplo acima (copie, cole e modifique) para fazer os exercícios da lista] (https://github.com/rjhalmeman/algoritmos-2026/blob/main/1-Bimestre/01_listaDeExercicios_Sequenciais.md)
+
+--- 
+
+# 23/03/2026
 
