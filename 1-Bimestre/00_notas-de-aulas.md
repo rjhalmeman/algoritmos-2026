@@ -1,6 +1,6 @@
 
-- [ ] 13/03/2026
-- [ ] 16/03/2026
+- [x] 13/03/2026
+- [x] 16/03/2026
 - [ ] 23/03/2026
 - [ ] 27/03/2026
 - [ ] 30/03/2026
@@ -11,11 +11,11 @@
 - [ ] 24/04/2026
 - [ ] 27/04/2026
 - [ ] 04/05/2026
-- [ ] 08/05/2026
+- [ ] 08/05/2026 - Avaliação do primeiro bimestre
 
 
 
-## 2026-03-13 (melhor dia possível para a primeira aula de algoritmos)
+## 13/03/2026 (melhor dia possível para a primeira aula de algoritmos)
 
 
 * Terminologia
