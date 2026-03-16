@@ -202,3 +202,10 @@ escreva(soma)
 
 # 23/03/2026
 
+## Funções pré-definidas
+
+Raiz quadrada -> sqrt (square root)
+
+![alt text](imagens/raiz.png.png)
+
+## 
