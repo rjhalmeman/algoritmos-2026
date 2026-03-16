@@ -1,17 +1,19 @@
 
-- [x] 13/03/2026
-- [x] 16/03/2026
-- [ ] 23/03/2026
-- [ ] 27/03/2026
-- [ ] 30/03/2026
-- [ ] 06/04/2026
-- [ ] 10/04/2026
-- [ ] 13/04/2026
-- [ ] 17/04/2026
-- [ ] 24/04/2026
-- [ ] 27/04/2026
-- [ ] 04/05/2026
-- [ ] 08/05/2026 - Avaliação do primeiro bimestre
+## Índice / Checklist
+
+- [x] [13/03/2026](#13032026)
+- [x] [16/03/2026](#16032026)
+- [ ] [23/03/2026](#23032026)
+- [ ] [27/03/2026](#27032026)
+- [ ] [30/03/2026](#30032026)
+- [ ] [06/04/2026](#06042026)
+- [ ] [10/04/2026](#10042026)
+- [ ] [13/04/2026](#13042026)
+- [ ] [17/04/2026](#17042026)
+- [ ] [24/04/2026](#24042026)
+- [ ] [27/04/2026](#27042026)
+- [ ] [04/05/2026](#04052026)
+- [ ] [08/05/2026](#08052026)
 
 
 
@@ -114,7 +116,7 @@ A resolução define a nitidez da imagem através da quantidade de pontos (pixel
 
 --- 
 
-16/03/2026
+# 16/03/2026
 
 ## Software
 
@@ -258,3 +260,35 @@ As funções pré-definidas (também chamadas de **funções internas** ou **nat
 ## 📝 Exemplos 
 
 
+# 23/03/2026
+Conteúdo referente a esta data...
+
+# 27/03/2026
+Conteúdo referente a esta data...
+
+# 30/03/2026
+Conteúdo referente a esta data...
+
+# 06/04/2026
+Conteúdo referente a esta data...
+
+# 10/04/2026
+Conteúdo referente a esta data...
+
+# 13/04/2026
+Conteúdo referente a esta data...
+
+# 17/04/2026
+Conteúdo referente a esta data...
+
+# 24/04/2026
+Conteúdo referente a esta data...
+
+# 27/04/2026
+Conteúdo referente a esta data...
+
+# 04/05/2026
+Conteúdo referente a esta data...
+
+# 08/05/2026
+Conteúdo referente a esta data...
