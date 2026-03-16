@@ -95,6 +95,9 @@ A resolução define a nitidez da imagem através da quantidade de pontos (pixel
 **A Analogia:** É o **Corpo e as Conexões do escritório**.
 É a peça principal que interliga tudo. Nela, o processador se comunica com a memória, que se comunica com o armazenamento e a placa de vídeo. Sem ela, as peças ficariam isoladas.
 
+--- 
+
+16/03/2026
 
 ## Software
 
@@ -111,6 +114,7 @@ Principais sistemas para computadores
  - MacOs
 
 ### Aplicativos
+
  - programas de computador que são executados em um hardware e usando um sistema operacional. Exemplo, Google Chrome (navegador para internet). Whatsapp, aplicativo de mensagens usado principalmente em dispositivos móveis (celulares).
 
 ### Linguagem de programação
@@ -121,7 +125,26 @@ Uma linguagem de programação é um conjunto de regras e símbolos que permite 
 
 Algoritmo é uma sequência finita de instruções lógicas e ordenadas para resolver um problema ou executar uma tarefa.
 
+### Entrada - Processamento - Saída
+
+Qualquer algoritmo tem entrada, processamento e saída.
 
 
+
+### HTML - Hiper Text Markup Language
+
+Possibilita a construção de interfaces gráficas (tela). Define os elementos de entrada de dados, controles para acionar o processamento e mostra os resultados.
+
+### Javascript
+
+Linguagem de programação que usaremos. Normalmente faz o processamento.
+
+### Variáveis
+
+Local, na memória RAM, onde guardamos algo. Esse algo pode ser um número, um texto, uma data, um booleano, etc.
+
+### Pseudocódigo 
+
+Código fonte de um algoritmos em linguagem estruturada, próxima do português, que descreve de forma clara e simplificada os passos de um algoritmo, sem se preocupar com a sintaxe rígida de uma linguagem de programação real. O pseudocódigo serve para planejar e comunicar a lógica antes da implementação no código final.
 
 
