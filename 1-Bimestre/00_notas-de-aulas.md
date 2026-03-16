@@ -223,6 +223,15 @@ escreva(soma)
 
 # 23/03/2026
 
+Visual Studio Code - VSCode
+
+O editor de textos que utilizaremos para o desenvolvimento de programas é o vscode.
+
+[Como instalar o VSCode no windows](https://www.youtube.com/watch?v=XFb97QhzDWg)
+
+
+
+
 ## Funções pré-definidas
 
 <img src="./imagens/raiz.png" width="300" height="150" alt="raiz">
