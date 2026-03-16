@@ -206,6 +206,6 @@ escreva(soma)
 
 Raiz quadrada -> sqrt (square root)
 
-![alt text](./imagens/raiz.png)
+<img src="./imagens/raiz.png" width="300" height="300" alt="raiz">
 
 ## 
