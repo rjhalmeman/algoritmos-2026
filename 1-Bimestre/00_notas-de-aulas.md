@@ -156,7 +156,7 @@ escreva(soma)
 
 ### Programa usando HTML e JS (exemplo básico)
 
-´´´ 
+´´´html 
 
 <!DOCTYPE html>
 <html lang="en">
