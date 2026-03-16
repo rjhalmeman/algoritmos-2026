@@ -17,8 +17,9 @@
 
 
 
-## 13/03/2026 (melhor dia possível para a primeira aula de algoritmos)
+# 13/03/2026 - Apresentação - Terminologia - Comunicação
 
+(melhor dia possível para a primeira aula de algoritmos)
 
 * Terminologia
 
@@ -116,7 +117,7 @@ A resolução define a nitidez da imagem através da quantidade de pontos (pixel
 
 --- 
 
-# 16/03/2026
+# 16/03/2026 - Aplicativos - 1º Exemplo
 
 ## Software
 
