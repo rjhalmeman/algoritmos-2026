@@ -2,7 +2,7 @@
 ## Índice / Checklist
 
 - [x] [13/03/2026 - Terminologia - apresentação da disciplina](#13032026) 
-- [x] [16/03/2026 - Aplicativos - 1º Exemplo](#16032026) 
+- [x] [16/03/2026](#16032026) 
 - [ ] [23/03/2026](#23032026)
 - [ ] [27/03/2026](#27032026)
 - [ ] [30/03/2026](#30032026)
@@ -17,7 +17,9 @@
 
 
 
-# 13/03/2026 - Apresentação - Terminologia - Comunicação
+# 13/03/2026
+
+ - Apresentação - Terminologia - Comunicação
 
 (melhor dia possível para a primeira aula de algoritmos)
 
@@ -36,8 +38,6 @@ Dinâmica do robô
 
   A sequência de comandos que levam o robô do ponto A ao ponto B é o algoritmo.
 
-
-## Software
 
 # 💻 Guia de Hardware para Iniciantes
 
@@ -117,7 +117,7 @@ A resolução define a nitidez da imagem através da quantidade de pontos (pixel
 
 --- 
 
-# 16/03/2026 - Aplicativos - 1º Exemplo
+# 16/03/2026
 
 ## Software
 
