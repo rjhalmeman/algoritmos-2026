@@ -150,7 +150,6 @@ Algoritmo é uma sequência finita de instruções lógicas e ordenadas para res
 Qualquer algoritmo tem entrada, processamento e saída.
 
 
-
 ### HTML - Hiper Text Markup Language
 
 Possibilita a construção de interfaces gráficas (tela). Define os elementos de entrada de dados, controles para acionar o processamento e mostra os resultados.
@@ -168,11 +167,13 @@ Local, na memória RAM, onde guardamos algo. Esse algo pode ser um número, um t
 Código fonte de um algoritmos em linguagem estruturada, próxima do português, que descreve de forma clara e simplificada os passos de um algoritmo, sem se preocupar com a sintaxe rígida de uma linguagem de programação real. O pseudocódigo serve para planejar e comunicar a lógica antes da implementação no código final.
 
 Exemplo:
-
+``` 
 leia(x)
 leia(y)
 soma = x + y;
 escreva(soma)
+``` 
+
 
 ### Programa usando HTML e JS (exemplo básico)
 
