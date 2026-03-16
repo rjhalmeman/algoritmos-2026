@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somar</title>
+</head>
+
+<body>
+    <label for="inputValorA">Digite o primeiro número</label>
+    <input type="number" name="inputValorA" id="inputValorA">
+    <br>
+    <label for="inputValorB">Digite o segundo número</label>
+    <input type="number" name="inputValorB" id="inputValorB">
+    <br>
+    <input type="button" name="botaoSomar" id="botaoSomar" value="Somar dois números"
+        onclick="funcaoSomarDoisNumeros()">
+    <br>
+    <label for="resultado">Resultado</label>
+    <input type="number" name="resultado" id="resultado" value="0">
+
+    <script>
+        function funcaoSomarDoisNumeros() {
+            //Entrada de dados para a função
+            let
+                valorA = parseFloat(
+                    document.getElementById("inputValorA").value);
+
+            let
+                valorB = parseFloat(
+                    document.getElementById("inputValorB").value);
+            //processamento
+            let soma = valorA + valorB;
+
+            document.getElementById("resultado").value = soma;
+
+        }
+    </script>
+
+</body>
+
+</html>

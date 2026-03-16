@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somador</title>
+</head>
+
+<body style="background-color: aqua;">
+
+    <h1>Programa para somar dois números</h1>
+    <label for="inputA">Digite um valor para A</label>
+    <input type="number" name="inputA" id="inputA">
+    <br>
+    <label for="inputB">Digite um valor para B</label>
+    <input type="number" name="inputB" id="inputB">
+    <br>
+    <input type="button" name="calcular" id="calcular" value="Somar" onclick="funcaoCalcular()">
+    <br>
+    <span id="resposta">0</span>
+
+    <script>
+        function funcaoCalcular() {
+            // alert("o clicar funcionou")
+            let valorA = parseFloat(document.getElementById("inputA").value);
+            let valorB = parseFloat(document.getElementById("inputB").value);
+
+            let soma = valorA + valorB;
+
+            document.getElementById("resposta").innerHTML = soma;
+
+        }
+
+
+    </script>
+</body>
+
+</html>
