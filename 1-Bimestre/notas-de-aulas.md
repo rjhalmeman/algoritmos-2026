@@ -147,4 +147,49 @@ Local, na memória RAM, onde guardamos algo. Esse algo pode ser um número, um t
 
 Código fonte de um algoritmos em linguagem estruturada, próxima do português, que descreve de forma clara e simplificada os passos de um algoritmo, sem se preocupar com a sintaxe rígida de uma linguagem de programação real. O pseudocódigo serve para planejar e comunicar a lógica antes da implementação no código final.
 
+Exemplo:
+
+leia(x)
+leia(y)
+soma = x + y;
+escreva(soma)
+
+### Programa usando HTML e JS (exemplo básico)
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa soma</title>
+</head>
+
+<body>
+    <h1>Programa exemplo que soma dois números</h1>
+    <!-- Programa em HTML e JavaScript para somar 2 números -->
+    <label for="inputN1">X</label>
+    <input type="number" name="inputN1" id="inputN1">
+    <br>
+    <label for="inputN2">Y</label>
+    <input type="number" name="inputN2" id="inputN2">
+    <br>
+    <br>
+    <input type="button" value="Somar" onclick="funcaoResponsavelPeloCalculo()">
+    <br>
+    <label for="resposta">x+y = </label>
+    <span id="resposta">innerHTML</span>
+
+    <script>
+        function funcaoResponsavelPeloCalculo() {
+            let x = parseFloat(document.getElementById("inputN1").value);
+            let y = parseFloat(document.getElementById("inputN2").value);
+            let s = x + y;
+            document.getElementById("resposta").innerHTML = s;
+        }
+    </script>
+
+</body>
+
+</html>
 
