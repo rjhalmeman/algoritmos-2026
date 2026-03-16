@@ -1,3 +1,20 @@
+
+- [ ] 13/03/2026
+- [ ] 16/03/2026
+- [ ] 23/03/2026
+- [ ] 27/03/2026
+- [ ] 30/03/2026
+- [ ] 06/04/2026
+- [ ] 10/04/2026
+- [ ] 13/04/2026
+- [ ] 17/04/2026
+- [ ] 24/04/2026
+- [ ] 27/04/2026
+- [ ] 04/05/2026
+- [ ] 08/05/2026
+
+
+
 ## 2026-03-13 (melhor dia possível para a primeira aula de algoritmos)
 
 
@@ -204,8 +221,40 @@ escreva(soma)
 
 ## Funções pré-definidas
 
-Raiz quadrada -> sqrt (square root)
-
 <img src="./imagens/raiz.png" width="300" height="150" alt="raiz">
 
-## 
+
+As funções pré-definidas (também chamadas de **funções internas** ou **nativas**) são comandos especiais que já vêm prontos para uso em calculadoras e programas de computador. Elas realizam cálculos e tarefas que não podem ser feitas diretamente com os símbolos do teclado.
+
+---
+
+## 🧮 Principais funções matemáticas
+
+| Função | Comando | Descrição | Exemplo |
+|--------|---------|-----------|---------|
+| **Raiz quadrada** | `sqrt` | Do inglês *square root* - calcula a raiz quadrada de um número | `sqrt(25)` = 5 |
+| **Potência** | `^` ou `**` | Eleva um número a outro | `5^2` = 25 ou `5**2` = 25 |
+| **Seno** | `sin` | Calcula o seno de um ângulo (em graus ou radianos) | `sin(30°)` = 0,5 |
+| **Cosseno** | `cos` | Calcula o cosseno de um ângulo | `cos(60°)` = 0,5 |
+| **Tangente** | `tan` | Calcula a tangente de um ângulo | `tan(45°)` = 1 |
+| **Logaritmo** | `log` | Logaritmo na base 10 | `log(100)` = 2 |
+| **Logaritmo natural** | `ln` | Logaritmo na base *e* (≈ 2,718) | `ln(7,389)` ≈ 2 |
+| **Valor absoluto** | `abs` | Retorna o valor positivo do número | `abs(-10)` = 10 |
+| **Arredondamento** | `round` | Arredonda para o inteiro mais próximo | `round(3,7)` = 4 |
+
+---
+
+## ✅ Por que usar funções?
+
+| Benefício | Explicação |
+|-----------|------------|
+| **⚡ Praticidade** | Não precisamos memorizar fórmulas complexas |
+| **🎯 Precisão** | Os cálculos são feitos com alta exatidão |
+| **🚀 Velocidade** | Resolvem problemas complexos em segundos |
+| **🔄 Consistência** | Sempre retornam o mesmo resultado para a mesma entrada |
+
+---
+
+## 📝 Exemplos 
+
+
