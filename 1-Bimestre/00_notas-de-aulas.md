@@ -229,6 +229,7 @@ O editor de textos que utilizaremos para o desenvolvimento de programas é o vsc
 
 [Como instalar o VSCode no windows](https://www.youtube.com/watch?v=XFb97QhzDWg)
 
+Fazendo o procedimento até o minuto 1m20 (um minuto e vinte segundos) do vídeo já é suficiente.
 
 
 
