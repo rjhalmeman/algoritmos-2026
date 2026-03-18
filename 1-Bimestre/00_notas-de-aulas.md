@@ -269,11 +269,51 @@ As funções pré-definidas (também chamadas de **funções internas** ou **nat
 
 ---
 
-## 📝 Exemplos 
+## 📝 Exemplo
 
+``` html
 
-# 23/03/2026
-Conteúdo referente a esta data...
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo da Raíz Quadrada de um Número</title>
+</head>
+
+<body>
+    <h1>Programa para calcular a raíz quadrada de um número</h1>
+    <!-- contentários no HTML são feitos assim -->
+
+    <!-- Entrada de dados (html) -->
+    <label for="inputNumero">Valor do Número</label>
+    <input type="number" name="inputNumero" id="inputNumero">
+    <br>
+    <!-- Processamento de dados (html) -->
+    <input type="button" value="Calcular" onclick="calcular()">
+    <br>
+    <!-- Saída de dados (html) -->
+    <label for="resposta">Raíz Quadrada</label>
+    <span id="resposta"></span>
+
+    <script>
+        function calcular() {
+            //entrada de dados (para função)
+            let valorNumero = parseFloat(document.getElementById("inputNumero").value);
+            //processamento (para função)
+            //a função Math.sqrt() é uma função nativa do JavaScript que calcula a raíz quadrada de um número
+            let valorRaiz = Math.sqrt(valorNumero);
+            //saída de dados (para função)
+            document.getElementById("resposta").innerHTML = valorRaiz;
+        }
+    </script>
+</body>
+
+</html>
+
+```
+
 
 # 27/03/2026
 Conteúdo referente a esta data...
