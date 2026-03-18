@@ -229,6 +229,7 @@ https://youtu.be/bNYJ1Q-mNB4
 --- 
 
 # 23/03/2026
+[↑ Voltar para o Índice](#índice--checklist)
 
 Visual Studio Code - VSCode
 
@@ -327,34 +328,46 @@ Faça um programa usando HTML e JS que possibilite que o usuário informe um nú
 
 
 # 27/03/2026
-
+[↑ Voltar para o Índice](#índice--checklist)
 Teste de mesa
 
 # 30/03/2026
+[↑ Voltar para o Índice](#índice--checklist)
 Conteúdo referente a esta data...
 
 # 06/04/2026
+[↑ Voltar para o Índice](#índice--checklist)
 Conteúdo referente a esta data...
 
 # 10/04/2026
+[↑ Voltar para o Índice](#índice--checklist)
 Conteúdo referente a esta data...
 
 # 13/04/2026
+[↑ Voltar para o Índice](#índice--checklist)
 Conteúdo referente a esta data...
 
 # 17/04/2026
+[↑ Voltar para o Índice](#índice--checklist)
 Conteúdo referente a esta data...
 
 # 24/04/2026
+[↑ Voltar para o Índice](#índice--checklist)
+
 Conteúdo referente a esta data...
 
 # 27/04/2026
+[↑ Voltar para o Índice](#índice--checklist)
+
 Conteúdo referente a esta data...
 
 # 04/05/2026
+[↑ Voltar para o Índice](#índice--checklist)
+
 Conteúdo referente a esta data...
 
 # 08/05/2026
+[↑ Voltar para o Índice](#índice--checklist)
 Avaliação do 1º Bimestre
 
 
