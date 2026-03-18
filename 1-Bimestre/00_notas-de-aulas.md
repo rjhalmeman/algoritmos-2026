@@ -19,7 +19,7 @@
 
 # 13/03/2026
 
- - Apresentação - Terminologia - Comunicação
+ - Terminologia - apresentação da disciplina
 
 (melhor dia possível para a primeira aula de algoritmos)
 
@@ -119,6 +119,8 @@ A resolução define a nitidez da imagem através da quantidade de pontos (pixel
 
 # 16/03/2026
 
+ - Primeiro exemplo de programa - somar dois números
+  
 ## Software
 
 ### Sistema Operacional
@@ -180,7 +182,7 @@ escreva(soma)
 ```html 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -189,7 +191,7 @@ escreva(soma)
 </head>
 
 <body>
-    <h1>Programa exemplo que soma dois números</h1>
+    <h1>Programa exemplo - somar dois números</h1>
     <!-- Programa em HTML e JavaScript para somar 2 números -->
     <label for="inputN1">X</label>
     <input type="number" name="inputN1" id="inputN1">
@@ -218,6 +220,10 @@ escreva(soma)
 ``` 
 
 [Use o exemplo acima (copie, cole e modifique) para fazer os exercícios da lista](https://github.com/rjhalmeman/algoritmos-2026/blob/main/1-Bimestre/01_listaDeExercicios_Sequenciais.md)
+
+Vídeo mostrando o algoritmo, digo, mostrando como se deve fazer cada exercício.
+
+https://youtu.be/bNYJ1Q-mNB4
 
 --- 
 
