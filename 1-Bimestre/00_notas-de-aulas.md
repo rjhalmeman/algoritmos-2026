@@ -18,6 +18,7 @@
 
 
 # 13/03/2026
+[↑ Voltar para o Índice](#índice--checklist)
 
  - Terminologia - apresentação da disciplina
 
@@ -118,7 +119,7 @@ A resolução define a nitidez da imagem através da quantidade de pontos (pixel
 --- 
 
 # 16/03/2026
-
+[↑ Voltar para o Índice](#índice--checklist)
  - Primeiro exemplo de programa - somar dois números
   
 ## Software
@@ -326,7 +327,8 @@ Faça um programa usando HTML e JS que possibilite que o usuário informe um nú
 
 
 # 27/03/2026
-Conteúdo referente a esta data...
+
+Teste de mesa
 
 # 30/03/2026
 Conteúdo referente a esta data...
