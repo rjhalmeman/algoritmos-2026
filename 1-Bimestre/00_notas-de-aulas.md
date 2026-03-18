@@ -238,8 +238,9 @@ O editor de textos que utilizaremos para o desenvolvimento de programas é o vsc
 Fazendo o procedimento até o minuto 1m20 (um minuto e vinte segundos) do vídeo já é suficiente.
 
 
+## Funções pré-definidas (ou funções nativas)
 
-## Funções pré-definidas
+São funções criadas que já estão disponíveis para uso. 
 
 <img src="./imagens/raiz.png" width="300" height="150" alt="raiz">
 
@@ -261,6 +262,7 @@ As funções pré-definidas (também chamadas de **funções internas** ou **nat
 | **Logaritmo natural** | `ln` | Logaritmo na base *e* (≈ 2,718) | `ln(7,389)` ≈ 2 |
 | **Valor absoluto** | `abs` | Retorna o valor positivo do número | `abs(-10)` = 10 |
 | **Arredondamento** | `round` | Arredonda para o inteiro mais próximo | `round(3,7)` = 4 |
+| **Alert** | `alert` | Mostra um popup na tela com uma mensagem | `alert("Programa pausado")`|
 
 ---
 
