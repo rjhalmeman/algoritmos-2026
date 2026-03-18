@@ -2,8 +2,8 @@
 ## Índice / Checklist
 
 - [x] [13/03/2026 - Terminologia - apresentação da disciplina](#13032026) 
-- [x] [16/03/2026](#16032026) 
-- [ ] [23/03/2026](#23032026)
+- [x] [16/03/2026 - Primeiro exemplo de programa](#16032026) 
+- [ ] [23/03/2026 - funções nativas](#23032026)
 - [ ] [27/03/2026](#27032026)
 - [ ] [30/03/2026](#30032026)
 - [ ] [06/04/2026](#06042026)
@@ -285,7 +285,7 @@ Faça um programa usando HTML e JS que possibilite que o usuário informe um nú
 </head>
 
 <body>
-    <h1>Programa para calcular a raíz quadrada de um número</h1>
+    <h1>Programa para calcular a raiz quadrada de um número</h1>
     <!-- contentários no HTML são feitos assim -->
 
     <!-- Entrada de dados (html) -->
@@ -296,7 +296,7 @@ Faça um programa usando HTML e JS que possibilite que o usuário informe um nú
     <input type="button" value="Calcular" onclick="calcular()">
     <br>
     <!-- Saída de dados (html) -->
-    <label for="resposta">Raíz Quadrada</label>
+    <label for="resposta">Raiz Quadrada</label>
     <span id="resposta"></span>
 
     <script>
@@ -304,7 +304,7 @@ Faça um programa usando HTML e JS que possibilite que o usuário informe um nú
             //entrada de dados (para função)
             let valorNumero = parseFloat(document.getElementById("inputNumero").value);
             //processamento (para função)
-            //a função Math.sqrt() é uma função nativa do JavaScript que calcula a raíz quadrada de um número
+            //a função Math.sqrt() é uma função nativa do JavaScript que calcula a raiz quadrada de um número
             let valorRaiz = Math.sqrt(valorNumero);
             //saída de dados (para função)
             document.getElementById("resposta").innerHTML = valorRaiz;
