@@ -271,6 +271,8 @@ As funções pré-definidas (também chamadas de **funções internas** ou **nat
 
 ## 📝 Exemplo
 
+Faça um programa usando HTML e JS que possibilite que o usuário informe um número e seja calculada a raíz quadrada desse número.
+
 ``` html
 
 <!DOCTYPE html>
