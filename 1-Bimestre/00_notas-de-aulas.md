@@ -120,7 +120,10 @@ A resolução define a nitidez da imagem através da quantidade de pontos (pixel
 
 # 16/03/2026
 [↑ Voltar para o Índice](#índice--checklist)
- - Primeiro exemplo de programa - somar dois números
+
+Formalização de conceitos sobre algoritmos: entrada, processamento, saída. Características: estado inicial, limite de resolução, condição e repetição.
+ 
+### Primeiro exemplo de programa - somar dois números
   
 ## Software
 
@@ -231,6 +234,8 @@ https://youtu.be/bNYJ1Q-mNB4
 # 23/03/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
+### 	Estruturação de raciocínio lógico. Estruturas sequenciais. Teste de mesa.
+
 Visual Studio Code - VSCode
 
 O editor de textos que utilizaremos para o desenvolvimento de programas é o vscode.
@@ -329,45 +334,70 @@ Faça um programa usando HTML e JS que possibilite que o usuário informe um nú
 
 # 27/03/2026
 [↑ Voltar para o Índice](#índice--checklist)
-Teste de mesa
+
+## Leitura de algoritmos - Exercícios
+
+Teste de mesa - aula em sala de aulas teórica
 
 # 30/03/2026
 [↑ Voltar para o Índice](#índice--checklist)
-Conteúdo referente a esta data...
+
+Exercícios
+
+## Formalização de passos para a resolução de problemas. Estruturas sequenciais. Teste de mesa.
 
 # 06/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
-Conteúdo referente a esta data...
+
+## Variáveis. Tipos de dados. Ambiente de desenvolvimento Exercícios com expressões aritméticas, atribuição e saída simples.
+
+Exercícios com diferentes tipos de dados. Concatenação de strings.
 
 # 10/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
-Conteúdo referente a esta data...
+
+## Condicionais
+Aulas em sala de aula teórica - G101
+
+if
 
 # 13/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
-Conteúdo referente a esta data...
+
+## Condicionais
+
+Exercícios
 
 # 17/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
-Conteúdo referente a esta data...
+
+## Variáveis - exercícios
+
+Exercícios juntando os conteúdos já estudados (variáveis, sequenciais, condicionais)
 
 # 24/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
-Conteúdo referente a esta data...
+## Funções
+
+Criação de funções em JS. Passagem de parâmetros. Desvio de fluxo de execução
+
+Aulas em sala de aula teórica - G101
+
 
 # 27/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
-Conteúdo referente a esta data...
+## Exercícios com funções e condicionais
 
 # 04/05/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
-Conteúdo referente a esta data...
+## Exercícios com funções e condicionais
 
 # 08/05/2026
 [↑ Voltar para o Índice](#índice--checklist)
+
 Avaliação do 1º Bimestre
 
 
