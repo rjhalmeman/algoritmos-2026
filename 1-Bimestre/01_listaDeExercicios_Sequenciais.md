@@ -12,13 +12,13 @@
 
 2) Faça um programa que leia um número e mostre como resposta esse número elevado ao cubo.
    
-   1) Faça um algoritmo que calcule a hipotenusa. Usar fórmula de Pitágoras.
+3) Faça um algoritmo que calcule a hipotenusa. Usar fórmula de Pitágoras.
       
       ```js
       h = sqrt(b**2+c**2)
       ```
 
-3) Faça um programa de computador para calcular a área de um retângulo. 
+4) Faça um programa de computador para calcular a área de um retângulo. 
    
    ``` js 
    area = base * altura
@@ -26,13 +26,13 @@
    
    
 
-4) Faça um programa que calcule quantas peças de piso são necessárias para um determinado ambiente. Deve-se informar as dimensões do ambiente em metros e o tamanho dos pisos em centímetros. Considere que é necessário um acréscimo de 10% na quantidade de pisos para que haja sobra para recortes.
+5) Faça um programa que calcule quantas peças de piso são necessárias para um determinado ambiente. Deve-se informar as dimensões do ambiente em metros e o tamanho dos pisos em centímetros. Considere que é necessário um acréscimo de 10% na quantidade de pisos para que haja sobra para recortes.
 
-5) Faça um programa que calcule o preço de um produto à vista e a prazo. Informa-se o preço do produto e o programa calcula e mostra o preço do produto com desconto de 10% e o preço do produto com acréscimo de 5%.
+6) Faça um programa que calcule o preço de um produto à vista e a prazo. Informa-se o preço do produto e o programa calcula e mostra o preço do produto com desconto de 10% e o preço do produto com acréscimo de 5%.
 
-6) A fábrica de refrigerantes Meia-Cola vende seu produto em três formatos: lata de 350 ml, garrafa de 600 ml e garrafa de 2 litros. Se um comerciante compra uma determinada quantidade de cada formato, faça um algoritmo para calcular quantos litros de refrigerante ele comprou.
+7) A fábrica de refrigerantes Meia-Cola vende seu produto em três formatos: lata de 350 ml, garrafa de 600 ml e garrafa de 2 litros. Se um comerciante compra uma determinada quantidade de cada formato, faça um algoritmo para calcular quantos litros de refrigerante ele comprou.
 
-7) Construa um algoritmo que, tendo como dados de entrada dois pontos quaisquer no plano, P(x1,y1) e P(x2,y2), escreva a distância entre eles. A fórmula que efetua tal cálculo é:
+8) Construa um algoritmo que, tendo como dados de entrada dois pontos quaisquer no plano, P(x1,y1) e P(x2,y2), escreva a distância entre eles. A fórmula que efetua tal cálculo é:
 
 <p align="center">
   <img src="./imagens/formulaDistancia.jpg" alt="" width="350" height="100">
