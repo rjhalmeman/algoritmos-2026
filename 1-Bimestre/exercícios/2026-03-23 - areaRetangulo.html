@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de área RETANGULAR</title>
+</head>
+
+<body>
+    <label for="inputValorBase">Digite o valor da base</label>
+    <input type="number" name="inputValorBase" id="inputValorBase">
+    <br>
+    <label for="inputValorAltura">Digite o valor da altura</label>
+    <input type="number" name="inputValorAltura" id="inputValorAltura">
+    <br>
+    <input type="button" name="botaoCalcular" id="botaoCalcular" value="Calcular"
+        onclick="funcaoCalcular()">
+    <br>
+    <label for="resultado">Resultado</label>
+    <input type="number" name="resultado" id="resultado" value="0">
+
+    <script>
+        function funcaoCalcular() {
+            //Entrada de dados para a função
+            let
+                valorBase = parseFloat(
+                    document.getElementById("inputValorBase").value);
+
+            let
+                valorAltura = parseFloat(
+                    document.getElementById("inputValorAltura").value);
+            //processamento
+            let area = valorBase * valorAltura;
+
+	    //saída
+            document.getElementById("resultado").value = area;
+
+        }
+    </script>
+
+</body>
+
+</html>

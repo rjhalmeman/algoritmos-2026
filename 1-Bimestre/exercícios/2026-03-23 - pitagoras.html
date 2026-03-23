@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pitágoras</title>
+</head>
+
+<body style="background-color: aqua;">
+
+    <h1>Cálculo de hipotenusa</h1>
+    <label for="inputB">Valor B</label>
+    <input type="number" name="inputB" id="inputB">
+    <br>
+    <label for="inputC">Valor C</label>
+    <input type="number" name="inputC" id="inputC">
+    <br>
+    <input type="button" name="calcular" id="calcular" value="Calcular" 
+             onclick="funcaoCalcular()">
+    <br>
+    <label for="resposta">Hipotenusa</label>
+    <span id="resposta">0</span>
+
+    <script>
+        function funcaoCalcular() {
+            //entrada
+            let valorB = parseFloat(document.getElementById("inputB").value);
+            let valorC = parseFloat(document.getElementById("inputC").value);
+	    
+            //processamento
+            let hipotenusa =  Math.sqrt(valorB**2+valorC**2)
+            //saída
+            document.getElementById("resposta").innerHTMl = hipotenusa;
+
+        }
+
+
+    </script>
+</body>
+
+</html>
