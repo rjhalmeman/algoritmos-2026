@@ -340,6 +340,8 @@ Faça um programa usando HTML e JS que possibilite que o usuário informe um nú
 
 Teste de mesa - aula em sala de aulas teórica
 
+[Exercícios propostos](https://github.com/rjhalmeman/algoritmos-2026/tree/main/1-Bimestre/exerc%C3%ADcios/2026-03-27%20-%20testeDeMesa)
+
 # 30/03/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
