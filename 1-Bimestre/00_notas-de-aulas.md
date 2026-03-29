@@ -345,9 +345,26 @@ Teste de mesa - aula em sala de aulas teórica
 # 30/03/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
+## Formalização de passos para a resolução de problemas. Estruturas sequenciais. Teste de mesa.
+
 Exercícios
 
-## Formalização de passos para a resolução de problemas. Estruturas sequenciais. Teste de mesa.
+``` 
+
+Faça um programa usando HTML e JS que possibilite que o usuário informe:
+
+A cotação do dólar (quantos reais são necessários para comprar 1 dólar) naquele dia
+
+Um valor qualquer em dólares (US$) e/ou um valor qualquer em reais a ser convertido em dólares.
+
+O programa deve calcular e exibir:
+
+a) Quantos reais equivalem ao valor informado em dólares
+b) Quantos dólares seriam comprados com 100 reais (usando a mesma cotação)
+c) O valor em reais para a compra de 10 dólares, 50 dólares e 100 dólares (exibir os três resultados separadamente)
+
+``` 
+
 
 # 06/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
