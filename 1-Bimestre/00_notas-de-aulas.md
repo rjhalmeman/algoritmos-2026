@@ -351,17 +351,8 @@ Exercícios
 
 ``` 
 
-Faça um programa usando HTML e JS que possibilite que o usuário informe:
+Faça um programa usando HTML e JS que possibilite que o usuário informe a cotação do dólar (quantos reais são necessários para comprar 1 dólar) naquele dia e o programa converta de reais para dólares ou de dólares para reais. Quando um valor qualquer em dólares (US$) for informado converter para reais. Quando um valor em reais for informado converter para dólares.
 
-A cotação do dólar (quantos reais são necessários para comprar 1 dólar) naquele dia
-
-Um valor qualquer em dólares (US$) e/ou um valor qualquer em reais a ser convertido em dólares.
-
-O programa deve calcular e exibir:
-
-a) Quantos reais equivalem ao valor informado em dólares
-b) Quantos dólares seriam comprados com 100 reais (usando a mesma cotação)
-c) O valor em reais para a compra de 10 dólares, 50 dólares e 100 dólares (exibir os três resultados separadamente)
 
 ``` 
 
