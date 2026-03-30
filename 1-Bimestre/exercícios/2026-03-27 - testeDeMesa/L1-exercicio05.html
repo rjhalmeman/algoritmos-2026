@@ -9,36 +9,49 @@
 <!-- programa que lê 2 valores, armazena em variáveis e troca esses valores de variáveis -->
 
 <body>
-  <label for="inputCs">Comprimento sala</label>
-    <input type="number" id="inputCs">
+    <label for="inputCs">Comprimento sala</label>
+    <input type="number" id="inputCs" placeholder="em metros">
     <br>
     <label for="inputLs">Largura sala</label>
-    <input type="number" id="inputLs">
+    <input type="number" id="inputLs" placeholder="em metros">
     <br>
-    <label for="inputV2">Valor 2</label>
-    <input type="number" id="inputV2">
+    <label for="inputComprimentoPiso">Comprimento piso</label>
+    <input type="number" id="inputComprimentoPiso" placeholder="em centímetros">
     <br>
-    <input type="button" value="Trocar valores" onclick="funcaoTrocarValores()">
+    <label for="inputLarguraPiso">Largura piso</label>
+    <input type="number" id="inputLarguraPiso" placeholder="em centímetros">
     <br>
-    <label for="spanRespostaV1">Valor 1 = </label>
-    <span id="spanRespostaV1"></span>
+    <input type="button" value="Calcular" onclick="funcaoCalcular()">
+    <br>
+    <label for="spanResposta">Quantidade de pisos = </label>
+    <span id="spanResposta"></span>
 
     <br>
-    <label for="spanRespostaV2">Valor 2 = </label>
-    <span id="spanRespostaV2"></span>
+    <label for="spanRespostaAcrescido">Quantidade acrescida de 10% = </label>
+    <span id="spanRespostaAcrescido"></span>
 
 
     <script>
-        function funcaoTrocarValores() {
-            let v1 = parseFloat(document.getElementById("inputV1").value);
-            let v2 = parseFloat(document.getElementById("inputV2").value);
+        function funcaoCalcular() {
+            let ls = parseFloat(document.getElementById("inputLs").value);
+            let cs = parseFloat(document.getElementById("inputCs").value);
+            let comprimentoPiso = parseFloat(document.getElementById("inputComprimentoPiso").value);
+            let larguraPiso = parseFloat(document.getElementById("inputLarguraPiso").value);
 
-            let variavelAuxiliar = v1;
-            v1 = v2;
-            v2 = variavelAuxiliar;
 
-            document.getElementById("spanRespostaV1").innerHTML = v1;
-            document.getElementById("spanRespostaV2").innerHTML = v2;
+          // ls e cs sao as larguras do ambiente em metros, comprimentoPiso e larguraPiso sao as medidas do piso em centimetros, entao precisamos converter os valores do piso para metros, dividindo por 100
+            comprimentoPiso = comprimentoPiso / 100;
+            larguraPiso = larguraPiso / 100;    
+
+            //quero calcular a quantidade de piso, entao preciso dividir a area do ambiente pela area do piso, ou seja, (ls * cs) / (comprimentoPiso * larguraPiso)
+            let quantidadePiso = (ls * cs) / (comprimentoPiso * larguraPiso);
+
+            //let quantidadePisoAcrescido = quantidadePiso * 1.10; // acrescendo 10% a mais
+            let quantidadePisoAcrescido = quantidadePiso + quantidadePiso*10/100; // acrescendo 10% a mais
+
+
+            document.getElementById("spanResposta").innerHTML = quantidadePiso  ;
+            document.getElementById("spanRespostaAcrescido").innerHTML = Math.ceil(quantidadePisoAcrescido); //a função Math.ceil arredonda o valor para cima, ou seja, se a quantidade de piso for 10.2, ele arredonda para 11, garantindo que teremos pisos suficientes mesmo que haja perdas ou cortes.
         }
     </script>
 
