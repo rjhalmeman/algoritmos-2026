@@ -8,32 +8,41 @@
 </head>
 
 <body>
-    <label for="inputValorBase">Digite o valor da base</label>
-    <input type="number" name="inputValorBase" id="inputValorBase">
+    <h2>Ambiente</h2>
+    <label for="inputValorLarguraAmbiente">Digite o valor da largura</label>
+    <input type="number" name="inputValorLarguraAmbiente" id="inputValorLarguraAmbiente">
     <br>
-    <label for="inputValorAltura">Digite o valor da altura</label>
+
+    <label for="inputValorComprimentoAmbiente">Digite o valor da altura</label>
     <input type="number" name="inputValorAltura" id="inputValorAltura">
     <br>
-    <input type="button" name="botaoCalcular" id="botaoCalcular" value="Calcular"
-        onclick="funcaoCalcular()">
+
+    <h2>Piso</h2>
+    <label for="inputValorAlturaPiso">Digite o valor da altura em centímetros</label>
+    <input type="number" name="inputValorAlturaPiso" id="inputValorAlturaPiso">
     <br>
-    <label for="resultado">Resultado</label>
+    <label for="inputValorLarguraPiso">Digite o valor da largura em centímetros</label>
+    <input type="number" name="inputValorLarguraPiso" id="inputValorLarguraPiso">
+    <br>
+    <input type="button" name="botaoCalcular" id="botaoCalcular" value="Calcular" onclick="funcaoCalcular()">
+    <br>
+    <label for="resultado">Quantidade de pisos</label>
     <input type="number" name="resultado" id="resultado" value="0">
 
     <script>
         function funcaoCalcular() {
             //Entrada de dados para a função
             let
-                valorBase = parseFloat(
-                    document.getElementById("inputValorBase").value);
+                valorLarguraAmbiente = parseFloat(
+                    document.getElementById("inputValorLarguraAmbiente").value);
 
             let
                 valorAltura = parseFloat(
-                    document.getElementById("inputValorAltura").value);
+                    document.getElementById("inputValorComprimentoAmbiente").value);
             //processamento
             let area = valorBase * valorAltura;
 
-	    //saída
+            //saída
             document.getElementById("resultado").value = area;
 
         }

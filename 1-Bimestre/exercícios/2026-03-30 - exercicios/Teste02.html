@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distância</title>
+</head>
+
+<body>
+    <label for="inputX1">X1</label>
+    <input type="number" name="inputX1" id="inputX1" placeholder="Digite o valor de X1">
+    <br>
+    <label for="inputX2">X2</label>
+    <input type="number" name="inputX2" id="inputX2" placeholder="Digite o valor de X2">
+    <br>
+    <label for="inputY1">Y1</label>
+    <input type="number" name="inputY1" id="inputY1" placeholder="Digite o valor de Y1">
+    <br>
+    <label for="inputY2">Y2</label>
+    <input type="number" name="inputY2" id="inputY2" placeholder="Digite o valor de Y2">
+    <br>
+
+    <input type="button" value="Calcular a distância" onclick="funcaoCalcular()">
+
+    <h1 id="resposta">0</h1>
+
+    <script>
+        function funcaoCalcular() {
+            let x1 = 
+            parseFloat(document.getElementById("inputX1").value);
+            let x2 = 
+            parseFloat(document.getElementById("inputX2").value);
+            let y1 = 
+            parseFloat(document.getElementById("inputY1").value);
+            let y2 = 
+            parseFloat(document.getElementById("inputY2").value);
+
+            let distancia = Math.sqrt((x2-x1)**2+(y2-y1)**2);
+
+            document.getElementById("resposta").innerHTML = 
+                  "A distância é de "      + distancia;
+
+        }
+    </script>
+</body>
+
+</html>
