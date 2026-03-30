@@ -5,7 +5,7 @@
 - [x] [16/03/2026 - Primeiro exemplo de programa](#16032026) 
 - [x] [23/03/2026 - Funções nativas](#23032026)
 - [x] [27/03/2026 - Teste de mesa](#27032026)
-- [ ] [30/03/2026 - Exercícios](#30032026)
+- [x] [30/03/2026 - Exercícios](#30032026)
 - [ ] [03/04/2026 - Feriado - Sexta-feira santa]
 - [ ] [06/04/2026 - Tipos de dados](#06042026)
 - [ ] [10/04/2026 - Condicionais](#10042026)
