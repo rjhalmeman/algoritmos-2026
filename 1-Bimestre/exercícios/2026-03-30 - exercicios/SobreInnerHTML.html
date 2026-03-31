@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste01</title>
 </head>
+
 <body>
     <input type="number" name="inputValor" id="inputValor">
     <input type="button" value="Calcular" onclick="calcular()">
@@ -13,11 +15,11 @@
 
     <script>
         function calcular() {
-            let valor = parseFloat( document.getElementById("inputValor").value);
+            let valor = parseFloat(document.getElementById("inputValor").value);
             let variavelResultado = valor * 3;
-            document.getElementById("resultado").innerHTML 
-            = "O resultado é: " + variavelResultado;
+            document.getElementById("resultado").innerHTML = "O resultado é: " + variavelResultado;
         }
     </script>
 </body>
+
 </html>
