@@ -349,6 +349,19 @@ Teste de mesa - aula em sala de aulas teórica
 
 Exercícios
 
+https://github.com/rjhalmeman/algoritmos-2026/tree/main/1-Bimestre/exerc%C3%ADcios/2026-03-30%20-%20exercicios
+
+
+
+
+# 06/04/2026
+[↑ Voltar para o Índice](#índice--checklist)
+
+## Variáveis. Tipos de dados. Ambiente de desenvolvimento Exercícios com expressões aritméticas, atribuição e saída simples.
+
+Exercícios com diferentes tipos de dados. Concatenação de strings.
+
+
 ``` 
 
 Faça um programa usando HTML e JS que possibilite que o usuário informe 
@@ -360,14 +373,6 @@ para dólares.
 
 
 ``` 
-
-
-# 06/04/2026
-[↑ Voltar para o Índice](#índice--checklist)
-
-## Variáveis. Tipos de dados. Ambiente de desenvolvimento Exercícios com expressões aritméticas, atribuição e saída simples.
-
-Exercícios com diferentes tipos de dados. Concatenação de strings.
 
 # 10/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
