@@ -16,8 +16,7 @@
    ``` 
    MA = (Nota1 + Nota2 x 2 + Nota3 x 3 + Nota4 x 4+ ME )/11. 
    ``` 
-
-A atribuição de conceitos obedece a tabela abaixo:
+      A atribuição de conceitos obedece a tabela abaixo:
 
 <p align="center">
   <img src="./imagens/tabelaConceitos.jpg" alt="" width="300" height="200">
