@@ -12,7 +12,12 @@
 
 4) Escreva um algoritmo que leia as idades de 2 homens e 2 mulheres (considere que as idades dos homens serão sempre diferentes, bem como as das mulheres). Calcule e escreva a soma das idades do homem mais velho com a mulher mais nova, e o produto das idades do homem mais novo com a mulher mais velha.
 
-5) Escrever um algoritmo que lê o número de identificação, as 4 notas obtidas por um aluno nas 4 verificações e a média dos exercícios que fazem parte da avaliação. Calcular a média de aproveitamento, usando a fórmula: MA = (Nota1 + Nota2 x 2 + Nota3 x 3 + Nota4 x 4+ ME )/11. A atribuição de conceitos obedece a tabela abaixo:
+5) Escrever um algoritmo que lê o número de identificação, as 4 notas obtidas por um aluno nas 4 verificações e a média dos exercícios que fazem parte da avaliação. Calcular a média de aproveitamento, usando a fórmula: 
+   ``` 
+   MA = (Nota1 + Nota2 x 2 + Nota3 x 3 + Nota4 x 4+ ME )/11. 
+   ``` 
+
+A atribuição de conceitos obedece a tabela abaixo:
 
 <p align="center">
   <img src="./imagens/tabelaConceitos.jpg" alt="" width="300" height="200">
@@ -20,7 +25,7 @@
 
 * O algoritmo deve escrever o número do aluno, suas notas, a média dos exercícios, a média de aproveitamento, conceito correspondente e a mensagem: APROVADO se o conceito for A,B ou C e REPROVADO se o
   conceito for D ou E.
-6) São dados graus para as notas de um exame como se segue:
+1) São dados graus para as notas de um exame como se segue:
 
 <p align="center">
   <img src="./imagens/tabelaGraus.jpg" alt="" width="200" height="200">
