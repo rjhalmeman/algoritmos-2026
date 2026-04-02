@@ -14,9 +14,9 @@
 
 5) Escrever um algoritmo que lê o número de identificação, as 4 notas obtidas por um aluno nas 4 verificações e a média dos exercícios que fazem parte da avaliação. Calcular a média de aproveitamento, usando a fórmula: 
    ``` 
-   MA = (Nota1 + Nota2 x 2 + Nota3 x 3 + Nota4 x 4+ ME )/11. 
+   MA = (Nota1 + Nota2 x 2 + Nota3 x 3 + Nota4 x 4+ ME )/11
    ``` 
-      A atribuição de conceitos obedece a tabela abaixo:
+        A atribuição de conceitos obedece a tabela abaixo:
 
 <p align="center">
   <img src="./imagens/tabelaConceitos.jpg" alt="" width="300" height="200">
