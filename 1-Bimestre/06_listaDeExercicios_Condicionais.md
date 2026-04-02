@@ -25,7 +25,9 @@ A atribuição de conceitos obedece a tabela abaixo:
 
 * O algoritmo deve escrever o número do aluno, suas notas, a média dos exercícios, a média de aproveitamento, conceito correspondente e a mensagem: APROVADO se o conceito for A,B ou C e REPROVADO se o
   conceito for D ou E.
-1) São dados graus para as notas de um exame como se segue:
+
+
+6) São dados graus para as notas de um exame como se segue:
 
 <p align="center">
   <img src="./imagens/tabelaGraus.jpg" alt="" width="200" height="200">
