@@ -6,8 +6,8 @@
 - [x] [23/03/2026 - Funções nativas](#23032026)
 - [x] [27/03/2026 - Teste de mesa](#27032026)
 - [x] [30/03/2026 - Exercícios](#30032026)
-- [ ] [03/04/2026 - Feriado - Sexta-feira santa]
-- [ ] [06/04/2026 - Tipos de dados](#06042026)
+- [x] [03/04/2026 - Feriado - Sexta-feira santa]
+- [x] [06/04/2026 - Tipos de dados](#06042026)
 - [ ] [10/04/2026 - Condicionais](#10042026)
 - [ ] [13/04/2026 - Condicionais](#13042026)
 - [ ] [17/04/2026 - Exercícios](#17042026)
@@ -405,7 +405,6 @@ https://github.com/rjhalmeman/algoritmos-2026/tree/main/1-Bimestre/exerc%C3%ADci
 Exercícios com diferentes tipos de dados. Concatenação de strings.
 
 
-  
 
 1) Faça um programa usando HTML e JS que possibilite que o usuário informe a
 cotação do dólar (quantos reais são necessários para comprar 1 dólar) naquele
