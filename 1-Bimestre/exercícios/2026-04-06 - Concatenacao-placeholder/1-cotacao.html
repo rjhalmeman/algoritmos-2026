@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cotacao</title>
+</head>
+
+<body style="background-color: purple"></body>
+
+    <h1>Programa para conversão de valores</h1>
+ <label for="inputCotacao">Cotação</label>
+    <input type="text" name="inputCotacao" id="inputCotacao">
+
+    <label for="inputDolar">Digite um valor para A</label>
+    <input type="text" name="inputDolar" id="inputDolar">
+    <input type="button" onclick="paraReais()" value="para reais">
+    <br>
+    <label for="inputReal">Digite um valor para B</label>
+    <input type="text" name="inputReal" id="inputReal">
+    <button onclick="paraDolar()">Converter para Dolar</button>
+    <br>
+    <script>
+        function paraReais() {
+            let valorEmDolar = parseFloat(document.getElementById("inputDolar").value);
+            let cotacaoDolar = parseFloat(document.getElementById("inputCotacao").value);
+           
+            let valorEmReais = valorEmDolar * cotacaoDolar;
+            document.getElementById("inputReal").value=valorEmReais;
+         
+        }
+
+        function paraDolar() {
+            let cotacaoDolar = parseFloat(document.getElementById("inputCotacao").value);
+            let valorEmReal = parseFloat(document.getElementById("inputReal").value);
+           
+            let valorEmDolar = valorEmReal / cotacaoDolar;
+            document.getElementById("inputDolar").value=valorEmDolar;
+         
+        }
+        
+    </script>
+</body>
+</html>

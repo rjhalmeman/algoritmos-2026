@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meteoro</title>
+</head>
+
+<body>
+    <label for="inputMassa">Massa</label>
+    <input type="number" name="inputMassa" id="inputMassa" placeholder="Digite a massa">
+    <span>KG</span>
+    <br>
+    <label for="inputVelocidade">velocidade</label>
+    <input type="number" name="inputVelocidade" id="inputVelocidade" placeholder="Digite a velocidade">
+    <span>Metros por segundo</span>
+    <br>
+    <input type="button" value="Calcular a energia" onclick="calcularEnergia()">
+
+    <h2 id="resposta">...</h2>
+
+    <script>
+        function calcularEnergia() {
+            let massa = 
+                parseFloat(document.getElementById("inputMassa").value);
+            let velocidade =
+                 parseFloat(document.getElementById("inputVelocidade").value);
+            let energia = massa * velocidade ** 2;
+            document.getElementById("resposta").innerHTML = "A energia é de " 
+                  + energia + " Joules";
+        }
+
+    </script>
+
+</body>
+
+</html>
