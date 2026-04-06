@@ -1,8 +1,8 @@
 
 ## Índice / Checklist
 
-- [x] [13/03/2026 - Terminologia - apresentação da disciplina](#13032026) 
-- [x] [16/03/2026 - Primeiro exemplo de programa](#16032026) 
+- [x] [13/03/2026 - Terminologia - apresentação da disciplina](#13032026)
+- [x] [16/03/2026 - Primeiro exemplo de programa](#16032026)
 - [x] [23/03/2026 - Funções nativas](#23032026)
 - [x] [27/03/2026 - Teste de mesa](#27032026)
 - [x] [30/03/2026 - Exercícios](#30032026)
@@ -14,7 +14,7 @@
 - [ ] [24/04/2026 - Funções](#24042026)
 - [ ] [27/04/2026 - Exercícios](#27042026)
 - [ ] [04/05/2026 - Exercícios](#04052026)
-- [ ] [08/05/2026 - Avaliação 1º Bimestre](#08052026) 
+- [ ] [08/05/2026 - Avaliação 1º Bimestre](#08052026)
 
 
 
@@ -31,44 +31,53 @@
 
 O que é um algoritmo?
 
-Dinâmica do robô
-  linguagem com comandos (levante / sente)
+Dinâmica do robô linguagem com comandos (levante / sente)
 
-- Linguagem que será usada para dinâmica
-  frente (um passo a frente)
-  direita (giro de 90° )
+- Linguagem que será usada para dinâmica frente (um passo a frente) direita
+  (giro de 90° )
 
   A sequência de comandos que levam o robô do ponto A ao ponto B é o algoritmo.
 
 
 # 💻 Guia de Hardware para Iniciantes
 
-Entender como um computador funciona é mais simples do que parece. Podemos comparar o funcionamento de uma máquina com um **escritório de estudos**.
+Entender como um computador funciona é mais simples do que parece. Podemos
+comparar o funcionamento de uma máquina com um **escritório de estudos**.
 
----
+
 
 ## 🧠 1. CPU (Processador)
-**A Analogia:** É o **Estudante** (A Pessoa).
-O Processador é o cérebro do computador. É ele quem lê os dados, faz as contas e executa as ordens que você dá.
-* **Na prática:** Quanto mais rápido o estudante, mais rápido as tarefas são resolvidas.
+**A Analogia:** É o **Estudante** (A Pessoa). O Processador é o cérebro do
+computador. É ele quem lê os dados, faz as contas e executa as ordens que você
+dá.
+* **Na prática:** Quanto mais rápido o estudante, mais rápido as tarefas são
+  resolvidas.
 
 ## 📏 2. Memória RAM
-**A Analogia:** É a **Mesa de Trabalho**.
-A RAM é o espaço onde o computador coloca tudo o que você está usando **agora** (abas do navegador, um jogo ou um documento). 
-* **Mesa Grande (Muita RAM):** Você consegue abrir vários livros e abas ao mesmo tempo sem lentidão.
-* **Mesa Pequena (Pouca RAM):** O computador "engasga" porque precisa ficar guardando um livro para conseguir abrir outro.
-* **Atenção:** Quando você desliga o computador, a mesa é limpa. Se não salvou, os dados da RAM somem.
+**A Analogia:** É a **Mesa de Trabalho**. A RAM é o espaço onde o computador
+coloca tudo o que você está usando **agora** (abas do navegador, um jogo ou um
+documento).
+* **Mesa Grande (Muita RAM):** Você consegue abrir vários livros e abas ao mesmo
+  tempo sem lentidão.
+* **Mesa Pequena (Pouca RAM):** O computador "engasga" porque precisa ficar
+  guardando um livro para conseguir abrir outro.
+* **Atenção:** Quando você desliga o computador, a mesa é limpa. Se não salvou,
+  os dados da RAM somem.
 
 ## 📚 3. Armazenamento Permanente (SSD ou HD)
-**A Analogia:** É a **Biblioteca (Estante)**.
-É aqui que seus arquivos, fotos e o sistema operacional ficam guardados para sempre.
-* **HD (Hard Drive):** Uma biblioteca enorme, mas antiga e lenta para encontrar os livros.
-* **SSD:** Uma biblioteca moderna e ultra veloz. Ter um SSD faz o computador ligar e abrir programas em segundos.
+**A Analogia:** É a **Biblioteca (Estante)**. É aqui que seus arquivos, fotos e
+o sistema operacional ficam guardados para sempre.
+* **HD (Hard Drive):** Uma biblioteca enorme, mas antiga e lenta para encontrar
+  os livros.
+* **SSD:** Uma biblioteca moderna e ultra veloz. Ter um SSD faz o computador
+  ligar e abrir programas em segundos.
 
----
+
 
 ## 📊 4. Unidades de Medida
-O computador entende o mundo através de **Bytes**. Cada caractere ocupa 1 Byte. A regra é simples: para subir de nível, acrescente **3 zeros** (multiplique por 1.000).
+O computador entende o mundo através de **Bytes**. Cada caractere ocupa 1 Byte.
+A regra é simples: para subir de nível, acrescente **3 zeros** (multiplique por
+1.000).
 
 | Nome | Sigla | Valor (Aprox.) | Exemplo real |
 | :--- | :--- | :--- | :--- |
@@ -82,58 +91,72 @@ O computador entende o mundo através de **Bytes**. Cada caractere ocupa 1 Byte.
 | **Zettabyte** | ZB | 1.000 EB | Quase todos os dados do mundo digital. |
 | **Yottabyte** | YB | 1.000 ZB | Uma escala colossal para o futuro. |
 
----
+
 
 ## 🎨 5. Placa de Vídeo (GPU)
-**A Analogia:** É o **Desenhista Especialista**.
-Enquanto o estudante (CPU) cuida da lógica, a Placa de Vídeo foca apenas em gerar imagens e vídeos. É essencial para jogos e edição de vídeo pesada.
+**A Analogia:** É o **Desenhista Especialista**. Enquanto o estudante (CPU)
+cuida da lógica, a Placa de Vídeo foca apenas em gerar imagens e vídeos. É
+essencial para jogos e edição de vídeo pesada.
 
 ## 📺 6. Tela (Resolução)
-A imagem é formada por milhões de pontinhos chamados **Pixels**. 
-* **Resolução:** É a quantidade desses pontos. Quanto mais pixels (como no **4K**), mais nítida é a imagem.
+A imagem é formada por milhões de pontinhos chamados **Pixels**.
+* **Resolução:** É a quantidade desses pontos. Quanto mais pixels (como no
+  **4K**), mais nítida é a imagem.
 
 ## 📷 7. Câmera e Imagem
-A câmera funciona como o olho do dispositivo, transformando a luz em dados digitais.
+A câmera funciona como o olho do dispositivo, transformando a luz em dados
+digitais.
 
-Megapixels (MP) 
+Megapixels (MP)
 
-Megapixel (MP): Mede a quantidade de informação visual. 1 Megapixel = 1 milhão de pontos (pixels) que formam a foto. Quanto mais MP, mais você pode ampliar ou imprimir a foto em tamanhos grandes sem perder a nitidez.
+Megapixel (MP): Mede a quantidade de informação visual. 1 Megapixel = 1 milhão
+de pontos (pixels) que formam a foto. Quanto mais MP, mais você pode ampliar ou
+imprimir a foto em tamanhos grandes sem perder a nitidez.
 
-Resolução: A Nitidez da Imagem
-A resolução é a medida de quantos pixels existem na largura e na altura da tela ou da foto.
+Resolução: A Nitidez da Imagem A resolução é a medida de quantos pixels existem
+na largura e na altura da tela ou da foto.
 
-Densidade: Ter muitos Megapixels em um sensor pequeno nem sempre é bom; o que importa é a qualidade de cada pixel para captar luz.
+Densidade: Ter muitos Megapixels em um sensor pequeno nem sempre é bom; o que
+importa é a qualidade de cada pixel para captar luz.
 
 ### 📺 Resoluções e Pixels
-A resolução define a nitidez da imagem através da quantidade de pontos (pixels) na tela:
+A resolução define a nitidez da imagem através da quantidade de pontos (pixels)
+na tela:
 
 * **Full HD:** 1920 x 1080p (Cerca de 2 milhões de pixels ou 2 MP).
 * **4K (Ultra HD):** 3840 x 2160p (Cerca de 8 milhões de pixels ou 8 MP).
 * **8K (FUHD):** 7680 x 4320p (Cerca de 33 milhões de pixels ou 33 MP).
 
-> **Dica didática:** Quanto maior a resolução, mais potente precisa ser a sua **Placa de Vídeo** (o desenhista) e mais rápida a sua **Internet** para carregar todos esses pontos sem travar.
+> **Dica didática:** Quanto maior a resolução, mais potente precisa ser a sua
+> **Placa de Vídeo** (o desenhista) e mais rápida a sua **Internet** para
+> carregar todos esses pontos sem travar.
 
 ## 🔌 8. Placa-Mãe
-**A Analogia:** É o **Corpo e as Conexões do escritório**.
-É a peça principal que interliga tudo. Nela, o processador se comunica com a memória, que se comunica com o armazenamento e a placa de vídeo. Sem ela, as peças ficariam isoladas.
+**A Analogia:** É o **Corpo e as Conexões do escritório**. É a peça principal
+que interliga tudo. Nela, o processador se comunica com a memória, que se
+comunica com o armazenamento e a placa de vídeo. Sem ela, as peças ficariam
+isoladas.
 
---- 
+
 
 # 16/03/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
-Formalização de conceitos sobre algoritmos: entrada, processamento, saída. Características: estado inicial, limite de resolução, condição e repetição.
+Formalização de conceitos sobre algoritmos: entrada, processamento, saída.
+Características: estado inicial, limite de resolução, condição e repetição.
  
 ### Primeiro exemplo de programa - somar dois números
-  
+    
 ## Software
 
 ### Sistema Operacional
 
-O objetivo de um sistema operacional é "tornar um sistema computacional" operacional (usável).
+O objetivo de um sistema operacional é "tornar um sistema computacional"
+operacional (usável).
 
-Por exemplo, ao ligar um notebook o windows é carregado e podemos usar o computador.
-Em um celular, o Android é o sistema operacional que permite o uso do aparelho.
+Por exemplo, ao ligar um notebook o windows é carregado e podemos usar o
+computador. Em um celular, o Android é o sistema operacional que permite o uso
+do aparelho.
 
 Principais sistemas para computadores
  - Linux
@@ -142,15 +165,23 @@ Principais sistemas para computadores
 
 ### Aplicativos
 
- - programas de computador que são executados em um hardware e usando um sistema operacional. Exemplo, Google Chrome (navegador para internet). Whatsapp, aplicativo de mensagens usado principalmente em dispositivos móveis (celulares).
+ - programas de computador que são executados em um hardware e usando um sistema
+   operacional. Exemplo, Google Chrome (navegador para internet). Whatsapp,
+   aplicativo de mensagens usado principalmente em dispositivos móveis
+   (celulares).
 
 ### Linguagem de programação
 
-Uma linguagem de programação é um conjunto de regras e símbolos que permite a um humano enviar instruções lógicas ao computador. Ela serve como uma ponte de tradução entre a nossa língua e o código binário interpretado pelo hardware. Através dela, definimos como o software deve processar dados e reagir a comandos.
+Uma linguagem de programação é um conjunto de regras e símbolos que permite a um
+humano enviar instruções lógicas ao computador. Ela serve como uma ponte de
+tradução entre a nossa língua e o código binário interpretado pelo hardware.
+Através dela, definimos como o software deve processar dados e reagir a
+comandos.
 
 ### Algoritmo
 
-Algoritmo é uma sequência finita de instruções lógicas e ordenadas para resolver um problema ou executar uma tarefa.
+Algoritmo é uma sequência finita de instruções lógicas e ordenadas para resolver
+um problema ou executar uma tarefa.
 
 ### Entrada - Processamento - Saída
 
@@ -159,7 +190,8 @@ Qualquer algoritmo tem entrada, processamento e saída.
 
 ### HTML - Hiper Text Markup Language
 
-Possibilita a construção de interfaces gráficas (tela). Define os elementos de entrada de dados, controles para acionar o processamento e mostra os resultados.
+Possibilita a construção de interfaces gráficas (tela). Define os elementos de
+entrada de dados, controles para acionar o processamento e mostra os resultados.
 
 ### Javascript
 
@@ -167,11 +199,16 @@ Linguagem de programação que usaremos. Normalmente faz o processamento.
 
 ### Variáveis
 
-Local, na memória RAM, onde guardamos algo. Esse algo pode ser um número, um texto, uma data, um booleano, etc.
+Local, na memória RAM, onde guardamos algo. Esse algo pode ser um número, um
+texto, uma data, um booleano, etc.
 
 ### Pseudocódigo 
 
-Código fonte de um algoritmos em linguagem estruturada, próxima do português, que descreve de forma clara e simplificada os passos de um algoritmo, sem se preocupar com a sintaxe rígida de uma linguagem de programação real. O pseudocódigo serve para planejar e comunicar a lógica antes da implementação no código final.
+Código fonte de um algoritmos em linguagem estruturada, próxima do português,
+que descreve de forma clara e simplificada os passos de um algoritmo, sem se
+preocupar com a sintaxe rígida de uma linguagem de programação real. O
+pseudocódigo serve para planejar e comunicar a lógica antes da implementação no
+código final.
 
 Exemplo:
 ``` 
@@ -230,7 +267,7 @@ Vídeo mostrando o algoritmo, digo, mostrando como se deve fazer cada exercício
 
 https://youtu.be/bNYJ1Q-mNB4
 
---- 
+
 
 # 23/03/2026
 [↑ Voltar para o Índice](#índice--checklist)
@@ -239,23 +276,28 @@ https://youtu.be/bNYJ1Q-mNB4
 
 Visual Studio Code - VSCode
 
-O editor de textos que utilizaremos para o desenvolvimento de programas é o vscode.
+O editor de textos que utilizaremos para o desenvolvimento de programas é o
+vscode.
 
 [Como instalar o VSCode no windows](https://www.youtube.com/watch?v=XFb97QhzDWg)
 
-Fazendo o procedimento até o minuto 1m20 (um minuto e vinte segundos) do vídeo já é suficiente.
+Fazendo o procedimento até o minuto 1m20 (um minuto e vinte segundos) do vídeo
+já é suficiente.
 
 
 ## Funções pré-definidas (ou funções nativas)
 
-São funções criadas que já estão disponíveis para uso. 
+São funções criadas que já estão disponíveis para uso.
 
 <img src="./imagens/raiz.png" width="300" height="150" alt="raiz">
 
 
-As funções pré-definidas (também chamadas de **funções internas** ou **nativas**) são comandos especiais que já vêm prontos para uso em calculadoras e programas de computador. Elas realizam cálculos e tarefas que não podem ser feitas diretamente com os símbolos do teclado.
+As funções pré-definidas (também chamadas de **funções internas** ou
+**nativas**) são comandos especiais que já vêm prontos para uso em calculadoras
+e programas de computador. Elas realizam cálculos e tarefas que não podem ser
+feitas diretamente com os símbolos do teclado.
 
----
+
 
 ## 🧮 Principais funções matemáticas
 
@@ -272,7 +314,7 @@ As funções pré-definidas (também chamadas de **funções internas** ou **nat
 | **Arredondamento** | `round` | Arredonda para o inteiro mais próximo | `round(3,7)` = 4 |
 | **Alert** | `alert` | Mostra um popup na tela com uma mensagem | `alert("Programa pausado")`|
 
----
+
 
 ## ✅ Por que usar funções?
 
@@ -283,11 +325,12 @@ As funções pré-definidas (também chamadas de **funções internas** ou **nat
 | **🚀 Velocidade** | Resolvem problemas complexos em segundos |
 | **🔄 Consistência** | Sempre retornam o mesmo resultado para a mesma entrada |
 
----
+
 
 ## 📝 Exemplo
 
-Faça um programa usando HTML e JS que possibilite que o usuário informe um número e seja calculada a raíz quadrada desse número.
+Faça um programa usando HTML e JS que possibilite que o usuário informe um
+número e seja calculada a raíz quadrada desse número.
 
 ``` html
 
@@ -362,17 +405,34 @@ https://github.com/rjhalmeman/algoritmos-2026/tree/main/1-Bimestre/exerc%C3%ADci
 Exercícios com diferentes tipos de dados. Concatenação de strings.
 
 
+  
+
+1) Faça um programa usando HTML e JS que possibilite que o usuário informe a
+cotação do dólar (quantos reais são necessários para comprar 1 dólar) naquele
+dia e o programa converta de reais para dólares ou de dólares para reais. Quando
+um valor qualquer em dólares (US$) for informado converter para reais. Quando um
+valor em reais for informado converter para dólares.
+
+
+
+
+2) Um pequeno meteoro está viajando pelo espaço e você precisa calcular a
+**energia cinética** dele ao entrar na atmosfera da Terra.
+
+A fórmula da energia cinética é:
+
+``` 
+E = (m * v²) / 2
 ``` 
 
-Faça um programa usando HTML e JS que possibilite que o usuário informe 
-a cotação do dólar (quantos reais são necessários para comprar 1 dólar) 
-naquele dia e o programa converta de reais para dólares ou de dólares 
-para reais. Quando um valor qualquer em dólares (US$) for informado 
-converter para reais. Quando um valor em reais for informado converter
-para dólares.
+Onde:
+- E = energia (Joules)
+- m = massa do meteoro (kg)
+- v = velocidade (m/s)
+
+### ***Deve-se usar placeholder na entrada de dados e concatenação na saída.***
 
 
-``` 
 
 # 10/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
@@ -394,7 +454,8 @@ Exercícios
 
 ## Variáveis - exercícios
 
-Exercícios juntando os conteúdos já estudados (variáveis, sequenciais, condicionais)
+Exercícios juntando os conteúdos já estudados (variáveis, sequenciais,
+condicionais)
 
 # 24/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
