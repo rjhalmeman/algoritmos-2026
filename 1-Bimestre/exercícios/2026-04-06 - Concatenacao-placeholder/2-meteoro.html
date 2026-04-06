@@ -12,7 +12,7 @@
     <input type="number" name="inputMassa" id="inputMassa" placeholder="Digite a massa">
     <span>KG</span>
     <br>
-    <label for="inputVelocidade">velocidade</label>
+    <label for="inputVelocidade">Velocidade</label>
     <input type="number" name="inputVelocidade" id="inputVelocidade" placeholder="Digite a velocidade">
     <span>Metros por segundo</span>
     <br>
@@ -22,13 +22,11 @@
 
     <script>
         function calcularEnergia() {
-            let massa = 
+            let massa =
                 parseFloat(document.getElementById("inputMassa").value);
-            let velocidade =
-                 parseFloat(document.getElementById("inputVelocidade").value);
+            let velocidade = parseFloat(document.getElementById("inputVelocidade").value);
             let energia = massa * velocidade ** 2;
-            document.getElementById("resposta").innerHTML = "A energia é de " 
-                  + energia + " Joules";
+            document.getElementById("resposta").innerHTML = "A energia é de " + energia + " Joules";
         }
 
     </script>
