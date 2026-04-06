@@ -68,7 +68,7 @@ Neste exemplo, o algoritmo recebe duas notas e calcula a **média aritmética**.
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <title>Média</title>
@@ -77,28 +77,24 @@ Neste exemplo, o algoritmo recebe duas notas e calcula a **média aritmética**.
 
 <h2>Cálculo de Média</h2>
 
-<div>
-  <label for="nota1">Nota 1:</label>
-  <input type="number" id="nota1" placeholder="Ex: 8">
-</div>
-<br>
-<div>
-  <label for="nota2">Nota 2:</label>
-  <input type="number" id="nota2" placeholder="Ex: 7">
-</div>
-<br>
+<label for="nota1">Nota 1:</label>
+<input type="number" id="nota1" placeholder="Ex: 8"><br><br>
+
+<label for="nota2">Nota 2:</label>
+<input type="number" id="nota2" placeholder="Ex: 7"><br><br>
+
 <button onclick="calcularMedia()">Calcular Média</button>
 
 <p id="resultado"></p>
 
 <script>
 function calcularMedia() {
-  let n1 = Number(document.getElementById("nota1").value);
-  let n2 = Number(document.getElementById("nota2").value);
+  let n1 = parseFloat(document.getElementById("nota1").value);
+  let n2 = parseFloat(document.getElementById("nota2").value);
 
   let media = (n1 + n2) / 2;
 
-  document.getElementById("resultado").innerText = "Média: " + media;
+  document.getElementById("resultado").innerHTML = "Média: " + media;
 }
 </script>
 
@@ -114,7 +110,7 @@ Este algoritmo calcula a **área** multiplicando base e altura.
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <title>Área</title>
@@ -123,28 +119,24 @@ Este algoritmo calcula a **área** multiplicando base e altura.
 
 <h2>Área do Retângulo</h2>
 
-<div>
-  <label for="base">Base (cm):</label>
-  <input type="number" id="base" placeholder="Ex: 10">
-</div>
-<br>
-<div>
-  <label for="altura">Altura (cm):</label>
-  <input type="number" id="altura" placeholder="Ex: 5">
-</div>
-<br>
+<label for="base">Base (cm):</label>
+<input type="number" id="base" placeholder="Ex: 10"><br><br>
+
+<label for="altura">Altura (cm):</label>
+<input type="number" id="altura" placeholder="Ex: 5"><br><br>
+
 <button onclick="calcularArea()">Calcular Área</button>
 
 <p id="resultado"></p>
 
 <script>
 function calcularArea() {
-  let base = Number(document.getElementById("base").value);
-  let altura = Number(document.getElementById("altura").value);
+  let base = parseFloat(document.getElementById("base").value);
+  let altura = parseFloat(document.getElementById("altura").value);
 
   let area = base * altura;
 
-  document.getElementById("resultado").innerText = "Área: " + area + " cm²";
+  document.getElementById("resultado").innerHTML = "Área: " + area + " cm²";
 }
 </script>
 
@@ -177,7 +169,7 @@ O algoritmo compara dois valores e informa qual é o maior ou se são iguais.
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <title>Maior Número</title>
@@ -186,31 +178,27 @@ O algoritmo compara dois valores e informa qual é o maior ou se são iguais.
 
 <h2>Maior Número</h2>
 
-<div>
-  <label for="num1">Número 1:</label>
-  <input type="number" id="num1">
-</div>
-<br>
-<div>
-  <label for="num2">Número 2:</label>
-  <input type="number" id="num2">
-</div>
-<br>
+<label for="num1">Número 1:</label>
+<input type="number" id="num1"><br><br>
+
+<label for="num2">Número 2:</label>
+<input type="number" id="num2"><br><br>
+
 <button onclick="verificar()">Verificar</button>
 
 <p id="resultado"></p>
 
 <script>
 function verificar() {
-  let n1 = Number(document.getElementById("num1").value);
-  let n2 = Number(document.getElementById("num2").value);
+  let n1 = parseFloat(document.getElementById("num1").value);
+  let n2 = parseFloat(document.getElementById("num2").value);
 
   if (n1 > n2) {
-    document.getElementById("resultado").innerText = "O maior é: " + n1;
+    document.getElementById("resultado").innerHTML = "O maior é: " + n1;
   } else if (n2 > n1) {
-    document.getElementById("resultado").innerText = "O maior é: " + n2;
+    document.getElementById("resultado").innerHTML = "O maior é: " + n2;
   } else {
-    document.getElementById("resultado").innerText = "Os números são iguais.";
+    document.getElementById("resultado").innerHTML = "Os números são iguais.";
   }
 }
 </script>
@@ -227,7 +215,7 @@ Este algoritmo classifica a pessoa em categorias baseadas em sua idade.
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <title>Classificação</title>
@@ -236,27 +224,25 @@ Este algoritmo classifica a pessoa em categorias baseadas em sua idade.
 
 <h2>Classificação por Idade</h2>
 
-<div>
-  <label for="idade">Informe sua idade:</label>
-  <input type="number" id="idade" placeholder="Ex: 25">
-</div>
-<br>
+<label for="idade">Informe sua idade:</label>
+<input type="number" id="idade" placeholder="Ex: 25"><br><br>
+
 <button onclick="classificar()">Classificar</button>
 
 <p id="resultado"></p>
 
 <script>
 function classificar() {
-  let idade = Number(document.getElementById("idade").value);
+  let idade = parseInt(document.getElementById("idade").value);
 
   if (idade < 12) {
-    document.getElementById("resultado").innerText = "Classificação: Criança";
+    document.getElementById("resultado").innerHTML = "Classificação: Criança";
   } else if (idade < 18) {
-    document.getElementById("resultado").innerText = "Classificação: Adolescente";
+    document.getElementById("resultado").innerHTML = "Classificação: Adolescente";
   } else if (idade < 60) {
-    document.getElementById("resultado").innerText = "Classificação: Adulto";
+    document.getElementById("resultado").innerHTML = "Classificação: Adulto";
   } else {
-    document.getElementById("resultado").innerText = "Classificação: Idoso";
+    document.getElementById("resultado").innerHTML = "Classificação: Idoso";
   }
 }
 </script>
@@ -283,7 +269,7 @@ Este algoritmo usa um laço **for** para multiplicar o número digitado de 1 a 1
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <title>Tabuada</title>
@@ -292,27 +278,25 @@ Este algoritmo usa um laço **for** para multiplicar o número digitado de 1 a 1
 
 <h2>Gerador de Tabuada</h2>
 
-<div>
-  <label for="numeroTabuada">Escolha um número:</label>
-  <input type="number" id="numeroTabuada" placeholder="Ex: 5">
-</div>
-<br>
+<label for="numeroTabuada">Escolha um número:</label>
+<input type="number" id="numeroTabuada" placeholder="Ex: 5"><br><br>
+
 <button onclick="gerarTabuada()">Gerar Tabuada</button>
 
-<div id="resultado"></div>
+<p id="resultado"></p>
 
 <script>
 function gerarTabuada() {
-  let num = Number(document.getElementById("numeroTabuada").value);
-  let resultadoDiv = document.getElementById("resultado");
+  let num = parseInt(document.getElementById("numeroTabuada").value);
+  let resultadoP = document.getElementById("resultado");
   
   // Limpa o resultado anterior
-  resultadoDiv.innerHTML = "";
+  resultadoP.innerHTML = "";
   
   // Laço de repetição de 1 a 10
   for (let i = 1; i <= 10; i++) {
     let linha = num + " x " + i + " = " + (num * i) + "<br>";
-    resultadoDiv.innerHTML += linha;
+    resultadoP.innerHTML += linha;
   }
 }
 </script>
@@ -339,7 +323,7 @@ Este exemplo lê um texto, conta quantos caracteres ele tem e o transforma em le
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <title>Manipulação de Strings</title>
@@ -348,11 +332,9 @@ Este exemplo lê um texto, conta quantos caracteres ele tem e o transforma em le
 
 <h2>Analisador de Texto</h2>
 
-<div>
-  <label for="textoEntrada">Digite uma palavra ou frase:</label>
-  <input type="text" id="textoEntrada" placeholder="Ex: JavaScript">
-</div>
-<br>
+<label for="textoEntrada">Digite uma palavra ou frase:</label>
+<input type="text" id="textoEntrada" placeholder="Ex: JavaScript"><br><br>
+
 <button onclick="analisarTexto()">Analisar</button>
 
 <p id="tamanhoTexto"></p>
@@ -367,8 +349,8 @@ function analisarTexto() {
   // .toUpperCase() converte tudo para maiúsculas
   let maiusculo = texto.toUpperCase();
 
-  document.getElementById("tamanhoTexto").innerText = "Quantidade de caracteres: " + tamanho;
-  document.getElementById("textoMaiusculo").innerText = "Em maiúsculas: " + maiusculo;
+  document.getElementById("tamanhoTexto").innerHTML = "Quantidade de caracteres: " + tamanho;
+  document.getElementById("textoMaiusculo").innerHTML = "Em maiúsculas: " + maiusculo;
 }
 </script>
 
@@ -396,7 +378,7 @@ Aqui criamos um array de strings e adicionamos nomes a ele iterativamente.
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <title>Vetores</title>
@@ -405,11 +387,9 @@ Aqui criamos um array de strings e adicionamos nomes a ele iterativamente.
 
 <h2>Lista de Convidados</h2>
 
-<div>
-  <label for="nomeConvidado">Nome:</label>
-  <input type="text" id="nomeConvidado" placeholder="Ex: Maria">
-</div>
-<br>
+<label for="nomeConvidado">Nome:</label>
+<input type="text" id="nomeConvidado" placeholder="Ex: Maria"><br><br>
+
 <button onclick="adicionarNome()">Adicionar</button>
 
 <h3>Convidados Atuais:</h3>
@@ -463,7 +443,7 @@ Vamos criar e exibir um objeto contendo diferentes tipos de dados (String, Numbe
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <title>Objetos</title>
@@ -472,21 +452,15 @@ Vamos criar e exibir um objeto contendo diferentes tipos de dados (String, Numbe
 
 <h2>Cadastro de Perfil (Objeto)</h2>
 
-<div>
-  <label for="nomePerfil">Nome:</label>
-  <input type="text" id="nomePerfil">
-</div>
-<br>
-<div>
-  <label for="idadePerfil">Idade:</label>
-  <input type="number" id="idadePerfil">
-</div>
-<br>
-<div>
-  <label for="ativoPerfil">Usuário Ativo?</label>
-  <input type="checkbox" id="ativoPerfil">
-</div>
-<br>
+<label for="nomePerfil">Nome:</label>
+<input type="text" id="nomePerfil"><br><br>
+
+<label for="idadePerfil">Idade:</label>
+<input type="number" id="idadePerfil"><br><br>
+
+<label for="ativoPerfil">Usuário Ativo?</label>
+<input type="checkbox" id="ativoPerfil"><br><br>
+
 <button onclick="salvarPerfil()">Salvar Perfil</button>
 
 <pre id="resultadoObjeto"></pre>
@@ -496,12 +470,12 @@ function salvarPerfil() {
   // Criando o objeto
   let usuario = {
     nome: document.getElementById("nomePerfil").value,
-    idade: Number(document.getElementById("idadePerfil").value),
+    idade: parseInt(document.getElementById("idadePerfil").value),
     ativo: document.getElementById("ativoPerfil").checked
   };
 
   // Exibindo o objeto formatado na tela
-  document.getElementById("resultadoObjeto").innerText = JSON.stringify(usuario, null, 2);
+  document.getElementById("resultadoObjeto").innerHTML = JSON.stringify(usuario, null, 2);
 }
 </script>
 
@@ -533,7 +507,7 @@ Este exemplo junta tudo: Vetores, Objetos, Laços de repetição e Lógica para 
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <title>CRUD em Memória</title>
@@ -546,16 +520,12 @@ Este exemplo junta tudo: Vetores, Objetos, Laços de repetição e Lógica para 
 
 <h2>Gerenciador de Produtos (CRUD)</h2>
 
-<div>
-  <label for="nomeProduto">Produto:</label>
-  <input type="text" id="nomeProduto" placeholder="Nome do produto">
-</div>
-<br>
-<div>
-  <label for="precoProduto">Preço (R$):</label>
-  <input type="number" id="precoProduto" placeholder="Ex: 10.50">
-</div>
-<br>
+<label for="nomeProduto">Produto:</label>
+<input type="text" id="nomeProduto" placeholder="Nome do produto"><br><br>
+
+<label for="precoProduto">Preço (R$):</label>
+<input type="number" id="precoProduto" placeholder="Ex: 10.50"><br><br>
+
 <button onclick="criarProduto()">Adicionar Produto</button>
 
 <table>
@@ -579,9 +549,9 @@ let idAtual = 1;
 // CREATE (Criar)
 function criarProduto() {
   let nome = document.getElementById("nomeProduto").value;
-  let preco = Number(document.getElementById("precoProduto").value);
+  let preco = parseFloat(document.getElementById("precoProduto").value);
 
-  if (nome === "" || preco <= 0) {
+  if (nome === "" || isNaN(preco) || preco <= 0) {
     alert("Preencha os dados corretamente!");
     return;
   }
@@ -629,14 +599,20 @@ function atualizarProduto(idPesquisa) {
   let novoPreco = prompt("Digite o novo preço:");
 
   if (novoNome && novoPreco) {
-    for (let i = 0; i < bancoDeDados.length; i++) {
-      if (bancoDeDados[i].id === idPesquisa) {
-        bancoDeDados[i].nome = novoNome;
-        bancoDeDados[i].preco = Number(novoPreco);
-        break; // Para o loop pois já achou o produto
+    let precoConvertido = parseFloat(novoPreco);
+    
+    if(!isNaN(precoConvertido)) {
+      for (let i = 0; i < bancoDeDados.length; i++) {
+        if (bancoDeDados[i].id === idPesquisa) {
+          bancoDeDados[i].nome = novoNome;
+          bancoDeDados[i].preco = precoConvertido;
+          break; // Para o loop pois já achou o produto
+        }
       }
+      lerProdutos(); // Atualiza a tela
+    } else {
+      alert("Preço inválido!");
     }
-    lerProdutos(); // Atualiza a tela
   }
 }
 
@@ -670,7 +646,7 @@ Você aprendeu:
 - Como tratar textos usando manipulação de **strings**.
 - A diferença entre organizar dados simples em **vetores/matrizes** e dados complexos em **objetos**.
 - A criar uma aplicação lógica completa unindo tudo através de um sistema **CRUD**.
-- Boas práticas em HTML utilizando **labels** interligadas com inputs para melhor usabilidade.
+- Boas práticas em HTML utilizando **labels** interligadas com inputs para melhor usabilidade, e a simplificar layouts sem o uso excessivo de tags extras.
 
 Esses são os **fundamentos absolutos da lógica de programação**. Dominando essas estruturas, você está pronto para construir interfaces complexas, consumir APIs e dominar frameworks modernos de JavaScript!
 
