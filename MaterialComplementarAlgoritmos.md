@@ -12,21 +12,24 @@
     - [2.1 Conceito](#21-conceito)
     - [2.2 Exemplo: Verificar Maior Número](#22-exemplo-verificar-maior-número)
     - [2.3 Exemplo: Classificação de Idade](#23-exemplo-classificação-de-idade)
-  - [3. Algoritmos com Repetição](#3-algoritmos-com-repetição)
+  - [3. Funções (Functions)](#3-funções-functions)
     - [3.1 Conceito](#31-conceito)
-    - [3.2 Exemplo: Gerador de Tabuada](#32-exemplo-gerador-de-tabuada)
-  - [4. Algoritmos com Strings](#4-algoritmos-com-strings)
+    - [3.2 Exemplo: Calculadora de Dobro](#32-exemplo-calculadora-de-dobro)
+  - [4. Algoritmos com Repetição](#4-algoritmos-com-repetição)
     - [4.1 Conceito](#41-conceito)
-    - [4.2 Exemplo: Manipulação de Texto](#42-exemplo-manipulação-de-texto)
-  - [5. Agregados Homogêneos (Vetores e Matrizes)](#5-agregados-homogêneos-vetores-e-matrizes)
+    - [4.2 Exemplo: Gerador de Tabuada](#42-exemplo-gerador-de-tabuada)
+  - [5. Algoritmos com Strings](#5-algoritmos-com-strings)
     - [5.1 Conceito](#51-conceito)
-    - [5.2 Exemplo: Lista de Nomes (Vetor)](#52-exemplo-lista-de-nomes-vetor)
-  - [6. Agregados Heterogêneos (Objetos)](#6-agregados-heterogêneos-objetos)
+    - [5.2 Exemplo: Manipulação de Texto](#52-exemplo-manipulação-de-texto)
+  - [6. Agregados Homogêneos (Vetores e Matrizes)](#6-agregados-homogêneos-vetores-e-matrizes)
     - [6.1 Conceito](#61-conceito)
-    - [6.2 Exemplo: Ficha de Usuário](#62-exemplo-ficha-de-usuário)
-  - [7. CRUD em Memória RAM](#7-crud-em-memória-ram)
+    - [6.2 Exemplo: Lista de Nomes (Vetor)](#62-exemplo-lista-de-nomes-vetor)
+  - [7. Agregados Heterogêneos (Objetos)](#7-agregados-heterogêneos-objetos)
     - [7.1 Conceito](#71-conceito)
-    - [7.2 Exemplo: Gerenciador de Produtos](#72-exemplo-gerenciador-de-produtos)
+    - [7.2 Exemplo: Ficha de Usuário](#72-exemplo-ficha-de-usuário)
+  - [8. CRUD em Memória RAM](#8-crud-em-memória-ram)
+    - [8.1 Conceito](#81-conceito)
+    - [8.2 Exemplo: Gerenciador de Produtos](#82-exemplo-gerenciador-de-produtos)
   - [Conclusão](#conclusão)
 
 ---
@@ -37,6 +40,7 @@ Neste tutorial, vamos aprender a implementar **algoritmos básicos e avançados*
 
 - **Algoritmos sequenciais**
 - **Algoritmos com condicionais**
+- **Funções (functions)**
 - **Algoritmos com repetição**
 - **Algoritmos com strings**
 - **Algoritmos com agregados homogêneos (uni e multidimensionais)**
@@ -83,7 +87,7 @@ Neste exemplo, o algoritmo recebe duas notas e calcula a **média aritmética**.
 <label for="nota2">Nota 2:</label>
 <input type="number" id="nota2" placeholder="Ex: 7"><br><br>
 
-<button onclick="calcularMedia()">Calcular Média</button>
+<input type="button" onclick="calcularMedia()" value="Calcular Média">
 
 <p id="resultado"></p>
 
@@ -125,7 +129,7 @@ Este algoritmo calcula a **área** multiplicando base e altura.
 <label for="altura">Altura (cm):</label>
 <input type="number" id="altura" placeholder="Ex: 5"><br><br>
 
-<button onclick="calcularArea()">Calcular Área</button>
+<input type="button" onclick="calcularArea()" value="Calcular Área">
 
 <p id="resultado"></p>
 
@@ -184,7 +188,7 @@ O algoritmo compara dois valores e informa qual é o maior ou se são iguais.
 <label for="num2">Número 2:</label>
 <input type="number" id="num2"><br><br>
 
-<button onclick="verificar()">Verificar</button>
+<input type="button" onclick="verificar()" value="Verificar">
 
 <p id="resultado"></p>
 
@@ -227,7 +231,7 @@ Este algoritmo classifica a pessoa em categorias baseadas em sua idade.
 <label for="idade">Informe sua idade:</label>
 <input type="number" id="idade" placeholder="Ex: 25"><br><br>
 
-<button onclick="classificar()">Classificar</button>
+<input type="button" onclick="classificar()" value="Classificar">
 
 <p id="resultado"></p>
 
@@ -253,17 +257,72 @@ function classificar() {
 
 ---
 
-## 3. Algoritmos com Repetição
+## 3. Funções (Functions)
 
 ---
 
 ### 3.1 Conceito
 
+Uma **função** é um bloco de código criado para realizar uma tarefa específica. Ela permite **reaproveitar código** sem precisar reescrevê-lo. Funções podem receber **parâmetros** (dados de entrada) e usar a palavra-chave `return` para devolver um resultado.
+
+---
+
+### 3.2 Exemplo: Calculadora de Dobro
+
+Neste exemplo, isolamos a lógica matemática em uma função separada que recebe um parâmetro e retorna um valor.
+
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Funções</title>
+</head>
+<body>
+
+<h2>Calculadora de Dobro</h2>
+
+<label for="numero">Digite um número:</label>
+<input type="number" id="numero" placeholder="Ex: 4"><br><br>
+
+<input type="button" onclick="exibirDobro()" value="Calcular Dobro">
+
+<p id="resultado"></p>
+
+<script>
+// Função pura que apenas faz o cálculo
+function calcularDobro(valor) {
+  return valor * 2;
+}
+
+// Função responsável por interagir com a tela (HTML)
+function exibirDobro() {
+  let num = parseFloat(document.getElementById("numero").value);
+  
+  // Chamamos a função de cálculo passando o número como parâmetro
+  let resultado = calcularDobro(num);
+
+  document.getElementById("resultado").innerHTML = "O dobro é: " + resultado;
+}
+</script>
+
+</body>
+</html>
+```
+
+---
+
+## 4. Algoritmos com Repetição
+
+---
+
+### 4.1 Conceito
+
 Estruturas de **repetição** (ou laços/loops) são usadas para executar o mesmo bloco de código **várias vezes** até que uma condição seja atendida. As estruturas mais comuns são o **for** (para) e o **while** (enquanto).
 
 ---
 
-### 3.2 Exemplo: Gerador de Tabuada
+### 4.2 Exemplo: Gerador de Tabuada
 
 Este algoritmo usa um laço **for** para multiplicar o número digitado de 1 a 10.
 
@@ -281,7 +340,7 @@ Este algoritmo usa um laço **for** para multiplicar o número digitado de 1 a 1
 <label for="numeroTabuada">Escolha um número:</label>
 <input type="number" id="numeroTabuada" placeholder="Ex: 5"><br><br>
 
-<button onclick="gerarTabuada()">Gerar Tabuada</button>
+<input type="button" onclick="gerarTabuada()" value="Gerar Tabuada">
 
 <p id="resultado"></p>
 
@@ -307,17 +366,17 @@ function gerarTabuada() {
 
 ---
 
-## 4. Algoritmos com Strings
+## 5. Algoritmos com Strings
 
 ---
 
-### 4.1 Conceito
+### 5.1 Conceito
 
 **Strings** são cadeias de caracteres (textos). Algoritmos com strings envolvem a **manipulação desse texto**, como contar o número de letras, converter para maiúsculas/minúsculas, ou buscar palavras específicas.
 
 ---
 
-### 4.2 Exemplo: Manipulação de Texto
+### 5.2 Exemplo: Manipulação de Texto
 
 Este exemplo lê um texto, conta quantos caracteres ele tem e o transforma em letras maiúsculas.
 
@@ -335,7 +394,7 @@ Este exemplo lê um texto, conta quantos caracteres ele tem e o transforma em le
 <label for="textoEntrada">Digite uma palavra ou frase:</label>
 <input type="text" id="textoEntrada" placeholder="Ex: JavaScript"><br><br>
 
-<button onclick="analisarTexto()">Analisar</button>
+<input type="button" onclick="analisarTexto()" value="Analisar">
 
 <p id="tamanhoTexto"></p>
 <p id="textoMaiusculo"></p>
@@ -360,11 +419,11 @@ function analisarTexto() {
 
 ---
 
-## 5. Agregados Homogêneos (Vetores e Matrizes)
+## 6. Agregados Homogêneos (Vetores e Matrizes)
 
 ---
 
-### 5.1 Conceito
+### 6.1 Conceito
 
 **Agregados Homogêneos** são estruturas de dados que armazenam múltiplos valores do **mesmo tipo**. 
 - **Vetor (Array Unidimensional):** Uma lista simples de itens.
@@ -372,7 +431,7 @@ function analisarTexto() {
 
 ---
 
-### 5.2 Exemplo: Lista de Nomes (Vetor)
+### 6.2 Exemplo: Lista de Nomes (Vetor)
 
 Aqui criamos um array de strings e adicionamos nomes a ele iterativamente.
 
@@ -390,7 +449,7 @@ Aqui criamos um array de strings e adicionamos nomes a ele iterativamente.
 <label for="nomeConvidado">Nome:</label>
 <input type="text" id="nomeConvidado" placeholder="Ex: Maria"><br><br>
 
-<button onclick="adicionarNome()">Adicionar</button>
+<input type="button" onclick="adicionarNome()" value="Adicionar">
 
 <h3>Convidados Atuais:</h3>
 <ul id="listaNomes"></ul>
@@ -427,17 +486,17 @@ function atualizarLista() {
 
 ---
 
-## 6. Agregados Heterogêneos (Objetos)
+## 7. Agregados Heterogêneos (Objetos)
 
 ---
 
-### 6.1 Conceito
+### 7.1 Conceito
 
 **Agregados Heterogêneos** (Objetos em JavaScript) permitem agrupar diferentes tipos de dados sob uma mesma estrutura, criando representações lógicas do mundo real (ex: um carro com atributos como cor, portas e ano). Em JavaScript, objetos são criados usando chaves `{}`.
 
 ---
 
-### 6.2 Exemplo: Ficha de Usuário
+### 7.2 Exemplo: Ficha de Usuário
 
 Vamos criar e exibir um objeto contendo diferentes tipos de dados (String, Number, Boolean).
 
@@ -461,7 +520,7 @@ Vamos criar e exibir um objeto contendo diferentes tipos de dados (String, Numbe
 <label for="ativoPerfil">Usuário Ativo?</label>
 <input type="checkbox" id="ativoPerfil"><br><br>
 
-<button onclick="salvarPerfil()">Salvar Perfil</button>
+<input type="button" onclick="salvarPerfil()" value="Salvar Perfil">
 
 <pre id="resultadoObjeto"></pre>
 
@@ -485,11 +544,11 @@ function salvarPerfil() {
 
 ---
 
-## 7. CRUD em Memória RAM
+## 8. CRUD em Memória RAM
 
 ---
 
-### 7.1 Conceito
+### 8.1 Conceito
 
 **CRUD** é um acrônimo para as quatro operações básicas de armazenamento de dados:
 - **C**reate (Criar/Inserir)
@@ -501,7 +560,7 @@ Fazer isso em **memória RAM** significa que usaremos um **Vetor de Objetos** pa
 
 ---
 
-### 7.2 Exemplo: Gerenciador de Produtos
+### 8.2 Exemplo: Gerenciador de Produtos
 
 Este exemplo junta tudo: Vetores, Objetos, Laços de repetição e Lógica para criar um sistema completo e simples.
 
@@ -526,7 +585,7 @@ Este exemplo junta tudo: Vetores, Objetos, Laços de repetição e Lógica para 
 <label for="precoProduto">Preço (R$):</label>
 <input type="number" id="precoProduto" placeholder="Ex: 10.50"><br><br>
 
-<button onclick="criarProduto()">Adicionar Produto</button>
+<input type="button" onclick="criarProduto()" value="Adicionar Produto">
 
 <table>
   <thead>
@@ -585,8 +644,8 @@ function lerProdutos() {
         <td>${p.nome}</td>
         <td>R$ ${p.preco.toFixed(2)}</td>
         <td>
-          <button onclick="atualizarProduto(${p.id})">Editar</button>
-          <button onclick="deletarProduto(${p.id})">Excluir</button>
+          <input type="button" onclick="atualizarProduto(${p.id})" value="Editar">
+          <input type="button" onclick="deletarProduto(${p.id})" value="Excluir">
         </td>
       </tr>
     `;
@@ -642,6 +701,7 @@ Você aprendeu:
 
 - Como funciona a linearidade em um **algoritmo sequencial**.
 - Como implementar **condições com if/else**.
+- Como estruturar códigos reutilizáveis utilizando **funções**.
 - Como automatizar tarefas com **repetições (for)**.
 - Como tratar textos usando manipulação de **strings**.
 - A diferença entre organizar dados simples em **vetores/matrizes** e dados complexos em **objetos**.
