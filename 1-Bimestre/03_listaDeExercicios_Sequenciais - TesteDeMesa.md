@@ -2,7 +2,7 @@
 
 
 #### Considerando que uma variável é um local (na memória RAM) que guarda alguma coisa.
-#### Para todos os exercícios, calcule e mostre o valor que estará na variável ou variáveis da pergunta após realizar os cálculos (processamento).
+#### Para todos os exercícios, calcule e mostre o valor que estará na variável ou variáveis da pergunta após realizar os cálculos (processamento). Não é necessário programar, apenas fazer o teste de mesa.
 
 
 1) Qual o valor de soma? (exemplo do que deve ser feito para cada um dos exercícios)
