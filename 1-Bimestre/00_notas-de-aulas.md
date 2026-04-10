@@ -437,9 +437,19 @@ Onde:
 [↑ Voltar para o Índice](#índice--checklist)
 
 ## Condicionais
-Aulas em sala de aula teórica - G101
+Aulas em sala de aula teórica - G103
+
+[Material complementar](https://github.com/rjhalmeman/algoritmos-2026/blob/main/MaterialComplementarAlgoritmos.md#2-algoritmos-com-condicionais)
 
 if
+
+Aprovado/Reprovado
+
+Bhaskara
+
+Qual número é maior
+
+Coloque 3 números em ordem crescente
 
 # 13/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
