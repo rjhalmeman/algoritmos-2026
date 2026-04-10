@@ -12,6 +12,26 @@
     - [2.1 Conceito](#21-conceito)
     - [2.2 Exemplo: Verificar Maior Número](#22-exemplo-verificar-maior-número)
     - [2.3 Exemplo: Classificação de Idade](#23-exemplo-classificação-de-idade)
+- [Estruturas Condicionais em JavaScript: if, switch case e operador ternário](#estruturas-condicionais-em-javascript-if-switch-case-e-operador-ternário)
+  - [1. Estrutura **if / else if / else**](#1-estrutura-if--else-if--else)
+    - [Sintaxe fundamental:](#sintaxe-fundamental)
+    - [Exemplo prático:](#exemplo-prático)
+    - [Características importantes:](#características-importantes)
+  - [2. Estrutura **switch / case**](#2-estrutura-switch--case)
+    - [Sintaxe fundamental:](#sintaxe-fundamental-1)
+    - [Exemplo prático:](#exemplo-prático-1)
+    - [Agrupando casos (fallthrough intencional):](#agrupando-casos-fallthrough-intencional)
+    - [⚠️ Atenção ao **break**:](#️-atenção-ao-break)
+  - [3. Operador **Ternário** (condição ? valor1 : valor2)](#3-operador-ternário-condição--valor1--valor2)
+    - [Sintaxe:](#sintaxe)
+    - [Exemplo prático básico:](#exemplo-prático-básico)
+    - [Comparação com if-else:](#comparação-com-if-else)
+    - [Ternário aninhado (use com moderação):](#ternário-aninhado-use-com-moderação)
+    - [Em retornos de função:](#em-retornos-de-função)
+  - [📊 Quadro comparativo](#-quadro-comparativo)
+  - [🎯 Quando usar cada um?](#-quando-usar-cada-um)
+  - [⚠️ Erros comuns para evitar](#️-erros-comuns-para-evitar)
+  - [🚀 Exemplo integrando as três estruturas](#-exemplo-integrando-as-três-estruturas)
   - [3. Funções (Functions)](#3-funções-functions)
     - [3.1 Conceito](#31-conceito)
     - [3.2 Exemplo: Calculadora de Dobro](#32-exemplo-calculadora-de-dobro)
@@ -254,6 +274,301 @@ function classificar() {
 </body>
 </html>
 ```
+
+# Estruturas Condicionais em JavaScript: if, switch case e operador ternário
+
+Em JavaScript, temos **três formas principais** de controlar o fluxo do programa com base em condições. Cada uma tem sua sintaxe específica e seu melhor momento de uso. Vamos explorar todas elas.
+
+## 1. Estrutura **if / else if / else**
+
+A estrutura `if` é a mais básica e flexível. Ela avalia uma **condição booleana** (verdadeira ou falsa) e executa um bloco de código de acordo.
+
+### Sintaxe fundamental:
+
+```javascript
+// if simples
+if (condicao) {
+    // código executado se condicao for true
+}
+
+// if-else
+if (condicao) {
+    // código se true
+} else {
+    // código se false
+}
+
+// if com múltiplas ramificações
+if (condicao1) {
+    // código se condicao1 for true
+} else if (condicao2) {
+    // código se condicao2 for true
+} else if (condicao3) {
+    // código se condicao3 for true
+} else {
+    // código se nenhuma condição for true
+}
+```
+
+### Exemplo prático:
+
+```javascript
+let nota = 85;
+
+if (nota >= 90) {
+    console.log("Conceito A");
+} else if (nota >= 80) {
+    console.log("Conceito B");
+} else if (nota >= 70) {
+    console.log("Conceito C");
+} else if (nota >= 60) {
+    console.log("Conceito D");
+} else {
+    console.log("Conceito F");
+}
+```
+
+### Características importantes:
+- As condições são avaliadas **em ordem**, de cima para baixo
+- Ao encontrar a primeira condição verdadeira, o bloco correspondente é executado e o restante é ignorado
+- O bloco `else` é **opcional**
+- Você pode ter **quantos `else if`** precisar
+
+## 2. Estrutura **switch / case**
+
+A estrutura `switch` é ideal quando você precisa comparar **uma única expressão** contra **múltiplos valores possíveis**. Ela usa **comparação estrita (===)**.
+
+### Sintaxe fundamental:
+
+```javascript
+switch (expressao) {
+    case valor1:
+        // código executado se expressao === valor1
+        break;
+    case valor2:
+        // código executado se expressao === valor2
+        break;
+    case valor3:
+        // código executado se expressao === valor3
+        break;
+    default:
+        // código executado se nenhum case corresponder
+}
+```
+
+### Exemplo prático:
+
+```javascript
+let diaSemana = 3;
+let nomeDia;
+
+switch (diaSemana) {
+    case 1:
+        nomeDia = "Domingo";
+        break;
+    case 2:
+        nomeDia = "Segunda-feira";
+        break;
+    case 3:
+        nomeDia = "Terça-feira";
+        break;
+    case 4:
+        nomeDia = "Quarta-feira";
+        break;
+    case 5:
+        nomeDia = "Quinta-feira";
+        break;
+    case 6:
+        nomeDia = "Sexta-feira";
+        break;
+    case 7:
+        nomeDia = "Sábado";
+        break;
+    default:
+        nomeDia = "Dia inválido";
+}
+
+console.log(nomeDia); // "Terça-feira"
+```
+
+### Agrupando casos (fallthrough intencional):
+
+```javascript
+let tipo = "admin";
+
+switch (tipo) {
+    case "admin":
+        console.log("Acesso total ao sistema");
+        // sem break - continua para o próximo caso
+    case "editor":
+        console.log("Pode editar conteúdos");
+        // sem break - continua para o próximo caso
+    case "visitante":
+        console.log("Pode visualizar páginas");
+        break;
+    default:
+        console.log("Acesso negado");
+}
+```
+
+### ⚠️ Atenção ao **break**:
+- Sem `break`, o programa **continua executando** os próximos cases (fallthrough)
+- Use `break` para **encerrar** a execução do switch
+- O `default` é executado quando **nenhum case corresponde** (é opcional)
+
+## 3. Operador **Ternário** (condição ? valor1 : valor2)
+
+O operador ternário é o único operador JavaScript que recebe **três operandos**. Ele é uma forma **concisa** de escrever um if-else simples.
+
+### Sintaxe:
+
+```javascript
+condicao ? valorSeVerdadeiro : valorSeFalso
+```
+
+### Exemplo prático básico:
+
+```javascript
+let idade = 18;
+let status = idade >= 18 ? "Maior de idade" : "Menor de idade";
+console.log(status); // "Maior de idade"
+```
+
+### Comparação com if-else:
+
+```javascript
+// Versão com if-else (6 linhas)
+let desconto;
+if (compra >= 100) {
+    desconto = 0.1;
+} else {
+    desconto = 0;
+}
+
+// Versão com ternário (1 linha)
+let desconto = compra >= 100 ? 0.1 : 0;
+```
+
+### Ternário aninhado (use com moderação):
+
+```javascript
+let nota = 85;
+let conceito = nota >= 90 ? "A" :
+               nota >= 80 ? "B" :
+               nota >= 70 ? "C" :
+               nota >= 60 ? "D" : "F";
+```
+
+### Em retornos de função:
+
+```javascript
+function podeDirigir(idade) {
+    return idade >= 18 ? "Pode dirigir" : "Não pode dirigir";
+}
+
+// Em template strings
+console.log(`Você ${idade >= 18 ? "é maior" : "é menor"} de idade`);
+```
+
+## 📊 Quadro comparativo
+
+| Característica | if/else | switch/case | Ternário |
+|----------------|---------|-------------|----------|
+| **Complexidade** | Alta (qualquer condição) | Média (igualdade estrita) | Baixa (condições simples) |
+| **Número de ramos** | Ilimitado | Ilimitado | Apenas 2 |
+| **Legibilidade** | Boa para blocos pequenos | Boa para muitos valores | Excelente para casos simples |
+| **Uso típico** | Lógica complexa | Menu, dias da semana | Atribuição condicional |
+| **Execução** | Primeiro bloco true | Case correspondente | Expressão única |
+
+## 🎯 Quando usar cada um?
+
+**Use `if/else` quando:**
+- Você tem **condições complexas** (com &&, ||, >, <, etc.)
+- Precisa testar **diferentes variáveis**
+- O bloco de código é **grande** (várias linhas)
+- A condição não é apenas igualdade
+
+**Use `switch/case` quando:**
+- Você compara **uma única variável** com **muitos valores distintos**
+- Os valores são **fixos e conhecidos** (como números ou strings curtas)
+- Você quer **evitar repetir** a variável várias vezes
+- Precisa de **fallthrough intencional**
+
+**Use o **operador ternário** quando:**
+- Você tem uma **atribuição condicional simples**
+- Precisa de um **retorno rápido** em uma função
+- Está escrevendo **JSX** (React) ou **template literals**
+- Quer **código mais conciso** e a condição é trivial
+
+## ⚠️ Erros comuns para evitar
+
+```javascript
+// ERRO: usar atribuição (=) em vez de comparação (===)
+if (x = 5) { } // Atribui 5 a x e sempre é verdadeiro
+
+// CORRETO
+if (x === 5) { }
+
+// ERRO: esquecer o break no switch
+switch(valor) {
+    case 1:
+        fazAlgo(); // Executa
+    case 2:
+        fazOutraCoisa(); // Também executa se valor === 1
+}
+
+// CORRETO
+switch(valor) {
+    case 1:
+        fazAlgo();
+        break;
+    case 2:
+        fazOutraCoisa();
+        break;
+}
+
+// ERRO: ternário muito aninhado (prejudica legibilidade)
+let resultado = a ? b ? c ? d : e : f : g;
+
+// CORRETO - use if/else para lógica complexa
+if (a) {
+    if (b) {
+        resultado = c ? d : e;
+    } else {
+        resultado = f;
+    }
+} else {
+    resultado = g;
+}
+```
+
+## 🚀 Exemplo integrando as três estruturas
+
+```javascript
+function avaliarDia(dia) {
+    // switch para dias da semana
+    switch(dia) {
+        case "sabado":
+        case "domingo":
+            // ternário para decisão rápida
+            return dia === "sabado" ? "Fim de semana começou!" : "Último dia de descanso";
+        default:
+            // if para lógica mais complexa
+            if (dia === "sexta") {
+                return "Sextou! 🎉";
+            } else {
+                return `${dia} - dia útil comum`;
+            }
+    }
+}
+
+console.log(avaliarDia("sabado"));  // "Fim de semana começou!"
+console.log(avaliarDia("sexta"));   // "Sextou! 🎉"
+console.log(avaliarDia("terca"));   // "terca - dia útil comum"
+```
+
+> **Dica profissional**: Priorize sempre a **legibilidade do código**. O ternário é elegante, mas não force seu uso em condições complexas. O if/else é mais verboso, mas frequentemente mais claro. O switch brilha quando você tem um menu extenso de opções para a mesma variável.
+
 
 ---
 
