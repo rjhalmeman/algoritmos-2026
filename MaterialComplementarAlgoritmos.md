@@ -32,6 +32,22 @@
   - [🎯 Quando usar cada um?](#-quando-usar-cada-um)
   - [⚠️ Erros comuns para evitar](#️-erros-comuns-para-evitar)
   - [🚀 Exemplo integrando as três estruturas](#-exemplo-integrando-as-três-estruturas)
+- [Comparação em JavaScript: == vs ===](#comparação-em-javascript--vs-)
+  - [1. Operador **==** (Igualdade Abstrata / Comparação Frouxa)](#1-operador--igualdade-abstrata--comparação-frouxa)
+    - [Regras de conversão do `==`:](#regras-de-conversão-do-)
+    - [Exemplos práticos:](#exemplos-práticos)
+    - [Comportamentos surpreendentes (e problemáticos):](#comportamentos-surpreendentes-e-problemáticos)
+  - [2. Operador **===** (Igualdade Estrita / Comparação Rigorosa)](#2-operador--igualdade-estrita--comparação-rigorosa)
+    - [Regras do `===`:](#regras-do-)
+    - [Exemplos práticos:](#exemplos-práticos-1)
+  - [📊 Tabela Comparativa Essencial](#-tabela-comparativa-essencial)
+  - [🚨 Casos problemáticos do `==` (armadilhas)](#-casos-problemáticos-do--armadilhas)
+  - [✅ **Boa prática recomendada**](#-boa-prática-recomendada)
+    - [Use **sempre `===`** a menos que você tenha uma razão MUITO específica para usar `==`.](#use-sempre--a-menos-que-você-tenha-uma-razão-muito-específica-para-usar-)
+    - [Exceções raras onde `==` pode ser útil:](#exceções-raras-onde--pode-ser-útil)
+  - [🔍 Como testar o tipo antes de comparar](#-como-testar-o-tipo-antes-de-comparar)
+  - [🎯 Resumo visual](#-resumo-visual)
+  - [💡 **Conclusão**](#-conclusão)
   - [3. Funções (Functions)](#3-funções-functions)
     - [3.1 Conceito](#31-conceito)
     - [3.2 Exemplo: Calculadora de Dobro](#32-exemplo-calculadora-de-dobro)
@@ -569,6 +585,224 @@ console.log(avaliarDia("terca"));   // "terca - dia útil comum"
 
 > **Dica profissional**: Priorize sempre a **legibilidade do código**. O ternário é elegante, mas não force seu uso em condições complexas. O if/else é mais verboso, mas frequentemente mais claro. O switch brilha quando você tem um menu extenso de opções para a mesma variável.
 
+# Comparação em JavaScript: == vs ===
+
+Em JavaScript, existem **dois operadores de comparação** que parecem semelhantes, mas funcionam de maneiras fundamentalmente diferentes. Entender essa diferença é **crucial** para evitar bugs silenciosos.
+
+## 1. Operador **==** (Igualdade Abstrata / Comparação Frouxa)
+
+O operador `==` compara dois valores **permitindo conversão automática de tipos**. Se os tipos forem diferentes, o JavaScript tenta **convertê-los para um tipo comum** antes de comparar.
+
+### Regras de conversão do `==`:
+
+| Cenário | Comportamento |
+|---------|---------------|
+| Número vs String | Converte string para número |
+| Boolean vs qualquer tipo | Converte boolean para número (true → 1, false → 0) |
+| null vs undefined | São considerados **iguais** entre si |
+| Objeto vs primitivo | Tenta converter objeto para primitivo |
+
+### Exemplos práticos:
+
+```javascript
+// Número vs String - string é convertida para número
+console.log(5 == "5");        // true (string "5" vira número 5)
+console.log(10 == "10");      // true
+console.log(0 == "0");        // true
+console.log(5 == "5.0");      // true
+
+// Boolean vs Número - boolean é convertido para número
+console.log(true == 1);       // true (true vira 1)
+console.log(false == 0);      // true (false vira 0)
+console.log(true == 2);       // false (true vira 1, 1 != 2)
+
+// Boolean vs String
+console.log(true == "1");     // true (true → 1, "1" → 1)
+console.log(false == "0");    // true (false → 0, "0" → 0)
+console.log(true == "true");  // false (true → 1, "true" → NaN)
+
+// null e undefined
+console.log(null == undefined);   // true (caso especial)
+console.log(null == null);        // true
+console.log(undefined == undefined); // true
+
+// null com números
+console.log(null == 0);       // false (null não é convertido para 0)
+console.log(null == "");      // false
+
+// NaN nunca é igual a nada (nem a ele mesmo)
+console.log(NaN == NaN);       // false
+console.log(NaN == "NaN");     // false
+console.log(NaN == 0);         // false
+```
+
+### Comportamentos surpreendentes (e problemáticos):
+
+```javascript
+// Esses exemplos mostram por que o == pode ser traiçoeiro
+console.log("" == 0);          // true (string vazia vira 0)
+console.log(" " == 0);         // true (espaço vira 0)
+console.log("" == false);      // true (ambos viram 0)
+console.log(" \t\r\n" == 0);   // true (whitespace vira 0)
+
+console.log([1] == 1);         // true (array vira string "1", depois número 1)
+console.log([1,2] == "1,2");   // true (array vira string "1,2")
+
+console.log(true == "1");      // true
+console.log(true == "2");      // false (1 vs 2)
+console.log(true == "true");   // false (1 vs NaN)
+```
+
+## 2. Operador **===** (Igualdade Estrita / Comparação Rigorosa)
+
+O operador `===` compara **valor e tipo** sem realizar nenhuma conversão. Se os tipos forem diferentes, o resultado é **imediatamente false**.
+
+### Regras do `===`:
+
+- **Tipos diferentes** → resultado false
+- **Mesmo tipo** → compara o valor normalmente
+
+### Exemplos práticos:
+
+```javascript
+// Tipos diferentes - sempre false
+console.log(5 === "5");       // false (number vs string)
+console.log(true === 1);      // false (boolean vs number)
+console.log(null === undefined); // false (diferentes tipos)
+
+// Mesmo tipo - compara valor
+console.log(5 === 5);         // true
+console.log("texto" === "texto"); // true
+console.log(true === true);   // true
+console.log(false === false); // true
+
+// null e undefined com seus próprios tipos
+console.log(null === null);     // true
+console.log(undefined === undefined); // true
+
+// NaN continua especial
+console.log(NaN === NaN);       // false (NaN nunca é igual a NaN)
+
+// Objetos comparam referência, não conteúdo
+console.log({} === {});         // false (objetos diferentes)
+let obj = { nome: "João" };
+console.log(obj === obj);       // true (mesma referência)
+```
+
+## 📊 Tabela Comparativa Essencial
+
+| Comparação | == | === | Motivo |
+|------------|-----|------|--------|
+| `5 == "5"` | ✅ true | ❌ false | `==` converte string para número |
+| `0 == false` | ✅ true | ❌ false | `==` converte false para 0 |
+| `"" == false` | ✅ true | ❌ false | `==` converte ambos para 0 |
+| `null == undefined` | ✅ true | ❌ false | `==` tem caso especial |
+| `"1" == true` | ✅ true | ❌ false | `==` converte ambos para número |
+| `5 === 5` | ✅ true | ✅ true | tipos e valores iguais |
+| `"5" === "5"` | ✅ true | ✅ true | tipos e valores iguais |
+| `[] == ""` | ✅ true | ❌ false | `==` converte array para string |
+
+## 🚨 Casos problemáticos do `==` (armadilhas)
+
+```javascript
+// Comparações que podem quebrar sua lógica
+console.log(0 == false);        // true - surpreendente
+console.log("" == false);       // true - surpreendente
+console.log([] == false);       // true - surpreendente
+console.log("0" == false);      // true - surpreendente
+
+console.log("\n" == 0);         // true - quebra de linha vira 0
+console.log(null == false);     // false - inconsistente!
+console.log(undefined == false); // false - inconsistente!
+
+// Array vs String
+console.log([1,2] == "1,2");    // true
+console.log([1,2] == [1,2]);    // false (objetos diferentes!)
+```
+
+## ✅ **Boa prática recomendada**
+
+### Use **sempre `===`** a menos que você tenha uma razão MUITO específica para usar `==`.
+
+```javascript
+// ❌ EVITE (comportamento imprevisível)
+if (valor == 5) { }
+if (input == true) { }
+if (resultado == "") { }
+
+// ✅ PREFIRA (comportamento previsível)
+if (valor === 5) { }
+if (input === true) { }
+if (resultado === "") { }
+```
+
+### Exceções raras onde `==` pode ser útil:
+
+```javascript
+// Verificar se é null ou undefined (ambos)
+if (valor == null) {  // equivalente a: valor === null || valor === undefined
+    console.log("Valor é null ou undefined");
+}
+
+// Comparação com número sem se preocupar com tipo numérico
+if (quantidade == 10) {  // funciona com "10" (string) e 10 (number)
+    console.log("Quantidade é 10");
+}
+// Mas ainda é mais seguro usar Number(quantidade) === 10
+```
+
+## 🔍 Como testar o tipo antes de comparar
+
+```javascript
+// Descobrir o tipo de um valor
+console.log(typeof 5);        // "number"
+console.log(typeof "5");      // "string"
+console.log(typeof true);     // "boolean"
+console.log(typeof null);     // "object" (bug histórico do JS)
+console.log(typeof undefined); // "undefined"
+
+// Verificar null corretamente
+function isNull(value) {
+    return value === null;
+}
+
+// Verificar NaN (o único valor que não é igual a si mesmo)
+function isReallyNaN(value) {
+    return value !== value;  // ou usar Number.isNaN(value)
+}
+
+console.log(isReallyNaN(NaN));  // true
+console.log(isReallyNaN(5));    // false
+```
+
+## 🎯 Resumo visual
+
+```
+Operador ==  (Igualdade Frouxa)
+┌─────────────┐
+│ 5 == "5"    │ → true  (converte string → número)
+│ true == 1   │ → true  (converte boolean → número)  
+│ null == undefined → true  (caso especial)
+└─────────────┘
+
+Operador === (Igualdade Estrita)
+┌─────────────┐
+│ 5 === "5"   │ → false (tipos diferentes)
+│ true === 1  │ → false (tipos diferentes)
+│ null === undefined → false (tipos diferentes)
+│ 5 === 5     │ → true  (mesmo tipo E mesmo valor)
+└─────────────┘
+```
+
+## 💡 **Conclusão**
+
+- **`==`** realiza **conversão automática de tipos** antes de comparar
+- **`===`** compara **tipo e valor** sem conversão
+- A recomendação da comunidade JavaScript é usar **sempre `===`** para evitar comportamentos inesperados
+- Use `==` apenas quando você **explicitamente quer** a conversão de tipos e entende suas regras
+- A única exceção amplamente aceita é `valor == null` para verificar `null` ou `undefined` simultaneamente
+
+> **Dica de ouro**: A maioria dos linters (ESLint, JSHint) configuram regras para **proibir o uso de `==`** e exigir `===`. Isso não é frescura - é prevenção contra bugs sutis que podem passar despercebidos!
 
 ---
 
