@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bhaskara</title>   
+    <title>Bhaskara</title>
 </head>
 
 <body>
@@ -14,15 +14,15 @@
     <!-- Coeficientes A, B, C -->
     <label for="inputA">Valor de A (coeficiente a)</label>
 
-    <input type="number" name="inputA" id="inputA"  >
+    <input type="number" name="inputA" id="inputA">
     <br>
 
     <label for="inputB">Valor de B (coeficiente b)</label>
-    <input type="number" name="inputB" id="inputB"  >
+    <input type="number" name="inputB" id="inputB">
     <br>
 
     <label for="inputC">Valor de C (coeficiente c)</label>
-    <input type="number" name="inputC" id="inputC"  >
+    <input type="number" name="inputC" id="inputC">
     <br>
 
     <input type="button" name="calcular" id="calcular" value="Calcular Bhaskara" onclick="funcaoCalcular()">
@@ -39,9 +39,9 @@
             let b = parseFloat(document.getElementById("inputB").value);
             let c = parseFloat(document.getElementById("inputC").value);
 
-            // --- PROTEÇÃO 1: Verificar se A é igual a zero (ou NaN) ---
+            // --- PROTEÇÃO 1: Verificar se A é igual a zero 
             // Se A for zero, a equação não é do segundo grau (divisão por zero)
-            let respX1 = "";
+            let respX1 = ""; //  é preciso declarar respX1 e respX2 antes do if para garantir que elas existam em ambos os casos (A=0 ou A≠0)
             let respX2 = "";
 
             if (a === 0) {
