@@ -786,12 +786,12 @@ Operador ==  (Igualdade Frouxa)
 └─────────────┘
 
 Operador === (Igualdade Estrita)
-┌─────────────┐
-│ 5 === "5"   │ → false (tipos diferentes)
-│ true === 1  │ → false (tipos diferentes)
-│ null === undefined → false (tipos diferentes)
-│ 5 === 5     │ → true  (mesmo tipo E mesmo valor)
-└─────────────┘
+┌────────────────────┐
+│ 5 === "5"          │ → false (tipos diferentes)
+│ true === 1         │ → false (tipos diferentes)
+│ null === undefined │→ false (tipos diferentes)
+│ 5 === 5            │ → true  (mesmo tipo E mesmo valor)
+└────────────────────┘
 ```
 
 ## 💡 **Conclusão**
