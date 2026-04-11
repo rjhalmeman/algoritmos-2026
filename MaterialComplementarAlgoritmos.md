@@ -779,17 +779,17 @@ console.log(isReallyNaN(5));    // false
 
 ```
 Operador ==  (Igualdade Frouxa)
-┌─────────────┐
-│ 5 == "5"    │ → true  (converte string → número)
-│ true == 1   │ → true  (converte boolean → número)  
-│ null == undefined → true  (caso especial)
-└─────────────┘
+┌────────────────────┐
+│ 5 == "5"           │ → true  (converte string → número)
+│ true == 1          │ → true  (converte boolean → número)  
+│ null == undefined  │ → true  (caso especial)
+└────────────────────┘
 
 Operador === (Igualdade Estrita)
 ┌────────────────────┐
 │ 5 === "5"          │ → false (tipos diferentes)
 │ true === 1         │ → false (tipos diferentes)
-│ null === undefined │→ false (tipos diferentes)
+│ null === undefined │ → false (tipos diferentes)
 │ 5 === 5            │ → true  (mesmo tipo E mesmo valor)
 └────────────────────┘
 ```
