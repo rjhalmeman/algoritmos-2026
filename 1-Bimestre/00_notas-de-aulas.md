@@ -8,7 +8,7 @@
 - [x] [30/03/2026 - Exercícios](#30032026)
 - [x] [03/04/2026 - Feriado - Sexta-feira santa]
 - [x] [06/04/2026 - Tipos de dados](#06042026)
-- [ ] [10/04/2026 - Condicionais](#10042026)
+- [x] [10/04/2026 - Condicionais](#10042026)
 - [ ] [13/04/2026 - Condicionais](#13042026)
 - [ ] [17/04/2026 - Exercícios](#17042026)
 - [ ] [24/04/2026 - Funções](#24042026)
@@ -447,9 +447,8 @@ Aprovado/Reprovado
 
 Bhaskara
 
-Qual número é maior
+Qual número é maior?
 
-Coloque 3 números em ordem crescente
 
 # 13/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
@@ -457,6 +456,9 @@ Coloque 3 números em ordem crescente
 ## Condicionais
 
 Exercícios
+Coloque 3 números em ordem crescente.
+Intervalo
+![alt text](./imagens/intervalo.png)
 
 # 17/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
