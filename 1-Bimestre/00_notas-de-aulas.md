@@ -455,9 +455,17 @@ Qual número é maior?
 
 ## Condicionais
 
+Onde "aparece" o que eu coloco no console.log("algo").
+
 Exercícios
-Coloque 3 números em ordem crescente.
-Intervalo
+
+
+
+1) Faça um programa que leia 3 números inteiros e os coloque em ordem crescente.
+
+
+2) Faça um programa que leia o valor de x e informe se ele está no intervalo (ou não)
+   
 ![alt text](./imagens/intervalo.png)
 
 # 17/04/2026
