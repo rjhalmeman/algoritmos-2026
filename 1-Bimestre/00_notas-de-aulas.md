@@ -468,6 +468,12 @@ Exercícios
    
 ![alt text](./imagens/intervalo.png)
 
+3) Faça um programa que leia o valor de x e informe se ele está no intervalo (ou não)
+4) ![alt text](./imagens/intervalo2.png)
+
+5) Como seria fazer uma programa genérico, para que fosse possível informar os limites e o programa avaliasse se está
+   ou não no intervalo?
+
 # 17/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
