@@ -464,12 +464,12 @@ Exercícios
 1) Faça um programa que leia 3 números inteiros e os coloque em ordem crescente.
 
 
-2) Faça um programa que leia o valor de x e informe se ele está no intervalo (ou não)
+2) Faça um programa que leia o valor de x e informe se ele está no intervalo (ou não).
    
 ![alt text](./imagens/intervalo.png)
 
-3) Faça um programa que leia o valor de x e informe se ele está no intervalo (ou não)
-4) ![alt text](./imagens/intervalo2.png)
+3) Faça um programa que leia o valor de x e informe se ele está no intervalo (ou não).
+ ![alt text](./imagens/intervalo2.png).
 
 5) Como seria fazer uma programa genérico, para que fosse possível informar os limites e o programa avaliasse se está
    ou não no intervalo?
