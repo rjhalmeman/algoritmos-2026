@@ -9,7 +9,7 @@
 - [x] [03/04/2026 - Feriado - Sexta-feira santa]
 - [x] [06/04/2026 - Tipos de dados](#06042026)
 - [x] [10/04/2026 - Condicionais](#10042026)
-- [ ] [13/04/2026 - Condicionais](#13042026)
+- [x] [13/04/2026 - Condicionais](#13042026)
 - [ ] [17/04/2026 - Exercícios](#17042026)
 - [ ] [24/04/2026 - Funções](#24042026)
 - [ ] [27/04/2026 - Exercícios](#27042026)
