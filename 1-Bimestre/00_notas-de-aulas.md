@@ -457,6 +457,8 @@ Qual número é maior?
 
 Onde "aparece" o que eu coloco no console.log("algo").
 
+Exemplos
+
 Exercícios
 
 
