@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora com Input HTML</title>
+</head>
+
+<body>
+
+    <h3>Calculadora Simples</h3>
+    
+    <label>Digite o valor de X:</label>
+    <input type="number" id="valorX" placeholder="Ex: 10">
+    
+    <br><br>
+    
+    <label>Digite o valor de Y:</label>
+    <input type="number" id="valorY" placeholder="Ex: 20">
+    
+    <br><br>
+    
+    <button onclick="calcular()">Calcular</button>
+    
+    <hr>
+    
+    <h3>Resultados:</h3>
+    <div id="respostaVisivelNoHTML"></div>
+
+    <script>
+        function calcular() {
+            //entrada de dados do script para o HTML
+            let x = parseFloat(document.getElementById("valorX").value);
+            let y = parseFloat(document.getElementById("valorY").value);
+            
+        //processamento           
+            let soma = x + y;
+            let subtracao = x - y;
+            let multiplicacao = x * y;
+            let divisao = x / y;
+            
+            //saída no console
+            console.log("O valor de x é: " + x);
+            console.log("O valor de y é: " + y);
+            console.log("A soma de x e y é: " + soma);
+            console.log("A subtração de x e y é: " + subtracao);
+            console.log("A multiplicação de x e y é: " + multiplicacao);
+            console.log("A divisão de x por y é: " + divisao);
+            
+            //saída no HTML
+            let elementoResposta = document.getElementById("respostaVisivelNoHTML");
+            elementoResposta.innerHTML = 
+                "O valor de x é: " + x + "<br>" +
+                "O valor de y é: " + y + "<br>" +
+                "A soma de x e y é: " + soma + "<br>" +
+                "A subtração de x e y é: " + subtracao + "<br>" +
+                "A multiplicação de x e y é: " + multiplicacao + "<br>" +
+                "A divisão de x por y é: " + divisao;
+        }
+    </script>
+
+</body>
+
+</html>
