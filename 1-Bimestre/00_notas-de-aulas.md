@@ -458,11 +458,16 @@ Extras
 
 [Grifar](https://www.youtube.com/shorts/yXgQ_VJYunk)
 
-## Condicionais
 
 Onde "aparece" o que eu coloco no console.log("algo").
 
 [Exemplos](https://github.com/rjhalmeman/algoritmos-2026/tree/main/1-Bimestre/exerc%C3%ADcios/2026-04-13-exemplos)
+
+## Condicionais
+
+[Tutorial de como instalar o nodejs no windows](https://www.youtube.com/watch?v=uIPfbUebAeQ)
+
+
 
 Exercícios
 
