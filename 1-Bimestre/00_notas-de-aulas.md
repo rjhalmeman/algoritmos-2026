@@ -508,7 +508,6 @@ Crie uma interface simples onde o usuário informa a quantidade de cada lanche. 
 ![alt text](./imagens/burgao.png)
 
 
-
 # 24/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
