@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M31</title>
+</head>
+
+<body>
+    <label for="inputX">Digite um valor para X</label>
+    <input type="number" id="inputX"><br>
+    <input type="button" value="Calcular" onclick="funcaoCalcular()">
+    <br>
+    <p id="aResposta">aqui vai sair a resposta</p>
+
+    <script>
+        function funcaoCalcular() {
+            let x = parseFloat(document.getElementById("inputX").value);
+            let resp = "";
+            if (x >= 3 && x < 8){
+                resp = "O número "+x+" está no intervalo";
+            } else {
+                 resp = "O número "+x+" NÃO está no intervalo";
+            }
+            document.getElementById("aResposta").innerHTML = resp;
+
+        }
+    </script>
+
+</body>
+
+</html>

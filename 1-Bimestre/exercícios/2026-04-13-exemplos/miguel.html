@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Teste de Bandeira Preta</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            transition: all 0.5s; /* Deixa a mudança de cor suave */
+            padding: 50px;
+        }
+        .container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Painel de Comissários - F1</h2>
+        
+        <label for="inputNbw">Número ou Nome do Piloto:</label>
+        <input type="text" id="inputNbw" placeholder="Ex: 44">
+        
+        <button onclick="bkFlag('black')">Aplicar Bandeira Preta</button>
+
+        <hr>
+        
+        <h1 id="result"></h1>
+        <p id="respost"></p>
+    </div>
+
+    <script>
+        function bkFlag(black) {
+            // Pegamos o valor do input
+            let Nbw = document.getElementById("inputNbw").value;
+            
+            // Mudamos o estilo do corpo
+            document.body.style.backgroundColor = black;
+            document.body.style.color = "white"; // "white" precisa de aspas
+            
+            // Exibimos as mensagens nos IDs correspondentes
+            // Corrigido de Nwb para Nbw
+            document.getElementById('result').innerHTML = "Black Flag for " + Nbw;
+            document.getElementById('respost').innerHTML = "Disqualified from the session, retire as soon as possible!";
+        }
+    </script>
+
+</body>
+</html>

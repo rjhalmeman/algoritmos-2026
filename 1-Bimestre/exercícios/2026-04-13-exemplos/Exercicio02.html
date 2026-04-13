@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>intervalo</title>
+</head>
+
+<body>
+    <label for="inputX">Digite um valor para X</label>
+    <input type="number" id="inputX">
+    <input type="button" value="Calcular" onclick="funcaoCalcular()">
+    <h1 id="resposta">a resposta sairá aqui</h1>
+    
+    <script>
+        function funcaoCalcular() {
+            let x = parseFloat(document.getElementById("inputX").value);
+            let resp = "";
+            if (x >= 3 && x < 8) {
+                resp = "Sim, o número " + x + " está no intervalo";
+            } else {
+                resp = "Não, o número " + x + " não está no intervalo";
+            }
+
+            document.getElementById("resposta").innerHTML = resp;
+        }
+    </script>
+
+
+</body>
+
+</html>
