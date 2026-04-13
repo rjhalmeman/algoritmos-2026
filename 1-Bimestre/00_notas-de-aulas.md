@@ -453,6 +453,11 @@ Qual número é maior?
 # 13/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
+Extras
+[Ciência da aprendizagem](https://www.youtube.com/shorts/LObe19rCzYQ?feature=share)
+
+[Grifar](https://www.youtube.com/shorts/yXgQ_VJYunk)
+
 ## Condicionais
 
 Onde "aparece" o que eu coloco no console.log("algo").
