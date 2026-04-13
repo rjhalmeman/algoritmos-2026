@@ -461,8 +461,6 @@ Onde "aparece" o que eu coloco no console.log("algo").
 
 Exercícios
 
-
-
 1) Faça um programa que leia 3 números inteiros e os coloque em ordem crescente.
 
 
