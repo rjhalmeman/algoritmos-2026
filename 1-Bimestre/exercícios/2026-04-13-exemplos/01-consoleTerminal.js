@@ -8,18 +8,17 @@
 let x = 10;
 let y = 20;
 
-console.log("O valor de x é: " + x);
-console.log("O valor de y é: " + y);
 
 let soma = x + y;
-console.log("A soma de x e y é: " + soma);
-
 let subtracao = x - y;
-console.log("A subtração de x e y é: " + subtracao);
-
 let multiplicacao = x * y;
-console.log("A multiplicação de x e y é: " + multiplicacao);
-
 let divisao = x / y;
+
+
+console.log("O valor de x é: " + x);
+console.log("O valor de y é: " + y);
+console.log("A soma de x e y é: " + soma);
+console.log("A subtração de x e y é: " + subtracao);
+console.log("A multiplicação de x e y é: " + multiplicacao);
 console.log("A divisão de x por y é: " + divisao);
 
