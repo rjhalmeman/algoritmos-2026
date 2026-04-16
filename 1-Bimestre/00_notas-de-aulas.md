@@ -498,6 +498,9 @@ condicionais)
    
    ![alt text](./imagens/medias.png)
 
+3) Escrever um algoritmo que lê um par de coordenadas (x,y) inteiras e imprima uma mensagem informando em qual quadrante está o ponto. O algoritmo deve também ser capaz de identificar se o ponto está sobre um dos eixos ou no ponto central.
+   
+![alt text](./imagens/quadrantes.png)
 
 # 24/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
