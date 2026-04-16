@@ -493,19 +493,8 @@ Exercícios juntando os conteúdos já estudados (variáveis, sequenciais,
 condicionais)
 
 1) Faça um programa que leia 3 números inteiros e os coloque em ordem crescente.
-2)  # Exercício: Sistema de Pedidos - Lanchonete Bom Apetite
+   
 
-Crie uma página web simples para a **Lanchonete Bom Apetite**. A página deve listar os itens do cardápio utilizando parágrafos. Para cada item, deve haver um campo de **entrada de dados (input)** onde o usuário digita a quantidade. Ao final, um **botão** deve disparar uma função em **JavaScript** que realize o cálculo de cada item (preço unitário vezes a quantidade) e mostre o **total acumulado** na tela.
-
-Crie uma interface simples onde o usuário informa a quantidade de cada lanche. O programa deve calcular o total com base nos  valores:
-* **100 - Cachorro quente:** R$ 18,10
-* **101 - Bauru simples:** R$ 19,30
-* **102 - Bauru com ovo:** R$ 19,50
-* **103 - Hambúrguer:** R$ 21,10
-* **104 - Cheeseburguer:** R$ 21,30
-* **105 - Refrigerante:** R$ 6,00
-
-![alt text](./imagens/burgao.png)
 
 
 # 24/04/2026
