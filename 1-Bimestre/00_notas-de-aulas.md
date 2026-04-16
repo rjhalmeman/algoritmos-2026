@@ -494,7 +494,9 @@ condicionais)
 
 1) Faça um programa que leia 3 números inteiros e os coloque em ordem crescente.
    
-
+2) Faça uma programa que leia as duas notas de provas. Verifique se as notas não são menores que zero e maiores que 10. Calcule a média e mostre a resposta conforme a tabela a seguir.
+   
+   ![alt text](./imagens/medias.png)
 
 
 # 24/04/2026
