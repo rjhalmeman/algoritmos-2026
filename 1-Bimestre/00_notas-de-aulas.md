@@ -509,7 +509,7 @@ condicionais)
 
 Criação de funções em JS. Passagem de parâmetros. Desvio de fluxo de execução
 
-Aulas em sala de aula teórica - G101
+Aulas em sala de aula teórica - G103
 
 
 # 27/04/2026
