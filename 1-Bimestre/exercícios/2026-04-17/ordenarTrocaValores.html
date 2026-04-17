@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Organizar Números - Maior, Meio, Menor</title>
+</head>
+<body>
+    <h3>Digite três números</h3>
+    
+    <label for="inputa">Número A:</label>
+    <input type="number" id="inputa"><br><br>
+    
+    <label for="inputb">Número B:</label>
+    <input type="number" id="inputb"><br><br>
+    
+    <label for="inputc">Número C:</label>
+    <input type="number" id="inputc"><br><br>
+    
+    <input type="button" value="Ordenar" onclick="funcaoOrdenar()">
+    
+    <hr>
+    <p id="RespostaMa">Maior: --</p>
+    <p id="RespostaMei">Meio: --</p>
+    <p id="RespostaMen">Menor: --</p>
+
+    <script>
+        function funcaoOrdenar() {
+            // Pegar os valores dos inputs
+            let a = parseFloat(document.getElementById("inputa").value);
+            let b = parseFloat(document.getElementById("inputb").value);
+            let c = parseFloat(document.getElementById("inputc").value);
+            
+           let aux=0;
+           if (a>b) {
+             aux=a;
+             a=b;
+             b=aux;
+           }
+           if (b>c) {
+             aux=b;
+             b=c;
+             c=aux;
+           }
+           if (a>b) {
+             aux=a;
+             a=b;
+             b=aux;
+           }
+
+            // Exibir os resultados
+            document.getElementById("RespostaMa").innerHTML = "Maior: " + c;
+            document.getElementById("RespostaMei").innerHTML = "Meio: " + b;
+            document.getElementById("RespostaMen").innerHTML = "Menor: " + a;
+        }
+    </script>
+</body>
+</html>
