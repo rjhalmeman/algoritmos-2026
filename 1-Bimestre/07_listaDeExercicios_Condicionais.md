@@ -55,10 +55,10 @@ Média de aproveitamento Conceito
 </div>
 
 <p align="center">
-  <img src="./imagens/l06_tabelaNumeros.jpg" alt="Cérebro" width="300" height="200">
+  <img src="./imagens/l06_tabelaNumeros.jpg" alt="tabela" width="300" height="200">
 </p>
 
-4) ) Faça um algoritmo que leia o nome, o sexo e o estado civil de uma pessoa. Caso sexo seja “F” e estado civil seja “CASADA”, solicitar o tempo de casada (anos). (Este exercício vai misturar coisas da entrada de dados com o processamento. Preste atenção nisso, pois algumas vezes temos que adaptar a solução ao problema).
+4) Faça um programa que leia o valor de x. Calcule a raiz cúbica de x e 10 elevado a x. É obrigatório que sejam criadas duas funções para o processamento. 
 
 5) Você viajou para os Estados Unidos e descobriu que lá a unidade de medida de temperatura é diferente da do Brasil. Para não ter que acessar um serviço na internet a todo o momento, nem fazer os cálculos manualmente, faça um algoritmo, e programa em JS, que converte a temperatura informada para a temperatura na outra unidade de medida. Ou seja, se a temperatura for informada em Celsius o algoritmo deve fornecer a temperatura em Fahrenheit, já se a temperatura for fornecida em Fahrenheit, o resultado deve ser em
    graus Celsius. As fórmulas de conversão devem ser pesquisadas na internet.
@@ -69,5 +69,37 @@ Média de aproveitamento Conceito
 7) Faça um algoritmo, desenhe a GUI(tela), escreva o pseudocódigo e o programa em JS, que informados o nome, o dia e o mês que a pessoa nasceu. Imprima qual o signo dela no seguinte formato: Berola da Silva, você que nasceu em 25/4 e seu signo do horóscopo é Touro e o planeta regente é Vênus.
    
    ![alt text](./imagens/horoscopo.png)
-   
-8) asdf
+
+
+8)  🎮 Inspirado em Brawl Stars
+
+Crie um programa em **HTML + JavaScript** onde o usuário informa o **dano base** de um brawler e escolhe uma opção: **1 - Ataque Crítico** ou **2 - Ataque com Super Bônus**. O programa deve calcular e mostrar o dano final conforme a escolha.
+
+Implemente uma estrutura principal que leia os dados e utilize **2 funções auxiliares**: uma para calcular o **dano crítico** (2 vezes o dano base) e outra para calcular o **dano com bônus** (2 vezes o dano base + 500).
+
+---
+
+9) Faça um programa que leia o valor da encomenda e o valor do frete:
+
+Se o valor da encomenda for maior que R$90.00. O frete é gratis (desconsiderar o frete).
+Se o valor da encomenda for maior ou igual a R$50.00 e menor que R$90.00. Calcular valor com 50% do valor do frete.
+Se a encomenda custa menos de R$50.00. Valor + valor do frete.
+
+👉 Crie **3 funções auxiliares** para cada cálculo.
+
+---
+
+10) 💪 Fitness - IMC (usando funções) :
+
+1 - Calcular IMC
+2 - Classificar IMC  
+
+👉 Separe em **2 funções auxiliares**.
+
+---
+
+11) O programa deve ler 4 notas, a quantidade de aulas. A média a ser considerada para aprovação é maior ou igual a 6.0. A quantidade máxima de faltas é 25% da quantidade de aulas. Calcular média e mostrar situação final (aprovado, reprovado por nota ou reprovado por faltas).
+
+👉 Use funções auxiliares para calcular a média e para a situação final.
+
+---
