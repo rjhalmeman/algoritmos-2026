@@ -487,27 +487,31 @@ Onde "aparece" o que eu coloco no console.log("algo").
 # 17/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
-## Variáveis - exercícios
-
-Exercícios juntando os conteúdos já estudados (variáveis, sequenciais,
-condicionais)
-
 1) Faça um programa que leia 3 números inteiros e os coloque em ordem crescente.
+   [Solução do Daniel](https://github.com/rjhalmeman/algoritmos-2026/blob/main/1-Bimestre/exerc%C3%ADcios/2026-04-17/danielOrdenar.html)
    
-2) Faça uma programa que leia as duas notas de provas. Verifique se as notas não são menores que zero e maiores que 10. Calcule a média e mostre a resposta conforme a tabela a seguir.
+
+## Funções
+
+Criação de funções em JS. Passagem de parâmetros. Desvio de fluxo de execução
+ 
+1) Crie um programa HTML e JS que determine se um número é par ou ímpar. Usar função extra.
+
+2) Faça um programa HTML e JS que leia dois	números	(x e y). Identifique qual número é menor e retorne a frase "O número MENOR e menor que o número MAIOR). É obrigatória a criação de uma função extra para o processamento.
+   
+3) Faça uma programa que leia as duas notas de provas. Verifique se as notas não são menores que zero e maiores que 10. Calcule a média e mostre a resposta conforme a tabela a seguir.
    
    ![alt text](./imagens/medias.png)
 
-3) Escrever um algoritmo que lê um par de coordenadas (x,y) inteiras e imprima uma mensagem informando em qual quadrante está o ponto. O algoritmo deve também ser capaz de identificar se o ponto está sobre um dos eixos ou no ponto central.
+4) Escrever um algoritmo que lê um par de coordenadas (x,y) inteiras e imprima uma mensagem informando em qual quadrante está o ponto. O algoritmo deve também ser capaz de identificar se o ponto está sobre um dos eixos ou no ponto central.
    
 ![alt text](./imagens/quadrantes.png)
 
 # 24/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
-## Funções
+## Exercícios 
 
-Criação de funções em JS. Passagem de parâmetros. Desvio de fluxo de execução
 
 Aulas em sala de aula teórica - G103
 
