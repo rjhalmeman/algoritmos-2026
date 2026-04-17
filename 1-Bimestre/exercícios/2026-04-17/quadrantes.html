@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadrantes</title>
+</head>
+
+<body>
+    inputx: <input type="number" id="inputX"><br><br>
+    inputy: <input type="number" id="inputY"><br><br>
+    <input type="button" value="Verificar Quadrante" onclick="verificarQuadrante()">
+    <p id="resultado"></p>
+
+    <script>
+        function verificarQuadrante() {
+            let x = parseFloat(document.getElementById("inputX").value);
+            let y = parseFloat(document.getElementById("inputY").value);
+       
+
+            let resp = ""
+            if (x > 0 && y > 0) {
+                resp = "O ponto está no Quadrante 1";
+            } else if (x < 0 && y > 0) {
+                resp = "O ponto está no Quadrante 2";
+            } else if (x < 0 && y < 0) {
+                resp = "O ponto está no Quadrante 3";
+            } else if (x > 0 && y < 0) {
+                resp = "O ponto está no Quadrante 4";
+            } else if (x === 0 && y === 0) {
+                resp = "O ponto está na origem";
+            } else if (x === 0) {
+                resp = "O ponto está sobre o eixo Y";
+            } else if (y === 0) {
+                resp = "O ponto está sobre o eixo X";
+            }
+            document.getElementById("resultado").innerHTML = resp;
+        }
+    </script>
+</body>
+
+</html>
