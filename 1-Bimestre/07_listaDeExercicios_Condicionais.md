@@ -67,5 +67,7 @@ Média de aproveitamento Conceito
    https://escolakids.uol.com.br/matematica/calculo-do-ano-bissexto.htm
 
 7) Faça um algoritmo, desenhe a GUI(tela), escreva o pseudocódigo e o programa em JS, que informados o nome, o dia e o mês que a pessoa nasceu. Imprima qual o signo dela no seguinte formato: Berola da Silva, você que nasceu em 25/4 e seu signo do horóscopo é Touro e o planeta regente é Vênus.
+   
    ![alt text](./imagens/horoscopo.png)
+   
 8) asdf
