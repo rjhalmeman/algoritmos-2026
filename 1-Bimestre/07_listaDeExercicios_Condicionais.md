@@ -2,7 +2,7 @@
   <img src="./imagens/treinarCerebro.jpg" alt="Cérebro" width="200" height="200">
 </p>
 
-# AL06 - Lista de algoritmos 06 - Condicionais
+# AL07 - Lista de algoritmos 07 - Condicionais / Funções
 
 1) O IMC (Índice de Massa Corporal) é um critério da Organização Mundial de Saúde para dar uma indicação sobre a condição de peso de uma pessoa adulta. A fórmula é:
 

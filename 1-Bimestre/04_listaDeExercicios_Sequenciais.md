@@ -2,7 +2,7 @@
   <img src="./imagens/cerebro.png" alt="Cérebro" width="200" height="200">
 </p>
 
-# LA03 - Lista de Exercícios 03 - Sequenciais
+# LA04 - Lista de Exercícios 04 - Sequenciais
 
 1) Escreva um algoritmo que troque os valores de duas variáveis. Por exemplo, se a = 5 e b = 3, após a execução do algoritmo, a deverá conter o valor 3 e b deverá conter o valor 5.
 

@@ -1,4 +1,4 @@
-## Algoritmos - Lista de exercícios 05 - Condicionais
+## AL06 - Algoritmos - Lista de exercícios 06 - Condicionais
 
 1) Escreva um algoritmo que leia 3 números inteiros e mostre o menor deles.
 

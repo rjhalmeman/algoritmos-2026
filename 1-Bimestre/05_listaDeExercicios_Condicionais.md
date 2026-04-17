@@ -2,7 +2,7 @@
   <img src="./imagens/treinarCerebro.jpg" alt="Cérebro" width="200" height="200">
 </p>
 
-# AL04 - Algoritmos - Lista de exercícios 04 - Condicionais
+# AL05 - Algoritmos - Lista de exercícios 05 - Condicionais
 
 1) Escreva um programa que resolva o seguinte problema: uma cópia “xerox” custa R$ 0,25 por folha, mas acima de 100 folhas esse valor cai para R$ 0,20 por unidade. Dado o total de cópias, informe o valor a ser pago.
 
