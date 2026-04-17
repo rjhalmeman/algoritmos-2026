@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par ou Ímpar</title>
+</head>
+<body>
+    <p>inputNumero: <input type="number" id="inputNumero"><br><br></p>
+    <input type="button" value="Verificar Par ou Ímpar" onclick="verificarParImpar()">
+    <p id="resultado"></p>
+
+     <script>
+        function funcaoParImpar(numero) {
+            if (numero % 2 === 0) {
+                return "O número é Par";
+            } else {
+                return "O número é Ímpar";
+            }
+        }
+        function verificarParImpar() {
+
+            let numero = parseInt(document.getElementById("inputNumero").value);            
+            let resposta = funcaoParImpar(numero);            
+            document.getElementById("resultado").innerHTML = resposta;           
+        }
+     </script>
+
+</body>
+</html>
