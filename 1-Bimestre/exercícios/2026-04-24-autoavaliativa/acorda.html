@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conceitos</title>
+</head>
+
+<body>
+    <label for="inputNota">Nota</label>
+    <input type="number" id="inputNota" placeholder="Nota">
+
+    <label for="inputFaltas">Faltas</label>
+    <input type="number" id="inputFaltas" placeholder="Faltas">
+
+    <button id="btnCalcular" onclick="funcaoCalcular()">Calcular</button>
+
+    <p id="aviso"></p>
+    <p id="resultado"></p>
+
+    <script>
+        function funcaoCalcular() {
+            const nota = parseFloat(document.getElementById('inputNota').value);
+            const faltas = parseInt(document.getElementById('inputFaltas').value);
+
+            let aviso = '';            
+            if (isNaN(nota)) {
+                aviso = 'Por favor, insira um valor numérico para a nota.';
+                return; // se nota não for um número, exibe o aviso e PARA a execução da funçãoCalcular (return; é usado para sair da função imediatamente)
+            }
+            if (nota < 0) {
+                aviso = 'Por favor, insira um valor válido para a nota (entre 0 e 10).';
+                return;
+            }
+            if (nota > 10) {
+                aviso    = 'Por favor, insira um valor válido para a nota (entre 0 e 10).';
+                return;
+            }
+            if (isNaN(faltas)) {
+                aviso = 'Por favor, insira um valor numérico para as faltas.';
+                return;
+            }
+            if (faltas < 0) {
+                aviso = 'Por favor, insira um valor válido para as faltas (não pode ser negativo).';
+                return;
+            }
+            if (aviso) {// se aviso não estiver vazio, exibe o aviso e retorna
+                document.getElementById('aviso').textContent = aviso;
+                return;
+            }
+            let conceito = calcularConceito(nota, faltas);
+            document.getElementById('resultado').textContent = "Conceito: " + conceito;
+        }
+
+        function calcularConceito(nota, faltas) {
+            if (faltas < 20) {
+                if (nota >= 9) {
+                    conceito = 'A';
+                } else if (nota >= 7.5) {
+                    conceito = 'B';
+                } else if (nota >= 5) {
+                    conceito = 'C';
+                } else if (nota >= 4) {
+                    conceito = 'D';
+                } else {
+                    conceito = 'E';
+                }
+            } else {
+                if (nota >= 9) {
+                    conceito = 'B';
+                } else if (nota >= 7.5) {
+                    conceito = 'C';
+                } else if (nota >= 5) {
+                    conceito = 'D';
+                } else if (nota >= 4) {
+                    conceito = 'E';
+                } else {
+                    conceito = 'E';
+                }
+            }
+            return conceito;
+        }
+    </script>
+
+
+</body>
+
+</html>
