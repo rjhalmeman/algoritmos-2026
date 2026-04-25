@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Hipotenusa usando o teorema de Pitágoras</title>
+</head>
+
+<body>
+    <label for="inputB">Valor de B</label>
+    <input type="number" name="inputB" id="inputB">
+    <br>
+    <label for="inputC">Valor de C</label>
+    <input type="number" name="inputC" id="inputC">
+    <br>
+    <input type="button" value="Calcular" onclick="calcular()">
+    <br>
+    <label for="resposta">Hipotenusa</label>
+    <span id="resposta"></span>
+    
+    <script>
+        function calcular() {               
+            debugger; 
+            // para pausar a execução do código nesse ponto, permitindo que o
+            //  desenvolvedor inspecione as variáveis e o 
+            // fluxo de execução usando as ferramentas de desenvolvimento do navegador. 
+
+            let valorB = parseFloat(document.getElementById("inputB").value);
+            let valorC = parseFloat(document.getElementById("inputC").value);            
+            let valorH = pitagoras(valorB, valorC);            
+            document.getElementById("resposta").textContent = valorH;
+        }
+
+        function pitagoras(b, c) {
+            let h = Math.sqrt(b * b + c * c);
+            return h;
+        }
+    </script>
+</body>
+</html>

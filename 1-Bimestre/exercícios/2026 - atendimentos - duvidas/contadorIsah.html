@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+</head>
+
+<body>
+    <h1>Programa para calcular quantas vezes o botão foi apertado</h1>
+    <input type="button" value="Aperte! :]" onclick="funcaoClique()">
+    <p id="Contador">Contador : </p>
+    <script>
+        let contar = 0;// variável global para armazenar o valor do contador, tem que ficar fora da função para que o valor 
+        // seja mantido entre as chamadas da função funcaoClique(). Se colocar a variável dentro da função, ela seria reinicializada para 0 toda 
+        // vez que a função fosse chamada, e o contador não funcionaria corretamente.
+        function funcaoClique() {
+            // quando o botão for pressionado, o span tem que acrescentar +1, como??
+            contar = contar + 1; // ou contar += 1; ou contar++; são formas equivalentes de incrementar o valor da variável contar em 1 a cada clique no botão.
+            document.getElementById("Contador").innerHTML = "Contador : " + contar
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idade</title>
+</head>
+
+<body>
+    <h1>Programa para calcular o setor por idade</h1>
+    <label for="Idade">Idade do nadador</label>
+    <input type="number" id="Idade" placeholder="Insira a idade">
+    <br>
+    <input type="button" value="Classificar" onclick="funcaoClassificar()">
+    <br>
+    <p id="Resposta"></p>
+    <script>
+        function anaJuliaClassificadora(I) {
+            let resposta = "";//local para guardar a resposta da classificação
+            if (I >= 5 && I <= 7) {
+                resposta = "Infantil A"
+            }
+            else if (I >= 8 && I <= 10) {
+                resposta = "Infantil B"
+            }
+            else if (I >= 11 && I <= 13) {
+                resposta = "Juvenil A"
+            } else if (I >= 14 && I <= 17) {
+                resposta = "Juvenil B"
+            } else {
+                resposta = "Sênior"
+            }
+            return resposta; //faltava isso (saída para a função Classificar)
+        }
+        function funcaoClassificar() {
+            debugger
+            let I = parseFloat(document.getElementById("Idade").value);
+            let V = anaJuliaClassificadora(I);
+            document.getElementById("Resposta").innerHTML = V;
+        }
+    </script>
+</body>
+
+</html>
