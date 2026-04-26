@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<body style="background-color: aquamarine;"></body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificando o vencedor</title>
+</head>
+<h1>Vamos analisar o time vencedor</h1>
+
+<body>
+    <!-- Lista 06 - Exercício 03 -->
+    <label for="inputT1">Digite aqui o nome do time da casa e a quantidade te pontos respectivamente</label></br>
+    <input type="text" id="inputT1">
+    <br>
+    <br>
+    <input type="number" id="inputP1">
+    <br>
+    <br>
+    <label for="inputT2">Digite aqui o nome do time visitante e a quantidade te pontos respectivamente</label></br>
+    <input type="text" id="inputT2"><br>
+    <br>
+    <input type="number" id="inputP2">
+    <br>
+    <br>
+    <input type="button" value="verificar" onclick="funcaoCalcular()"><br>
+    <p id="respostaR"></p>
+    <script>
+        function funcaoV(P1, P2, T1, T2) { //definiu 4 parâmetros, os times e os pontos. Se definiu que serão 4 parâmetros, na hora de chamar a função serão 4 parâmetros, ou seja, tem que passar os times também.
+            if (P1 > P2) {
+                return "O vencedor da partida, com " + P1 + " pontos, foram os da casa: " + T1 + ", parabéns!!"
+            } else if (P1 < P2) {
+                return "O vencedor da partida, com " + P2 + " pontos, foram os visitantes : " + T2 + ", parabéns!!"
+            } else if (P1 === P2) {
+                return "Parece que tivemos um jogo pegado. Empate parabéns aos dois times!!"
+            }
+        }
+
+        function funcaoCalcular() {
+            debugger
+            let T1 = document.getElementById("inputT1").value;
+            let T2 = document.getElementById("inputT2").value;
+            let P1 = parseFloat(document.getElementById("inputP1").value)
+            let P2 = parseFloat(document.getElementById("inputP2").value)
+            // let resp = funcaoV(P1,P2); vc estava chamando com 2 parâmetros. Aqui tem que passar os times também,
+
+            let resp = funcaoV(P1, P2, T1, T2); // corrigi a chamada da função. Estavam faltando os times.
+
+            document.getElementById("respostaR").innerHTML = resp;
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
