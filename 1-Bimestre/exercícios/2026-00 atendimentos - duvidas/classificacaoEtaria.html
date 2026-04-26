@@ -16,17 +16,19 @@
     <br>
     <p id="Resposta"></p>
     <script>
-        function anaJuliaClassificadora(I) {
+        function euSouAFuncaoQueClassifica(idade) {
+            //passe-me a Idade (entrada de dados) e eu te retorno a classificação
+
             let resposta = "";//local para guardar a resposta da classificação
-            if (I >= 5 && I <= 7) {
+            if (idade >= 5 && idade <= 7) {
                 resposta = "Infantil A"
             }
-            else if (I >= 8 && I <= 10) {
+            else if (idade >= 8 && idade <= 10) {
                 resposta = "Infantil B"
             }
-            else if (I >= 11 && I <= 13) {
+            else if (idade >= 11 && idade <= 13) {
                 resposta = "Juvenil A"
-            } else if (I >= 14 && I <= 17) {
+            } else if (idade >= 14 && idade <= 17) {
                 resposta = "Juvenil B"
             } else {
                 resposta = "Sênior"
@@ -36,7 +38,8 @@
         function funcaoClassificar() {
             debugger
             let I = parseFloat(document.getElementById("Idade").value);
-            let V = anaJuliaClassificadora(I);
+            let V = euSouAFuncaoQueClassifica(I); // o I é a entrada de dados, a idade. O V é a resposta da classificação, ou seja, a saída da função euSouAFuncaoQueClassifica.
+            
             document.getElementById("Resposta").innerHTML = V;
         }
     </script>
