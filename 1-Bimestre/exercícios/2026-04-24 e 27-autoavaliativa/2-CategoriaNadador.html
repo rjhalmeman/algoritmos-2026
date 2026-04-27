@@ -38,6 +38,7 @@
         }
         function classificar() {
             let idade = parseInt(document.getElementById('idade').value);
+            debugger;
             if (idade < 0 || idade > 120 || isNaN(idade)) {
                 document.getElementById('resultado').textContent = 'Por favor, insira uma idade válida entre 0 e 120 anos.';
                 return;// se a idade for inválida, exibe a mensagem de erro e interrompe a execução da função classificar.

@@ -14,10 +14,10 @@
 
     <!-- input button para fazer o processamento -->
     <input type="button" onclick="calcularBissexto()" value="Ano bissexto?">
-<br>
-<br>
-<br>
-    <label for="inputNumero">Ano</label>
+    <br>
+    <br>
+    <br>
+    <label for="inputNumero">Número</label>
     <input type="number" id="inputNumero" placeholder="Número qualquer">
 
     <!-- input button para fazer o processamento se é ano bissexto-->
@@ -28,21 +28,23 @@
     <h1 id="resultado"></h1>
 
     <!-- importar as minhas funções. Estou dizendo para o programa ONDE estão as "minhasFuncoes" -->
-    <script src="minhasFuncoes.js"></script>
+    <script src="1a-minhasFuncoes.js"></script>
 
     <script>
 
         function calcularBissexto() {
-            const ano = parseInt(document.getElementById('inputAno').value);
+            let ano = parseInt(document.getElementById('inputAno').value);
             if (isNaN(ano)) {
-                document.getElementById('resultado').textContent = 'Por favor, insira um valor numérico para o ano.';
+                document.getElementById('resultado').textContent =
+                    'Por favor, insira um valor numérico para o ano.';
                 return;
             }
             if (ano < 0) {
-                document.getElementById('resultado').textContent = 'Por favor, insira um valor válido para o ano (não pode ser negativo).';
+                document.getElementById('resultado').textContent =
+                'Por favor, insira um valor válido para o ano (não pode ser negativo).';
                 return;
             }
-            if (ehBissextoSimples(ano)) {
+            if (ehBissextoMelhorado(ano)) {
                 document.getElementById('resultado').textContent = ano + ' é um ano bissexto.';
             } else {
                 document.getElementById('resultado').textContent = ano + ' não é um ano bissexto.';
