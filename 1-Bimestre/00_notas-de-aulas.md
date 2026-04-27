@@ -10,9 +10,9 @@
 - [x] [06/04/2026 - Tipos de dados](#06042026)
 - [x] [10/04/2026 - Condicionais](#10042026)
 - [x] [13/04/2026 - Condicionais](#13042026)
-- [ ] [17/04/2026 - Exercícios](#17042026)
-- [ ] [24/04/2026 - Funções](#24042026)
-- [ ] [27/04/2026 - Exercícios](#27042026)
+- [x] [17/04/2026 - Funções - Exercícios](#17042026)
+- [x] [24/04/2026 - Autoavaliativa 01 - Funções](#24042026)
+- [x] [27/04/2026 - Exercícios](#27042026)
 - [ ] [04/05/2026 - Exercícios](#04052026)
 - [ ] [08/05/2026 - Avaliação 1º Bimestre](#08052026)
 
@@ -510,8 +510,8 @@ Criação de funções em JS. Passagem de parâmetros. Desvio de fluxo de execu�
 # 24/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
-## Exercícios 
-
+## Autoavaliativa 01
+[Conteúdos trabalhados nos dias 24 e 27](https://github.com/rjhalmeman/algoritmos-2026/tree/main/1-Bimestre/exerc%C3%ADcios/2026-04-24%20e%2027-autoavaliativa)
 
 Aulas em sala de aula teórica - G103
 
@@ -520,6 +520,7 @@ Aulas em sala de aula teórica - G103
 [↑ Voltar para o Índice](#índice--checklist)
 
 ## Exercícios com funções e condicionais
+[Conteúdos trabalhados nos dias 24 e 27](https://github.com/rjhalmeman/algoritmos-2026/tree/main/1-Bimestre/exerc%C3%ADcios/2026-04-24%20e%2027-autoavaliativa)
 
 # 04/05/2026
 [↑ Voltar para o Índice](#índice--checklist)
