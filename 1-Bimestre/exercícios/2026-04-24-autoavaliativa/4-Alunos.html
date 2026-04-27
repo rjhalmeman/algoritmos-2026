@@ -25,9 +25,9 @@
             const faltas = parseInt(document.getElementById('inputFaltas').value);
 
             let aviso = '';            
-            if (isNaN(nota)) {
+            if (isNaN(nota)) { //isto Não é um Número - Not a Number
                 aviso = 'Por favor, insira um valor numérico para a nota.';
-                return; // se nota não for um número, exibe o aviso e PARA a execução da funçãoCalcular (return; é usado para sair da função imediatamente)
+                return; // se nota não for um número, exibe o aviso e INTERROMPE (PARA) a execução da funçãoCalcular (return; é usado para sair da função imediatamente)
             }
             if (nota < 0) {
                 aviso = 'Por favor, insira um valor válido para a nota (entre 0 e 10).';

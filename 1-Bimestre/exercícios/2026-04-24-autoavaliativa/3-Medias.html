@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- entrada - ler x, y e z e qual opção será usada-->
+    <label for="inputX">Valor de X</label>
+    <input type="number" id="inputX" placeholder="Valor de X">
+    <br>
+    <label for="inputY">Valor de Y</label>
+    <input type="number" id="inputY" placeholder="Valor de Y">
+    <br>
+    <label for="inputZ">Valor de Z</label>      
+    <input type="number" id="inputZ" placeholder="Valor de Z">
+    <br>
+    <p>1-Geométrica</p>
+    <p>2 - Ponderada</p>
+    <p>3- Harmônica</p>
+    <p>4 - Aritmética</p>
+    <label for="inputOpcao">Opção</label>
+    <input type="number" id="inputOpcao" placeholder="Opção (1, 2, 3 ou 4)">
+    <br>
+    <input type="button" value="Calcular" onclick="calcular()">
+    <br>
+    <label for="resposta">Resposta</label>
+    <span id="resposta"></span>
+
+    <script>
+        function calcular() {
+            const x = parseFloat(document.getElementById('inputX').value);
+            const y = parseFloat(document.getElementById('inputY').value);
+            const z = parseFloat(document.getElementById('inputZ').value);
+            const opcao = parseInt(document.getElementById('inputOpcao').value);
+
+            let resultado;
+
+           if(opcao===1){ //média geométrica
+                resultado = Math.cbrt(x * y * z); //cbrt é a função de raiz cúbica
+            } else if(opcao===2){ //média ponderada
+                resultado = (x + 2 * y + 3 * z) / 6; //a média ponderada é calculada multiplicando cada valor pelo seu peso, somando os resultados e dividindo pela soma dos pesos. No caso, os pesos são 1 para x, 2 para y e 3 para z, totalizando 6.
+            } else if(opcao===3){ //média harmônica
+                resultado = 3 / (1 / x + 1 / y + 1 / z); //a média harmônica é calculada dividindo o número de valores (n) pela soma dos inversos dos valores. No caso, n é 3 (x, y e z), e a soma dos inversos é (1/x + 1/y + 1/z).
+            } else if(opcao===4){ //média aritmética
+                resultado = (x + y + z) / 3; //a média aritmética é calculada somando os valores e dividindo pelo número de valores. No caso, somamos x, y e z e dividimos por 3.
+            } else {
+                resultado = 'Opção inválida. Por favor, escolha entre 1, 2, 3 ou 4.';
+            }
+            document.getElementById('resposta').textContent = resultado;
+        }
+    </script>
+</body>
+</html>
