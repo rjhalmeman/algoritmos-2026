@@ -19,30 +19,34 @@
 
 
     <script>
+        function categorizarNadador(idade) {
+            let resposta = '';
+            if (idade < 5) {
+                resposta = 'jovem demais para competir';
+            } else if (idade <= 7) {
+                resposta = 'Infantil A';
+            } else if (idade <= 10) {
+                resposta = 'Infantil B';
+            } else if (idade <= 13) {
+                resposta = 'Juvenil A';
+            } else if (idade <= 17) {
+                resposta = 'Juvenil B';
+            } else {
+                resposta = 'Sênior - maiores de 18 anos';
+            }
+            return resposta;
+        }
         function classificar() {
             let idade = parseInt(document.getElementById('idade').value);
             if (idade < 0 || idade > 120 || isNaN(idade)) {
                 document.getElementById('resultado').textContent = 'Por favor, insira uma idade válida entre 0 e 120 anos.';
-                return;
+                return;// se a idade for inválida, exibe a mensagem de erro e interrompe a execução da função classificar.
             }
-            let categoria = '';
-            if (idade < 5) {
-                categoria = 'jovem demais para competir';
-            } else if (idade <= 7) {
-                categoria = 'Infantil A';
-            } else if (idade <= 10) {
-                categoria = 'Infantil B';
-            } else if (idade <= 13) {
-                categoria = 'Juvenil A';
-            } else if (idade <= 17) {
-                categoria = 'Juvenil B';
-            } else {
-                categoria = 'Sênior - maiores de 18 anos';
-            }
+            let categoria = categorizarNadador(idade);
 
+            document.getElementById('resultado').textContent = 'O nadador pertence à categoria: ' + categoria;
 
         }
-        document.getElementById('resultado').textContent = 'O nadador pertence à categoria: ' + categoria;       
     </script>
 </body>
 

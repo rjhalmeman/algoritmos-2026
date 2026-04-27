@@ -6,6 +6,7 @@
     <title>Sistema de Médias</title>
 </head>
 <body>
+    <!-- versão com uso de funções -->
     <!-- entrada - ler x, y e z e qual opção será usada-->
     <label for="inputX">Valor de X</label>
     <input type="number" id="inputX" placeholder="Valor de X">
@@ -87,22 +88,17 @@
                 return;
             }
 
-            // Chama a função apropriada baseado na opção
-            switch(opcao) {
-                case 1: // média geométrica
-                    resultado = mediaGeometrica(x, y, z);
-                    break;
-                case 2: // média ponderada
-                    resultado = mediaPonderada(x, y, z);
-                    break;
-                case 3: // média harmônica
-                    resultado = mediaHarmonica(x, y, z);
-                    break;
-                case 4: // média aritmética
-                    resultado = mediaAritmetica(x, y, z);
-                    break;
-                default:
-                    resultado = "Erro inesperado!";
+            // Chama a função apropriada baseado na opção usando if's
+            if (opcao === 1) {
+                resultado = mediaGeometrica(x, y, z);
+            } else if (opcao === 2) {
+                resultado = mediaPonderada(x, y, z);
+            } else if (opcao === 3) {
+                resultado = mediaHarmonica(x, y, z);
+            } else if (opcao === 4) {
+                resultado = mediaAritmetica(x, y, z);
+            } else {
+                resultado = "Erro inesperado!";
             }
 
             // Exibe o resultado formatado
