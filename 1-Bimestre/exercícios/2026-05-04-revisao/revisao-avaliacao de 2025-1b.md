@@ -60,7 +60,7 @@
 
 ### Questão 2: Categorização de Atletas
 
-O **K2 Volei Club de Campo Mourão** precisa de um programa para colocar cada atleta na categoria correta. Deve ser considerado o **ano de nascimento** conforme o quadro abaixo. Faça um programa com **HTML e JS** que solicite o ano de nascimento, calcule e mostre a categoria do atleta.
+O **K2 Volei Club de Campo Mourão** precisa de um programa para colocar cada atleta na categoria correta. Deve ser considerado o **ano de nascimento** conforme o quadro abaixo. Faça um programa com **HTML e JS** que solicite o ano de nascimento, calcule e mostre a categoria do atleta. **Faça uma função extra para categorizar o atleta.**
 
 | Categoria | Faixa Etária (Idade) |
 | :--- | :--- |
