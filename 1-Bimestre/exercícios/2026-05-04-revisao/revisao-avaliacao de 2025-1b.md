@@ -49,9 +49,9 @@
 
 ---
 
-### Considerando o código acima, responda
+### Considerando o código acima
 
-1.a) Desenhe a interface que o usuário vê (Tela). Indique na tela o que é entrada, processamento e saída.
+1.a) Desenhe a interface que o usuário vê (tela). Indique na tela o que é entrada, processamento e saída.
 1.b) Explique as linhas 15,20,38
 1.c) Faça o teste de mesa para os valores a=5, b=2 e c=1.
 1.d) Faça o teste de mesa para os valores a=4, b=1 e c=2. 
