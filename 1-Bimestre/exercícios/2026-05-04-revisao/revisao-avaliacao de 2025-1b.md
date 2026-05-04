@@ -88,3 +88,5 @@ O programa deverá calcular e exibir uma mensagem da seguinte forma. Por exemplo
 | Outono | Abril, Maio, Junho | Primavera |
 | Inverno | Julho, Agosto, Setembro | Verão |
 | Primavera | Outubro, Novembro, Dezembro | Outono |
+
+Não é necessário fazer validação/sanitização de dados. Os usuários NÃO vão errar ao digitar os dados.
