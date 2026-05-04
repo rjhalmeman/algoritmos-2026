@@ -2,12 +2,6 @@
 
 ### Questão 1: Categorização de Atletas
 
-# Transcrição Técnica: Estrutura de Código com Numeração de Linhas
-
-Este documento apresenta a transcrição fiel da imagem fornecida, organizada em uma **tabela Markdown** para representar o editor de código. O foco aqui é observar a **identação** e a sequência lógica das instruções em **HTML** e **JavaScript**.
-
-### Tabela de Código-Fonte
-
 | Linha | Conteúdo do Código |
 | :--- | :--- |
 | 1 | `<!DOCTYPE html>` |
@@ -55,12 +49,14 @@ Este documento apresenta a transcrição fiel da imagem fornecida, organizada em
 
 ---
 
-### Análise Educativa do Algoritmo
+### Considerando o código acima, responda
 
-* **Entrada de Dados**: O programa utiliza `document.getElementById().value` para capturar os valores inseridos pelo usuário nos campos de input.
-* **Processamento Lógico**: A função utiliza três blocos de **Estruturas Condicionais** (`if`). Este método é uma implementação manual do conceito de **Bubble Sort** (ordenação por bolha) para três variáveis, garantindo que os valores terminem em ordem crescente.
-* **Variável Auxiliar**: Note o uso da variável `aux`. Ela serve como um "balde temporário" para permitir que dois valores troquem de lugar sem que um sobrescreva o outro permanentemente durante a transição.
-* **Saída**: O comando `textContent` atualiza o elemento `<span>` na página, exibindo os números ordenados e separados por vírgulas.
+1.a) Desenhe a interface que o usuário vê (Tela). Indique na tela o que é entrada, processamento e saída.
+1.b) Explique as linhas 15,20,38
+1.c) Faça o teste de mesa para os valores a=5, b=2 e c=1.
+1.d) Faça o teste de mesa para os valores a=4, b=1 e c=2. 
+1.e) O que esse programa faz? (pelas respostas dos testes de mesa você vai responder isso)
+
 
 ### Questão 2: Categorização de Atletas
 
