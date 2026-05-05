@@ -1,6 +1,5 @@
 # Exercícios de Lógica de Programação - HTML e JavaScript
 
-### Questão 1: Categorização de Atletas
 
 | Linha | Conteúdo do Código |
 | :--- | :--- |
