@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Física</title>
+</head>
+
+<body>
+    <h1>Simulador de Força (2ª Lei de Newton)</h1>
+   
+    <!-- entrada de dados do HTML -->
+    <label for="inputMassa">Massa do objeto (kg):</label><br>
+    <input type="number" id="inputMassa" placeholder="Ex: 50"><br><br>
+    <label for="inputDistancia">Distância percorrida (metros):</label><br>
+    <input type="number" id="inputDistancia" placeholder="Ex: 1000"><br><br>
+    <label for="inputHoras">Horas:</label>
+    <input type="number" id="inputHoras" value="0">
+    <label for="inputMinutos">Minutos:</label>
+    <input type="number" id="inputMinutos" value="0">
+    <label for="inputSegundos">Segundos:</label>
+    <input type="number" id="inputSegundos" value="0"><br>
+
+    <!-- botão de execução - processamento do HTML -->
+    <input type="button" onclick="executarCalculo()" value="Calcular Força Resultante">
+
+    <!-- saída de dados do HTML -->
+    <p id="resultado">Insira os dados para ver o cálculo.</p>
+
+    <script>
+        // --- FUNÇÕES AUXILIARES ---
+
+        // Função para calcular o tempo total em segundos, recebendo horas, minutos e segundos como parâmetros, calculando o total e retornando o resultado.
+        function calcularTotalSegundos(h, m, s) {
+            return (h * 3600) + (m * 60) + s;
+        }
+
+        // Função para calcular a aceleração, recebendo a distância percorrida e o tempo total em segundos como parâmetros, aplicando a fórmula da aceleração e retornando o resultado.
+        function calcularAceleracao(distancia, tempoTotalSegundos) {
+            let resultado = (2 * distancia) / tempoTotalSegundos ** 2;
+            return resultado;
+        }
+
+        // Função para calcular a força, recebendo a massa e a aceleração como parâmetros, aplicando a fórmula da força e retornando o resultado.
+        function calcularForca(massa, aceleracao) {
+            return massa * aceleracao;
+        }
+
+        // --- FUNÇÃO PRINCIPAL --- acionada pelo clique do botão, que coleta os dados de entrada, chama as funções auxiliares para calcular o tempo total, a aceleração e a força, e exibe os resultados formatados na página.
+        function executarCalculo() {
+            // obten o valor da massa, que está no elemento inputMassa, convertendo para número real e armazenando na variável m
+            let m = parseFloat(document.getElementById('inputMassa').value);
+            // obten o valor da distância, que está no elemento inputDistancia, convertendo para número real e armazenando na variável d
+            let d = parseFloat(document.getElementById('inputDistancia').value);
+            // obten os valores de horas, minutos e segundos, que estão nos elementos inputHoras, inputMinutos e inputSegundos, convertendo para número inteiro e armazenando nas variáveis h, min e seg, respectivamente.
+            let h = parseInt(document.getElementById('inputHoras').value);
+            let min = parseInt(document.getElementById('inputMinutos').value);
+            let seg = parseInt(document.getElementById('inputSegundos').value);
+            // chama a função calcularTotalSegundos, passando h, min e seg como parâmetros, e armazenando o resultado na variável tTotalSeg
+            let tTotalSeg = calcularTotalSegundos(h, min, seg);
+
+            // verifica se a massa é um número válido e maior que zero, se o tempo total em segundos é maior que zero e se a distância é um número válido. Se alguma dessas condições não for atendida, exibe uma mensagem de erro e interrompe a execução da função.
+            if (isNaN(m) || m <= 0 || tTotalSeg <= 0 || isNaN(d)) {
+                document.getElementById('resultado').innerText = "Erro: Verifique se a massa e o tempo são maiores que zero.";
+                return;
+            }
+
+            // chama a função calcularAceleracao, passando d e tTotalSeg como parâmetros, e armazenando o resultado na variável a.
+            let a = calcularAceleracao(d, tTotalSeg);
+            // chama a função calcularForca, passando m e a como parâmetros, e armazenando o resultado na variável f.
+            let f = calcularForca(m, a);
+
+            //concatena os resultados em uma mensagem formatada e exibe na página, utilizando o método toFixed para limitar o número de casas decimais da aceleração e da força.
+            let mensagem = "Tempo total: " + tTotalSeg + " segundos. Aceleração calculada: " + a.toFixed(5) + " m/s². Força Resultante necessária: " + f.toFixed(2) + " Newtons.";
+            // exibe a mensagem no elemento com id 'resultado'
+            document.getElementById('resultado').innerHTML = mensagem;
+        }
+    </script>
+</body>
+
+</html>

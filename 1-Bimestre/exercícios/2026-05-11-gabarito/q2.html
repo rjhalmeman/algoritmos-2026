@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Desempenho Veicular</title>
+</head>
+
+<body>
+    <h1>Controle de Abastecimento</h1>
+
+    <label>Quilometragem Inicial (km):</label>
+    <input type="number" id="kmInicial"><br><br>
+
+    <label>Quilometragem Final (km):</label>
+    <input type="number" id="kmFinal"><br><br>
+
+    <label>Quantidade de Litros Abastecidos:</label>
+    <input type="number" id="litros"><br><br>
+
+    <label>Valor pago por Litro (R$):</label>
+    <input type="number" id="valorLitro"><br><br>
+
+    <label>Capacidade Total do Tanque (Litros):</label>
+    <input type="number" id="capacidadeTanque"><br><br>
+
+    <button onclick="calcularDesempenho()">Calcular Resultados</button>
+
+    <h2>Resultados:</h2>
+    <p id="outDistancia"></p>
+    <p id="outConsumo"></p>
+    <p id="outValorTotal"></p>
+    <p id="outCustoKm"></p>
+    <p id="outAutonomia"></p>
+    <p id="outClassificacao"></p>
+
+    <script>
+        // --- FUNÇÕES AUXILIARES ---
+
+        // Função para calcular o consumo
+        function calcularConsumo(distanciaPercorrida, litrosUsados) {
+            let consumo = distanciaPercorrida / litrosUsados;
+            return consumo;
+        }
+
+        // Função para classificar o consumo
+        function classificarConsumo(consumo) {
+            let resultado = "";
+            if (consumo < 10) {
+                resultado = "Alto consumo";
+            } else if (consumo >= 10 && consumo < 13) {
+                resultado = "Consumo médio";
+            } else {
+                resultado = "Consumo baixo (Econômico)";
+            }
+            return resultado;
+        }
+
+        // --- FUNÇÃO PRINCIPAL ---
+        function calcularDesempenho() {
+
+            // 1. Entrada: Captura os valores digitados
+            let kmInicial = parseFloat(document.getElementById("kmInicial").value);
+            let kmFinal = parseFloat(document.getElementById("kmFinal").value);
+            let litros = parseFloat(document.getElementById("litros").value);
+            let valorLitro = parseFloat(document.getElementById("valorLitro").value);
+            let capacidadeTanque = parseFloat(document.getElementById("capacidadeTanque").value);
+
+            // 2. Processamento: Cálculos gerais
+            let distancia = kmFinal - kmInicial;
+            let valorTotalGasto = litros * valorLitro;
+            let custoPorKm = valorTotalGasto / distancia;
+
+            // Chamada das funções auxiliares
+            let consumoMedio = calcularConsumo(distancia, litros);
+            let classificacao = classificarConsumo(consumoMedio);
+
+            let autonomia = capacidadeTanque * consumoMedio;
+
+            // 3. Saída: Injeção dos resultados em cada parágrafo (p) correspondente         
+            document.getElementById("outDistancia").innerHTML = "Distância percorrida: " + distancia + " km";
+            document.getElementById("outConsumo").innerHTML = "Consumo médio: " + consumoMedio.toFixed(2) + " km/l";
+            document.getElementById("outValorTotal").innerHTML = "Valor total do abastecimento: R$ " + valorTotalGasto.toFixed(2);
+            document.getElementById("outCustoKm").innerHTML = "Custo médio por km rodado: R$ " + custoPorKm.toFixed(2);
+            document.getElementById("outAutonomia").innerHTML = "Autonomia com tanque cheio: " + autonomia.toFixed(2) + " km";
+            document.getElementById("outClassificacao").innerHTML = "Classificação do veículo: " + classificacao;
+        }
+    </script>
+</body>
+
+</html>

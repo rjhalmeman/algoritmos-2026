@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cálculo de Comissão</title>
+</head>
+<body>
+
+    <h1>Cálculo de Comissão</h1>
+
+    <p><strong>Tabela de Comissão:</strong></p>
+    <p>Até R$ 5.000: 10%</p>
+    <p>De R$ 5.000 até R$ 10.000: 12%</p>
+    <p>Acima de R$ 10.000: 15%</p>
+
+    <label for="inputSalario">Salário Fixo:</label><br>
+    <input type="number" id="inputSalario"><br><br>
+
+    <label for="inputVendas">Valor das Vendas:</label><br>
+    <input type="number" id="inputVendas"><br><br>
+
+    <button onclick="calcular()">Calcular</button>
+
+    <h2>Resultado</h2>
+    <p id="resSalario"></p>
+    <p id="resVendas"></p>
+    <p id="resComissao"></p>
+    <p id="resTotal"></p>
+
+    <script>
+        function calcular() {
+            let salario = parseFloat(document.getElementById("inputSalario").value);
+            let vendas = parseFloat(document.getElementById("inputVendas").value);
+            let percentual = calcularPercentual(vendas);
+            let comissao = vendas * (percentual / 100);
+            let total = salario + comissao;
+
+            document.getElementById("resSalario").innerText = "Salário: R$ " + salario;
+            document.getElementById("resVendas").innerText = "Vendas: R$ " + vendas;
+            document.getElementById("resComissao").innerText = "Comissão (" + percentual + "%): R$ " + comissao;
+            document.getElementById("resTotal").innerText = "Total a receber: R$ " + total;
+        }
+
+        function calcularPercentual(vendas) {
+            let percentual = 0;
+            if (vendas <= 5000) {
+                percentual = 10;
+            } else if (vendas <= 10000) {
+                percentual = 12;
+            } else {
+                percentual = 15;
+            }
+            return percentual;
+        }
+    </script>
+
+</body>
+</html>
