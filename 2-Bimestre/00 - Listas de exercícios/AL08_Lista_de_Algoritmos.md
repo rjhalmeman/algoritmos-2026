@@ -1,32 +1,43 @@
-# AL08 - Algoritmos - Lista de Exercícios 08 - TIII - Repetição e Strings
+# AL08 - Lista de Algoritmos 08: Repetição 
 
-01) Desenvolva um algoritmo que conte o número de vogais e o número de palavras em uma string.
+> Para todos os exercícios o faça o programa com HTML e JavaScript.
 
-02) Escreva um programa que conta o número de vezes que uma determinada palavra aparece em uma frase. Por exemplo, Frase: "O cachorro correu atrás do gato, e o gato correu para cima da árvore." a palavra: "correu" aparece 2 vezes na frase.
 
-03) Faça um programa que remova todos os espaços em branco que estão sobrando em uma string. Por exemplo, “a casa perto do lago é a mais bonita”. Depois de passar pelo processamento deverá ser impressa “a casa perto do lago é a mais bonita”.
+01) Escreva um nome 10 vezes em linhas diferentes. Faça um programa que leia um nome e escreva esse nome 10 vezes, em linhas diferentes.
 
-04) Crie um programa que substitui todas as ocorrências de um determinado caractere por outro em uma string.
+02) Peça um número N ao usuário e exiba todos os números pares de 1 até N.
 
-06) Faça um programa que alterna entre letras maiúsculas e minúsculas em uma string. Exemplo: A casa Caiu Agora fica a CASA cAIU aGORA.
+03) Crie um programa que solicita ao usuário um número inteiro positivo e, em seguida, soma todos os números de 1 até esse número.
 
-07) Desenvolva um algoritmo que conta o número de consoantes em uma string.
+04) Escreva um programa que solicita ao usuário um número inteiro e exibe a tabuada desse número de 1 a 10.
 
-08) Crie um programa que solicita um número inteiro positivo ao usuário e calcula a soma de seus dígitos. Por exemplo, se o usuário digitar 123, a saída deve ser 6 (1 + 2 + 3).
+05) Um criador de conteúdo ganha 5 seguidores por dia. Use um laço para calcular e mostrar quantos seguidores ele terá após 30 dias (começa com 0).
 
-09) Faça um programa que leia um nome completo (nome e sobrenome). Escreva esse nome no formato inglês.
-        Para entrada `João Carlos da Silva` a saída será `Silva, João Carlos`  
-        Considere que o último nome é o sobrenome.
+06) Faça um programa que calcule o valor das parcelas de um produto comprado a prazo.
 
-10) Faça um programa que leia uma palavra e verifique se ela é um palíndromo.
+O usuário deve informar:
+- o valor do produto,
+- a taxa de juros mensal (em %),
+- e a quantidade de meses para o pagamento.
 
-> Um palíndromo é uma palavra que lida de trás para frente tem o mesmo significado.  
-> Exemplos: `arara`, `ana`, `ama`.
+O programa deve:
+- calcular o valor total a ser pago com os juros aplicados, 
+- e o valor de cada parcela (valor total / meses).
 
-11) A delegacia de polícia da pequena cidade de Springfield conta com somente 3 policiais: o chefe de polícia Clancy, e os policiais Eddie e Lou. Como é de se esperar, esse pequeno contingente de policiais não consegue atender imediatamente a todos os chamados policiais. Portanto, você foi contratado para criar um sistema de atendimento, de maneira que cada um dos policiais fique com um conjunto equilibrado de chamados. Considere os requisitos:  
-- Cada ocorrência deve ser de um tipo: Direção Perigosa, Barulho, Bebedeira, Homer  
-- Cada ocorrência deve ser de um nível de gravidade: Baixo, Médio, Alto  
-- Toda ocorrência do tipo Homer tem nível de gravidade alto  
-- Novas ocorrências devem ser atribuídas ao policial com menos ocorrências  
-- Ocorrências do tipo Homer sempre são atribuídas ao chefe de polícia  
-- A cada registro de ocorrência o sistema deve imprimir um resumo da quantidade de ocorrências de cada policial, o número de ocorrências do tipo Homer e o percentual de ocorrências do tipo “Direção Perigosa” em relação do total de ocorrências cadastradas.
+
+07) Faça um programa que calcule a sequência de Fibonacci até um termo informado pelo usuário.
+
+> Exemplo: até o 8º termo → `0, 1, 1, 2, 3, 5, 8, 13`
+
+08) Crie uma função que recebe um número e até qual múltiplo mostrar (ex: tabuada do 7 até 15). Exiba a tabuada completa.
+
+09) Crie uma função que recebe um número N e retorna a soma de todos os números ímpares de 1 até N (usando laço). O programa principal deve chamar essa função e exibir o resultado.
+
+10) Leia um nome, um sobrenome. Escreva esses nomes 10 vezes. Alternando a ordem dos nomes. Por exemplo, ler João Silva, vai escrever:
+
+João Silva
+Silva João
+João Silva
+Silva João ... até completar 10 linhas.
+
+
