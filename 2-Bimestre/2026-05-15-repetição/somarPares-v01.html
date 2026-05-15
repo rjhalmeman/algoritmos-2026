@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somar Números Pares</title>
+</head>
+<body>
+    <h1>Somar Números Pares de 1 a N</h1>
+    
+    <input type="number" id="numero" placeholder="Digite um número">
+    <button onclick="somarPares()">Calcular</button>
+    
+    <h1 id="resultado"></h1>
+    
+    <script>
+        function somarPares() {
+            let n = parseInt(document.getElementById("numero").value);
+            let soma = 0;
+            let i = 2;
+            
+            while (i <= n) {
+                if (i % 2 === 0) { // Verifica se o número é par
+                    soma = soma + i;
+                }
+                i = i + 1; // Incrementa
+            }
+            
+            document.getElementById("resultado").innerHTML = "A soma dos números pares de 1 a " + n + " é: " + soma;
+        }
+    </script>
+</body>
+</html>
