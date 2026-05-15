@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contar Letra A</title>
+</head>
+<body>
+    <h1>Contador de Letra A</h1>
+    
+    <label for="frase">Digite uma frase:</label>
+    <input type="text" id="frase" placeholder="Digite sua frase aqui">
+    <button onclick="contar()">Contar</button>
+    
+    <p id="resultado"></p>
+
+    <script>
+        function contar() {
+            const frase = document.getElementById("frase").value.toLowerCase();
+            let contagem = 0;
+            
+            for (let i = 0; i < frase.length; i++) {
+                if (frase[i] === 'a') {
+                    contagem = contagem + 1;
+                }
+            }
+            
+            const mensagem = "A letra 'a' aparece " + contagem + " vezes.";
+            document.getElementById("resultado").innerHTML = mensagem;
+        }
+    </script>
+</body>
+</html>
