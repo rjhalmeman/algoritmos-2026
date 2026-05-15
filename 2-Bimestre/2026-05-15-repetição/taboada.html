@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <label for="inputNumero">Número:</label>
+    <input type="number" name="inputNumero" id="inputNumero">
+
+    <button type="button" onclick="gerarTabuada()">Gerar Tabuada</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function gerarTabuada() {
+            const numero = parseInt(document.getElementById('inputNumero').value);
+            const res = document.getElementById('resultado');
+           
+            res.innerHTML = ''; // Limpa o resultado anterior
+
+            if (isNaN(numero)) { // Verifica se o valor inserido é um número 
+                res.innerHTML = 'Por favor, insira um número válido.'; // Exibe uma mensagem de erro, caso não seja um número
+                return; // Encerra a função para evitar que o código continue a ser executado
+            }
+            
+            let resposta = "";
+            for (let i = 1; i <= 10; i++) {
+                const resultado = numero * i;                
+                resposta = resposta + "  " + numero + " x " + i + " = " + resultado + "<br>";
+            }
+            res.innerHTML = resposta;
+        }
+    </script>
+
+
+
+</body>
+</html>

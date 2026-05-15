@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acumuladores com String</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        pre {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border-left: 4px solid #007bff;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .resultado {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            border: 1px solid #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Exemplos de Uso de String com Acumulador</h1>
+        
+        <h2>Exemplo 1: Concatenar Números</h2>
+        <pre><code>
+let acumulador = "";
+for (let i = 1; i <= 5; i++) {
+    acumulador += i + ", ";
+}
+acumulador = acumulador.slice(0, -2); // Remove última vírgula
+console.log(acumulador); // 1, 2, 3, 4, 5
+        </code></pre>
+        <button onclick="exemplo1()">Executar Exemplo 1</button>
+        <div id="resultado1" class="resultado"></div>
+
+        <h2>Exemplo 2: Construir Frase com Lista de Nomes</h2>
+        <pre><code>
+let nomes = ["Ana", "Bruno", "Carlos", "Diana"];
+let frase = "Participantes: ";
+for (let nome of nomes) {
+    frase += nome + ", ";
+}
+frase = frase.slice(0, -2) + ".";
+console.log(frase); // Participantes: Ana, Bruno, Carlos, Diana.
+        </code></pre>
+        <button onclick="exemplo2()">Executar Exemplo 2</button>
+        <div id="resultado2" class="resultado"></div>
+
+        <h2>Exemplo 3: Acumular HTML</h2>
+        <pre><code>
+let html = "";
+let frutas = ["Maçã", "Banana", "Laranja"];
+for (let fruta of frutas) {
+    html += "&lt;li&gt;" + fruta + "&lt;/li&gt;";
+}
+console.log(html);
+// &lt;li&gt;Maçã&lt;/li&gt;&lt;li&gt;Banana&lt;/li&gt;&lt;li&gt;Laranja&lt;/li&gt;
+        </code></pre>
+        <button onclick="exemplo3()">Executar Exemplo 3</button>
+        <div id="resultado3" class="resultado"></div>
+
+        <h2>Exemplo 4: Inverter String com Acumulador</h2>
+        <pre><code>
+let palavra = "algoritmo";
+let invertida = "";
+for (let i = palavra.length - 1; i >= 0; i--) {
+    invertida += palavra[i];
+}
+console.log(invertida); // omtiroglA
+        </code></pre>
+        <button onclick="exemplo4()">Executar Exemplo 4</button>
+        <div id="resultado4" class="resultado"></div>
+
+        <h2>Exemplo 5: Contar Ocorrências e Acumular</h2>
+        <pre><code>
+let texto = "abaracadabra";
+let resultado = "";
+let contador = 0;
+for (let letra of texto) {
+    if (letra === 'a') {
+        contador++;
+    }
+    resultado += letra;
+}
+console.log("Texto: " + resultado); // abaracadabra
+console.log("Letra 'a' aparece: " + contador + " vezes"); // 5 vezes
+        </code></pre>
+        <button onclick="exemplo5()">Executar Exemplo 5</button>
+        <div id="resultado5" class="resultado"></div>
+    </div>
+
+    <script>
+        function exemplo1() {
+            let acumulador = "";
+            for (let i = 1; i <= 5; i++) {
+                acumulador += i + ", ";
+            }
+            acumulador = acumulador.slice(0, -2);
+            document.getElementById("resultado1").innerHTML = "<strong>Resultado:</strong> " + acumulador;
+        }
+
+        function exemplo2() {
+            let nomes = ["Ana", "Bruno", "Carlos", "Diana"];
+            let frase = "Participantes: ";
+            for (let nome of nomes) {
+                frase += nome + ", ";
+            }
+            frase = frase.slice(0, -2) + ".";
+            document.getElementById("resultado2").innerHTML = "<strong>Resultado:</strong> " + frase;
+        }
+
+        function exemplo3() {
+            let html = "";
+            let frutas = ["Maçã", "Banana", "Laranja"];
+            for (let fruta of frutas) {
+                html += "<li>" + fruta + "</li>";
+            }
+            document.getElementById("resultado3").innerHTML = "<strong>HTML Gerado:</strong><ul>" + html + "</ul>";
+        }
+
+        function exemplo4() {
+            let palavra = "algoritmo";
+            let invertida = "";
+            for (let i = palavra.length - 1; i >= 0; i--) {
+                invertida += palavra[i];
+            }
+            document.getElementById("resultado4").innerHTML = "<strong>Palavra original:</strong> " + palavra + "<br><strong>Invertida:</strong> " + invertida;
+        }
+
+        function exemplo5() {
+            let texto = "abaracadabra";
+            let resultado = "";
+            let contador = 0;
+            for (let letra of texto) {
+                if (letra === 'a') {
+                    contador++;
+                }
+                resultado += letra;
+            }
+            document.getElementById("resultado5").innerHTML = "<strong>Texto:</strong> " + resultado + "<br><strong>Letra 'a' aparece:</strong> " + contador + " vezes";
+        }
+    </script>
+</body>
+</html>
