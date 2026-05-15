@@ -18,11 +18,13 @@
         function contar() {
             const frase = document.getElementById("frase").value.toLowerCase();
             let contagem = 0;
-            
-            for (let i = 0; i < frase.length; i++) {
+            let i = 0;
+            let fim = frase.length;
+            while (i < fim) {
                 if (frase[i] === 'a') {
                     contagem = contagem + 1;
                 }
+                i = i + 1;
             }            
             const mensagem = "A letra 'a' aparece " + contagem + " vezes.";
             document.getElementById("resultado").innerHTML = mensagem;
