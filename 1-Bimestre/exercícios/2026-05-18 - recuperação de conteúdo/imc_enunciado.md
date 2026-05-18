@@ -6,9 +6,9 @@ A fórmula utilizada é:
 
 ## Fórmula do IMC
 
-\[
-IMC = \frac{PESO}{ALTURA^2}
-\]
+``` 
+  imc = peso/altura²
+``` 
 
 Onde:
 
