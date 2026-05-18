@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subtração</title>
+</head>
+
+<body>
+    <label for="inputValorA">A</label>
+    <input type="number" name="inputValorA" id="inputValorA">
+    <br>
+    <label for="inputValorB">B</label>
+    <input type="number" name="inputValorB" id="inputValorB">
+    <br>
+    <input type="button" name="calcular" id="calcular" value="Subtrair" onclick="funcaoSubtrair()">
+    <br>
+    <label for="outputResultado">Resultado: </label>
+    <span id="outputResultado">0 </span>
+
+    <script>
+        function funcaoSubtrair() {
+            //Entrada de dados para a função
+            let a = parseFloat(document.getElementById("inputValorA").value);
+
+            let b = parseFloat(document.getElementById("inputValorB").value);
+            //processamento
+            let resultadoSubtracao = 0;
+            if (a > b) {
+                resultadoSubtracao = a - b;
+            } else {
+                resultadoSubtracao = b - a;
+            }
+            document.getElementById("outputResultado").innerHTML = resultadoSubtracao;
+        }
+    </script>
+
+</body>
+
+</html>
