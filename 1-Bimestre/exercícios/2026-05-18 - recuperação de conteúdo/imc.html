@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+</head>
+
+<body>
+    <h1>Programa para calcular IMC</h1>
+
+    <!-- entrada de dados -->
+    <label for="inputPeso">Digite seu peso (kg)</label>
+    <input type="number" name="inputPeso" id="inputPeso">
+    <br>
+
+    <label for="inputAltura">Digite sua altura (m)</label>
+    <input type="number" name="inputAltura" id="inputAltura">
+    <br>
+
+    <!-- vai acionar o processamento -->
+    <input type="button" name="calcular" id="calcular" value="Calcular IMC" onclick="funcaoCalcular()">
+    <br>
+
+    <!-- saída de dados -->
+    <span id="resultadoImc">0</span>
+    <br>
+    <span id="classificacao">Classificação</span>
+
+    <script>
+        function calcularIMC(p, h){
+            let resp = calcularIMC = p / (h * h);            
+            return resp;
+             //return imc = p / (h * h); //poderia ser assim também (sem criar a variável resp)
+        }
+
+        function funcaoCalcular() {
+            //entrada de dados
+            let peso = parseFloat(document.getElementById("inputPeso").value);
+            let altura = parseFloat(document.getElementById("inputAltura").value);
+
+            //processamento
+            let imc = + calcularIMC(peso,altura).toFixed(2); //chama a função e o resultado fica com 2 casas decimais
+            
+            let respClassificacao = "";
+            if (imc < 18.5) {
+                respClassificacao = "Abaixo do peso";
+            } else if (imc >= 18.5 && imc <= 24.9) { // tem sobra
+                respClassificacao = "Peso ideal";
+            } else if (imc <= 29.9) {
+                respClassificacao = "Levemente acima do peso";
+            } else if (imc <= 34.9) {
+                respClassificacao = "Obesidade grau I";
+            } else if (imc <= 39.9) {
+                respClassificacao = "Obesidade grau II (severa)";
+            } else {
+                respClassificacao = "Obesidade grau III (mórbida)";
+            }
+
+            //saída de dados
+            document.getElementById("resultadoImc").innerHTML =  "IMC: "+ imc;
+            document.getElementById("classificacao").innerHTML = respClassificacao;
+        }
+    </script>
+
+</body>
+
+</html>

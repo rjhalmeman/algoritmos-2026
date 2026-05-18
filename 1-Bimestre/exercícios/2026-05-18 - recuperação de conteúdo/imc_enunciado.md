@@ -41,3 +41,7 @@ O programa deverá:
 3. Calcular o **IMC** utilizando a fórmula;
 4. Exibir o valor do IMC;
 5. Informar a **classificação correspondente** de acordo com a tabela.
+
+
+
+## Faça um teste de mesa com os valores 70 kg e 1,75 m
