@@ -25,7 +25,7 @@
     <br>
 
     <!-- saída de dados -->
-    <span id="resultadoImc">0</span>
+    <h1 id="resultadoImc">0</h1>
     <br>
     <span id="classificacao">Classificação</span>
 
@@ -34,6 +34,10 @@
             let resp = p / (h * h);            
             return resp;
              //return p / (h * h); //poderia ser assim também (sem criar a variável resp)
+        }
+
+        function imcConcatenado(imc){
+            return "O IMC calculado foi "+ imc; //perguntaram-me se eu podia criar uma função para concatenar a resposta
         }
 
         function funcaoCalcular() {
@@ -60,9 +64,11 @@
             }
 
             //saída de dados
-            document.getElementById("resultadoImc").innerHTML =  "IMC: "+ imc;
+            document.getElementById("resultadoImc").innerHTML =  imcConcatenado(imc);
             document.getElementById("classificacao").innerHTML = respClassificacao;
         }
+
+        
     </script>
 
 </body>

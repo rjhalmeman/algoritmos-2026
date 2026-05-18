@@ -9,7 +9,7 @@
 
 <body>
 
-    <h1 id="titulo">Programa para somar dois números</h1>
+    <h1 id="titulo">Helena</h1>
     <label for="inputA">Digite um valor para A</label>
     <input type="number" name="inputA" id="inputA">
     <br>
@@ -25,21 +25,22 @@
 
     <script>
         function funcaoMudar() {
-            document.getElementById("titulo").innerHTML = "Mudei o título";
+            document.getElementById("titulo").innerHTML = "Helena";
+            document.getElementById("resposta").innerHTML = "Helena";
         }
 
-        function somar(x, y) {
-            let s = x + y;
+        function somar(a, b) {
+            let s = a + b;
             return s;
         }
 
         function funcaoCalcular() {
-            
+
             let valorA = parseFloat(document.getElementById("inputA").value);
             let valorB = parseFloat(document.getElementById("inputB").value);
 
-            let soma = somar(valorA,valorB)
-                document.getElementById("resposta").innerHTML = soma;
+            let soma = somar(valorA, valorB)
+            document.getElementById("resposta").innerHTML = soma;
         }
     </script>
 </body>
