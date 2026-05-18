@@ -16,16 +16,16 @@
     <label for="inputB">Digite um valor para B</label>
     <input type="number" name="inputB" id="inputB">
     <br>
-    <input type="button" name="calcular" id="calcular" value="Somar" onclick="funcaoCalcular()">
+    <input type="button" value="Somar" onclick="funcaoCalcular()">
     <br>
-    <input type="button" value="Vai" onclick="funcaoMudar()">
+    <input type="button" value="Mudar titulo" onclick="funcaoMudar()">
     <br>
     <span id="resposta">0</span>
 
 
     <script>
         function funcaoMudar() {
-            document.getElementById("titulo").innerHTML = "Hadassa";
+            document.getElementById("titulo").innerHTML = "Mudei o título";
         }
 
         function somar(x, y) {
