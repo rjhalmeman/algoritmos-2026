@@ -59,54 +59,54 @@
             const z = parseFloat(document.getElementById('inputZ').value);
             const opcao = parseInt(document.getElementById('inputOpcao').value);
 
-            let resultado;
+            let resp;
 
             // Verifica se todos os valores são números válidos
             if (isNaN(x) || isNaN(y) || isNaN(z)) {
-                resultado = "Por favor, insira valores válidos para X, Y e Z!";
-                document.getElementById('resposta').textContent = resultado;
+                resp = "Por favor, insira valores válidos para X, Y e Z!";
+                document.getElementById('resposta').textContent = resp;
                 return;
             }
 
             // Verifica se a opção é válida
             if (isNaN(opcao) || opcao < 1 || opcao > 4) {
-                resultado = "Opção inválida! Escolha entre 1, 2, 3 ou 4.";
-                document.getElementById('resposta').textContent = resultado;
+                resp = "Opção inválida! Escolha entre 1, 2, 3 ou 4.";
+                document.getElementById('resposta').textContent = resp;
                 return;
             }
 
             // Verifica valores negativos para média harmônica e geométrica
             if (opcao === 1 && (x <= 0 || y <= 0 || z <= 0)) {
-                resultado = "Para média geométrica, todos os valores devem ser positivos!";
-                document.getElementById('resposta').textContent = resultado;
+                resp = "Para média geométrica, todos os valores devem ser positivos!";
+                document.getElementById('resposta').textContent = resp;
                 return;
             }
 
             if (opcao === 3 && (x <= 0 || y <= 0 || z <= 0)) {
-                resultado = "Para média harmônica, todos os valores devem ser positivos!";
-                document.getElementById('resposta').textContent = resultado;
+                resp = "Para média harmônica, todos os valores devem ser positivos!";
+                document.getElementById('resposta').textContent = resp;
                 return;
             }
 
             // Chama a função apropriada baseado na opção usando if's
             if (opcao === 1) {
-                resultado = mediaGeometrica(x, y, z);
+                resp = mediaGeometrica(x, y, z);
             } else if (opcao === 2) {
-                resultado = mediaPonderada(x, y, z);
+                resp = mediaPonderada(x, y, z);
             } else if (opcao === 3) {
-                resultado = mediaHarmonica(x, y, z);
+                resp = mediaHarmonica(x, y, z);
             } else if (opcao === 4) {
-                resultado = mediaAritmetica(x, y, z);
+                resp = mediaAritmetica(x, y, z);
             } else {
-                resultado = "Erro inesperado!";
+                resp = "Erro inesperado!";
             }
 
             // Exibe o resultado formatado
-            if (typeof resultado === 'number') {
+            if (typeof resp === 'number') {
                 // Formata o resultado para mostrar 2 casas decimais
-                document.getElementById('resposta').textContent = resultado.toFixed(2);
+                document.getElementById('resposta').textContent = resp.toFixed(2);
             } else {
-                document.getElementById('resposta').textContent = resultado;
+                document.getElementById('resposta').textContent = resp;
             }
         }
     </script>

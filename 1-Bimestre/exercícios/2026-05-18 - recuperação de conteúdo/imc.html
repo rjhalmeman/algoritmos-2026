@@ -20,7 +20,8 @@
     <br>
 
     <!-- vai acionar o processamento -->
-    <input type="button" name="calcular" id="calcular" value="Calcular IMC" onclick="funcaoCalcular()">
+    <input type="button" name="calcular" id="calcular" value="Calcular IMC" 
+    onclick="funcaoCalcular()">
     <br>
 
     <!-- saída de dados -->
@@ -30,9 +31,9 @@
 
     <script>
         function calcularIMC(p, h){
-            let resp = calcularIMC = p / (h * h);            
+            let resp = p / (h * h);            
             return resp;
-             //return imc = p / (h * h); //poderia ser assim também (sem criar a variável resp)
+             //return p / (h * h); //poderia ser assim também (sem criar a variável resp)
         }
 
         function funcaoCalcular() {
@@ -41,12 +42,12 @@
             let altura = parseFloat(document.getElementById("inputAltura").value);
 
             //processamento
-            let imc = + calcularIMC(peso,altura).toFixed(2); //chama a função e o resultado fica com 2 casas decimais
+            let imc =  calcularIMC(peso,altura).toFixed(2); //chama a função e o resultado fica com 2 casas decimais
             
             let respClassificacao = "";
             if (imc < 18.5) {
                 respClassificacao = "Abaixo do peso";
-            } else if (imc >= 18.5 && imc <= 24.9) { // tem sobra
+            } else if ( imc <= 24.9) { // tem sobra
                 respClassificacao = "Peso ideal";
             } else if (imc <= 29.9) {
                 respClassificacao = "Levemente acima do peso";

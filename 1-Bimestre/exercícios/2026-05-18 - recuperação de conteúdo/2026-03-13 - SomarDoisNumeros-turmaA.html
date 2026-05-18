@@ -9,7 +9,7 @@
 
 <body style="background-color: aqua;">
 
-    <h1>Programa para somar dois números</h1>
+    <h1 id="titulo">Programa para somar dois números</h1>
     <label for="inputA">Digite um valor para A</label>
     <input type="number" name="inputA" id="inputA">
     <br>
@@ -18,17 +18,28 @@
     <br>
     <input type="button" name="calcular" id="calcular" value="Somar" onclick="funcaoCalcular()">
     <br>
-    <span id="heloise">0</span>
-    <span id="lucas">resposta  dois</span>
+    <input type="button" value="Vai" onclick="funcaoMudar()">
+    <br>
+    <span id="resposta">0</span>
+
 
     <script>
+        function funcaoMudar() {
+            document.getElementById("titulo").innerHTML = "Hadassa";
+        }
+
+        function somar(x, y) {
+            let s = x + y;
+            return s;
+        }
+
         function funcaoCalcular() {
             // alert("o clicar funcionou")
             let valorA = parseFloat(document.getElementById("inputA").value);
             let valorB = parseFloat(document.getElementById("inputB").value);
 
-            let soma = valorA + valorB;
-            document.getElementById("lucas").innerHTML = soma;
+            let soma = somar(valorA,valorB)
+                document.getElementById("resposta").innerHTML = soma;
         }
     </script>
 </body>
