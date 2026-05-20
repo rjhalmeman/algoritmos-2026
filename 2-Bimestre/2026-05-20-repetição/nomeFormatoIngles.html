@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobrenome, nome ...</title>
+</head>
+
+<body>
+   
+    <label for="inputNome">Nome completo:</label>
+    <input type="text" id="inputNome" name="inputNome"><br><br>
+    <button type="button" onclick="formateONome()">Nome em formato inglês</button>
+    <p id="nomeFormatado"></p>
+
+    <script>
+        function formateONome() {
+            const inputNome = document.getElementById('inputNome').value;
+
+            if (inputNome.length === 0) {
+                alert('Digite um nome válido');
+                return;
+            }
+            let fim = inputNome.length - 1;
+            let i = fim;
+            while (inputNome[i] !== ' ') {
+                i--;
+            } //sai quando achar o primeiro espaço, ou seja, o inicio do sobrenome
+            let fimDoNome = i - 1; //posição do último caractere do nome
+            i++; //passa para o primeiro caractere do sobrenome
+            let auxiliar = "";
+            while (i <= fim) {
+                auxiliar += inputNome[i];
+                i++;
+            } //auxiliar recebe o sobrenome
+            auxiliar += ", "; //adiciona a vírgula e o espaço
+            i = 0; //volta para o início do nome
+            while (i <= fimDoNome) {
+                auxiliar += inputNome[i];
+                i++;
+            } //auxiliar recebe o nome completo no formato "sobrenome, nome"
+            document.getElementById('nomeFormatado').textContent = auxiliar;
+        }
+    </script>
+
+</body>
+
+</html>

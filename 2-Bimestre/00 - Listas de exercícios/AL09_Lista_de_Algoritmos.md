@@ -23,7 +23,12 @@
 > Um palíndromo é uma palavra que lida de trás para frente tem o mesmo significado.  
 > Exemplos: `arara`, `ana`, `ama`.
 
-11) A delegacia de polícia da pequena cidade de Springfield conta com somente 3 policiais: o chefe de polícia Clancy, e os policiais Eddie e Lou. Como é de se esperar, esse pequeno contingente de policiais não consegue atender imediatamente a todos os chamados policiais. Portanto, você foi contratado para criar um sistema de atendimento, de maneira que cada um dos policiais fique com um conjunto equilibrado de chamados. Considere os requisitos:  
+11) Faça um programa que leia uma palavra e gere uma nova string contendo apenas os caracteres das posições pares (índices pares).
+12) Faça um programa que leia uma palavra e verifique se ela possui letras repetidas consecutivas. Exemplo: carro possui rr.
+13) Faça um programa que leia uma frase e gere uma abreviação utilizando apenas a primeira letra de cada palavra.
+Exemplo: Universidade Tecnológica Federal do Paraná → UTFPR
+
+14) A delegacia de polícia da pequena cidade de Springfield conta com somente 3 policiais: o chefe de polícia Clancy, e os policiais Eddie e Lou. Como é de se esperar, esse pequeno contingente de policiais não consegue atender imediatamente a todos os chamados policiais. Portanto, você foi contratado para criar um sistema de atendimento, de maneira que cada um dos policiais fique com um conjunto equilibrado de chamados. Considere os requisitos:  
 - Cada ocorrência deve ser de um tipo: Direção Perigosa, Barulho, Bebedeira, Homer  
 - Cada ocorrência deve ser de um nível de gravidade: Baixo, Médio, Alto  
 - Toda ocorrência do tipo Homer tem nível de gravidade alto  
