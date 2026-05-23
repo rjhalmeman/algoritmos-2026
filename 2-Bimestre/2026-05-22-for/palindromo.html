@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palíndromo</title>
+</head>
+
+<body>
+    <h1>Palíndromo - Laços e funções</h1>
+    <input type="text" id="inputFraseOriginal" placeholder="Digite uma palavra">
+    <button onclick="verificar()">Verificar se é palíndromo</button>
+    <h1 id="resultado"></h1>
+
+    <script>
+        function inverterString(texto) {
+            let invertida = '';
+            let i = texto.length - 1; //apontador para o último caractere da string
+            while (i >= 0) {
+                invertida = invertida + texto[i];
+                i--;
+            }
+            return invertida;
+        }
+
+        function removerEspacosDeUmaString(texto) {
+            let semEspacos = '';
+            for (let i = 0; i < texto.length; i++) {
+                if (texto[i] !== ' ') {
+                    semEspacos += texto[i]; // += é o mesmo que semEspacos = semEspacos + palavra[i];
+                }
+            }
+            return semEspacos;
+        }
+
+        function ehPalindromo(frase) { //função booleana que retorna true ou false
+            let fraseSemEspacos = removerEspacosDeUmaString(frase);
+            let fraseInvertida = inverterString(fraseSemEspacos);
+            return fraseSemEspacos === fraseInvertida; //retorna true se for palíndromo e false caso contrário
+
+            /*
+            // outra forma de escrever a função ehPalindromo
+            if (fraseSemEspacos === fraseInvertida) {
+                return true; //é um palíndromo
+            } else {
+                return false; //não é um palíndromo
+            }
+            */
+        }
+
+        function verificar() {
+            //entrada de dados 
+            let fraseOriginal = document.getElementById('inputFraseOriginal').value;           
+
+            let resposta = "";
+            if (ehPalindromo(fraseOriginal)) {
+                resposta = "É um palíndromo!";
+            } else {
+                resposta = "Não é um palíndromo.";
+            }
+            document.getElementById('resultado').innerHTML = "Frase original..: " + fraseOriginalSemEspacos + "<br>Frase invertida: " + fraseInvertida + "<br>" + resposta;
+        }
+
+    </script>
+
+</body>
+
+</html>
