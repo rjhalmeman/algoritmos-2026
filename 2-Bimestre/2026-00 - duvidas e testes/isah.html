@@ -1,0 +1,49 @@
+<body>
+    <h1>Números pares de 1 até N</h1>
+    <label for="numero">Insira o número desejado</label>
+    <input type="number" id="numero" placeholder="Insira o número aqui">
+    <br>
+    <input type="button" value="Encontrar os números pares" onclick="funcaoMostrar()">
+    <br>
+    <p id="Resposta">O(s) número(s) par(es) de 1 até seu número desejado é(são) </p>
+    <script>
+
+        function EncontrarONúmeroPar(n) {
+            let i = 1; // Iniciar a variável i com 1, para começar a verificar os números a partir de 1
+            let pares = "";
+            //Índice aqui serve de verificação, por exemplo, se i = 0 e 0 < n, então adiciona mais um, algo assim
+            while (i <= n) { // Enquanto i for menor ou igual a n, continue o loop
+                //verificar se é par?
+                if (i % 2 === 0) {
+                    pares += i + ", "; // Se for par, armazene-o na variável pares e adicione uma vírgula e um espaço para separar os números (concatenando o número par encontrado com a string "pares")
+                    i++;
+                    //Se esse número dividido por 2 ter resto zero, armazene-o na variável pares e some mais um
+                    //Mas como eu vou armazenar todos eles em pares sem bagunçar a variável???
+                    // CONCATENANDO. 
+                } else {
+                    i++;
+                    //Se não for resto 0, apenas pule para o próximo número
+                }
+            }
+            return pares;
+        }
+        function Precaução(n) {
+            let answer;
+            if (n === 0) {
+                answer = "Inválido, por favor, insira um número maior que 0"
+            } else if (isNaN(n)) {
+                answer = "Inválido, por favor, insira um número maior que 0"
+            } else {
+                answer = EncontrarONúmeroPar(n)
+            }
+            return answer;
+        }
+        function funcaoMostrar() {
+            let n = parseFloat(document.getElementById("numero").value);
+            let resp = Precaução(n);
+            document.getElementById("Resposta").innerHTML = "O(s) número(s) par(es) de 1 até " + n + " é(são) " + resp;
+        }
+    </script>
+</body>
+
+</html>
