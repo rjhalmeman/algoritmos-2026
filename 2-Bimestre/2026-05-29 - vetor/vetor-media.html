@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>média</title>
+</head>
+
+<body>
+    <label for="inputNotaAluno">Nota</label>
+    <input type="number" id="inputNotaAluno"><br>
+    <input type="button" value="Adicionar" onclick="adicionar()"><br>
+    <input type="button" value="média" onclick="calcularMedia()"><br>
+    <label for="vetorComNotas">Notas </label>
+    <span id="vetorComNotas">...</span><br>
+    <label for="resultado">Média </label>
+    <span id="resultado">...</span>
+
+    <script>
+         let i = 0;
+        // let nota = [0, 0, 0, 0,0];
+        let nota = [];
+        let nome = ["Amaral", "Sabrine", "Fernando"]
+        function adicionar() {
+            let n = parseFloat(document.getElementById("inputNotaAluno").value);
+            // nota[i] = n;
+            nota.push(n);
+            i++;
+            document.getElementById("vetorComNotas").innerHTML = nota;
+            if (i === 2000) {
+                alert("chega... de alunos");
+                return;
+            }
+
+        }
+
+        function calcularMedia() {
+            document.getElementById("resultado").innerHTML = media(nota);
+        }
+
+
+        function media(nota) {
+            let s = 0;
+            for (let i = 0; i < nota.length; i++) {
+                s = s + nota[i];
+            }
+            let m = s / nota.length;
+            return m;
+        }
+
+    </script>
+
+</body>
+
+</html>
