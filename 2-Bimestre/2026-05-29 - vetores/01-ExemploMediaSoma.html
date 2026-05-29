@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Média e Soma</title>
+</head>
+
+<body>
+    <label for="inputNumero">Número inteiro</label>
+    <input type="number" id="inputNumero">
+    <input type="button" value="Adicionar ao vetor" onclick="adicionar()"><br>
+    <br><br>
+    <label for="dadosLidos">Vetor Números </label>
+    <span id="dadosLidos">[]</span><br>
+    <br><br>
+
+    <input type="button" value="Calcular Média" onclick="calcularMedia()"><br>
+    <label for="resultadoMedia">Média </label>
+    <span id="resultadoMedia">0</span>
+    <br><br>
+    <input type="button" value="Calcular Soma" onclick="calcularSoma()"><br>
+    <label for="resultadoSoma">Soma </label>
+    <span id="resultadoSoma">0</span>
+
+    <script>
+        let vetor = []; //variável global do tipo vetor (array). Precisamos declarar o vetor fora da função para que ele seja global e possa ser acessado por outras funções.
+
+        function adicionar() {
+            let num = parseInt(document.getElementById("inputNumero").value);
+
+            vetor.push(num); //adiciona o número lido ao final do vetor. O método push() é usado para adicionar um elemento ao final de um array.
+
+            document.getElementById("dadosLidos").innerHTML = "[" + vetor + "]"; //exibe o vetor atualizado na página. O método innerHTML é usado para definir o conteúdo HTML de um elemento. Aqui, estamos convertendo o vetor em uma string e exibindo-o entre colchetes.
+        }
+
+        function calcularMedia() {
+            if (vetor.length === 0) { //verifica se o vetor está vazio para evitar divisão por zero ao calcular a média.
+                alert("O vetor está vazio. Adicione números antes de calcular a média.");
+                return;
+            }
+            let soma = 0;
+            for (let i = 0; i < vetor.length; i++) {
+                soma += vetor[i];
+            }
+            let media = soma / vetor.length;
+            document.getElementById("resultadoMedia").innerHTML = media;
+        }
+
+        function calcularSoma() {
+            //apenas para fins didáticos, vamos calcular a soma usando um loop while, para mostrar uma alternativa ao for.
+            let soma = 0;
+            let i = 0;
+            while (i < vetor.length) { //para cada elemento do vetor, enquanto i for menor que o comprimento do vetor, o loop continua. O método length é usado para obter o número de elementos em um array.
+                soma += vetor[i];
+                i++;
+            }
+            document.getElementById("resultadoSoma").innerHTML = soma;
+        }
+    </script>
+
+</body>
+
+</html>
