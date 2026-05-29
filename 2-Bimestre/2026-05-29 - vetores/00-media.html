@@ -21,7 +21,8 @@
 
     <script>
         let i = 0;
-        // let nota = [0, 0, 0, 0,0];
+        // let nota = [0, 0, 0, 0, 0]; // vetor de 5 posições, inicialmente preenchido com zeros. O índice do vetor vai de 0 a 4.
+
         let nota = [];
         // let nome = ["Amaral", "Sabrine", "Fernando"]; // vetor de strings
         function adicionar() {
@@ -30,8 +31,8 @@
             nota.push(n);
             i++;
             document.getElementById("vetorComNotas").innerHTML = nota;
-            if (i === 2000) {
-                alert("chega... de alunos");
+            if (i === 5) {
+                alert("chega... ");
                 return;
             }
 
