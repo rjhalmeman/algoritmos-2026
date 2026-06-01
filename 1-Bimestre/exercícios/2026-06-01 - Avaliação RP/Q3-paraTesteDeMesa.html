@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de mensalidade de plano de saúde</title>
+</head>
+<body>
+    <label for="mensalidade">Valor da Mensalidade (R$):</label>
+    <input type="number" id="mensalidade" ><br>
+    <label for="anoNascimento">Ano de Nascimento:</label>
+    <input type="number" id="anoNascimento" ><br>
+    <label for="siglaEstado">Sigla do Estado da Federação (PR, SP ou RJ):</label>
+    <input type="text" id="siglaEstado" name="siglaEstado"><br>
+    <button type="button" onclick="calcularPlanoSaude()">Calcular</button>
+    <h3 id="mensalidade-final">resposta</h3>
+    <script>
+        function nomeDoEstado(sigla) {
+            if (sigla == "PR") {
+                return "Paraná";
+            } else if (sigla == "SP") {
+                return "São Paulo";
+            } else {
+                return "Rio de Janeiro";
+            }
+        }
+        function calcularPlanoSaude() {
+            let mensalidade = parseFloat(document.getElementById('mensalidade').value);
+            let anoNascimento = parseInt(document.getElementById('anoNascimento').value);
+            let siglaEstado = document.getElementById('siglaEstado').value.toUpperCase();
+            if (siglaEstado != "PR" && siglaEstado != "SP" && siglaEstado != "RJ") {
+                alert("Estado inválido! Por favor, insira PR, SP ou RJ.");
+                return;
+            }
+            let anoAtual = new Date().getFullYear(); //busca no sistema o ano atual. 
+            let idade = anoAtual - anoNascimento;
+            let mensalidadeFinal = mensalidade;
+            let desconto = 0.0;
+            let nomeEstado = nomeDoEstado(siglaEstado);
+            if (idade < 18) {
+                desconto = 25 / 100;
+            } else if (idade <= 45) {
+                desconto = 20 / 100;
+                if (siglaEstado === 'PR') {
+                    desconto = desconto + 3 / 100;
+                }
+            } else if (idade <= 60) {
+                desconto = 10 / 100;
+                if (siglaEstado === 'SP' || siglaEstado === 'RJ') {
+                    desconto = desconto + 2 / 100;
+                }
+            } else {
+                if (siglaEstado === 'SP') {
+                    desconto = -1 / 100;
+                }
+            }
+            mensalidadeFinal = mensalidade - (mensalidade * desconto);
+            let operacao = "desconto";
+            if (desconto < 0) {
+                operacao = "acréscimo";
+                desconto = desconto * -1;
+            }
+            document.getElementById('mensalidade-final').innerHTML = "Com " + idade
+                + " anos no estado do " + nomeEstado + " a mensalidade será de "
+                + mensalidadeFinal.toFixed(2) + " , ou seja, o " + operacao + " foi de "
+                + (desconto * 100).toFixed(1) + "%.";
+        }
+    </script>
+</body>
+</html>

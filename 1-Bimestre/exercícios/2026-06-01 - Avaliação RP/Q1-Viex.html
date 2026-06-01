@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulador de Tarifa de Viex</title>
+</head>
+<body>
+    <h2>Simulador de Tarifa de Viex</h2>
+    <label>Distância percorrida (em km):</label><br>
+    <input type="number" id="campoDistancia" step="0.01"><br><br>
+    <p>Horário de Início</p>
+    <label>Hora:</label>
+    <input type="number" id="campoHora" min="0" max="23">     
+    <label> Minuto:</label>
+    <input type="number" id="campoMinuto" min="0" max="59"><br><br>
+    <label>Velocidade média (em km/h):</label><br>
+    <input type="number" id="campoVelocidade" step="0.01"><br><br>
+    <button onclick="calcularTarifa()">Calcular Valor Total</button>
+    <label for="textoResultado">Resultado:</label>
+    <span id="textoResultado"></span>
+
+    <script>
+        // Função extra para validar apenas se é horário de pico
+        function verificarHorarioPico(hora, minuto) {
+            // Pico da manhã: das 07:30 até 09:00
+            let estaEmHorarioDePico = false;            
+            if (hora == 7 && minuto >= 30) {
+                estaEmHorarioDePico = true;
+            } else if (hora == 8) {
+                estaEmHorarioDePico = true;
+            } else if (hora == 9 && minuto == 0) {
+                estaEmHorarioDePico = true;
+            } else  if (hora == 17 || hora == 18) {
+                estaEmHorarioDePico = true;
+            }
+            if (hora == 19 && minuto == 0) {
+                estaEmHorarioDePico = true;
+            }            
+            return estaEmHorarioDePico;
+        }
+
+        function calcularTarifa() {
+            // Captura dos dados da tela
+            let distancia = parseFloat(document.getElementById("campoDistancia").value);
+            let hora = parseInt(document.getElementById("campoHora").value);
+            let minuto = parseInt(document.getElementById("campoMinuto").value);
+            let velocidade = parseFloat(document.getElementById("campoVelocidade").value);
+
+            let valorPorKm = 0;
+
+            // 1. Chamada da função para verificar se é Horário de Pico
+            if (verificarHorarioPico(hora, minuto) == true) {
+                valorPorKm = 3.50;
+            } 
+            // 2. Verificação do Horário Noturno (das 22:00 às 05:59)
+            else if (hora >= 22 || hora <= 5) {
+                valorPorKm = 2.90;
+            } 
+            // 3. Horário Normal (restante dos horários)
+            else {
+                valorPorKm = 2.10;
+            }
+
+            // Cálculo base: Bandeirada + (distância * valor do km)
+            let valorTotal = 4.50 + (distancia * valorPorKm);
+
+            // Verificação do adicional de trânsito lento
+            if (velocidade < 20) {
+                valorTotal = valorTotal + 5.00;
+            }
+
+            // Exibe o resultado final na tela
+            document.getElementById("textoResultado").innerHTML = "O valor total da corrida é: R$ " + valorTotal.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>

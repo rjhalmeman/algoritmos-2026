@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homer</title>
+</head>
+<body>
+  
+    <label for="quantidade">Quantidade:</label>
+    <input type="number" id="quantidade" name="quantidade"><br>
+    <label for="precoUnitario">Preço Unitário (R$):</label>
+    <input type="number" id="precoUnitario" name="precoUnitario"><br>
+    <label for="mes">Número do Mês (1-12):</label>
+    <input type="number" id="mes" name="mes"><br>
+    <label for="ano">Ano:</label>
+    <input type="number" id="ano" name="ano"><br>
+    <button type="button" onclick="calcularValorTotal()">Calcular Valor Total</button>
+    <h3 id="valorTotal">Valor Total: R$ 0.00</h3>
+    <script>
+
+        function quantidadesDeDiasNoMes(mes, ano) {
+            if (mes === 2) {
+                // Verificar se o ano é bissexto
+                if ((ano % 4 === 0 && ano % 100 !== 0) || (ano % 400 === 0)) {
+                    return 29; // Fevereiro em ano bissexto
+                } else {
+                    return 28; // Fevereiro em ano não bissexto
+                }
+            } else if (mes===4 || mes === 6 || mes === 9 || mes === 11) {
+                return 30; // Abril, Junho, Setembro, Novembro
+            } else {
+                return 31; // Janeiro, Março, Maio, Julho, Agosto, Outubro, Dezembro
+            }
+        }
+        function calcularValorTotal() {
+            let quantidadePorDia = parseInt(document.getElementById('quantidade').value);
+            let precoUnitario = parseFloat(document.getElementById('precoUnitario').value);
+            let mes = parseInt(document.getElementById('mes').value);
+            let ano = parseInt(document.getElementById('ano').value);
+            
+            let quantidadeDeDiasNoMes = quantidadesDeDiasNoMes(mes, ano);
+            let valorTotal = quantidadePorDia * quantidadeDeDiasNoMes * precoUnitario;
+            document.getElementById('valorTotal').textContent = "Valor Total: R$ " + valorTotal.toFixed(2);
+        }   
+    </script>
+</body>
+</html>
