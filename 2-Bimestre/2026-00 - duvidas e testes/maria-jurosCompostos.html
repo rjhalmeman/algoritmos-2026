@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juros</title>
+</head>
+
+<body>
+    <input type="number" id="inputValor" placeholder="Valor da etiqueta">
+    <input type="number" id="inputPorcentagem" placeholder="Porcentagem">
+    <input type="number" id="inputParcelas" placeholder="Parcelas">
+    <input type="button" value="Calcular" onclick="calcular()">
+
+    <span id="resposta"></span>
+
+    <script>
+        function calcular() {
+            let valorEtiqueta = parseFloat(document.getElementById("inputValor").value);
+            let porc = parseFloat(document.getElementById("inputPorcentagem").value)/100;
+            let parc = parseFloat(document.getElementById("inputParcelas").value);
+            let valor = valorEtiqueta;
+            let i = 1;
+            while (i <= parc) {
+                valor = valor + porc * valor;
+                console.log(valor);
+                i++;
+            }
+            let resultado = valor / parc;
+            document.getElementById("resposta").innerHTML = resultado.toFixed(2);
+        }
+    </script>
+</body>
+</html>
