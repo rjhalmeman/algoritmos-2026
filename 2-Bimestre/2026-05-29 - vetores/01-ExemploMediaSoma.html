@@ -36,7 +36,7 @@
 
             if (contador >= limite) { //verifica se o contador atingiu o limite de 10 números para evitar que o vetor cresça indefinidamente.
                 alert("Limite de " + limite + " números atingido. Não é possível adicionar mais números.");
-                return;// interrompe a execução da função se o limite for atingido, impedindo que mais números sejam adicionados ao vetor.
+                return;// interrompe a execução da função adicionar(), se o limite for atingido, impedindo que mais números sejam adicionados ao vetor.
             }
 
             let num = parseInt(document.getElementById("inputNumero").value);
