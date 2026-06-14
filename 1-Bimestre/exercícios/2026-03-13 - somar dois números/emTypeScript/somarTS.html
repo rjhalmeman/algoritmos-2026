@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somar</title>
+</head>
+
+<body>
+    <label for="inputValorA">Digite o primeiro número</label>
+    <input type="number" name="inputValorA" id="inputValorA">
+    <br>
+    <label for="inputValorB">Digite o segundo número</label>
+    <input type="number" name="inputValorB" id="inputValorB">
+    <br>
+    <input type="button" name="botaoSomar" id="botaoSomar" value="Somar dois números">
+    <br>
+    <label for="resultado">Resultado</label>
+    <input type="number" name="resultado" id="resultado" value="0">
+
+    <script src="somar.js"></script>
+    <script>
+        // Adicionar evento após carregar o script
+        document.getElementById("botaoSomar").onclick = funcaoSomarDoisNumeros;
+    </script>
+</body>
+
+</html>
