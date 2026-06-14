@@ -18,7 +18,7 @@
         onclick="funcaoSomarDoisNumeros()">
     <br>
     <label for="resultado">Resultado</label>
-    <input type="number" name="resultado" id="resultado" value="0">
+    <span id="resultado">0</span>
 
     <script>
         function funcaoSomarDoisNumeros() {
@@ -33,7 +33,7 @@
             //processamento
             let soma = valorA + valorB;
 
-            document.getElementById("resultado").value = soma;
+            document.getElementById("resultado").innerHTML = soma;
 
         }
     </script>
