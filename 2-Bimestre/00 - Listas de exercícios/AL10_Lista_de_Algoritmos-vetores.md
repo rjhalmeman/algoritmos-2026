@@ -4,7 +4,7 @@
 
 01) Escreva um programa que dado um valor numérico digitado pelo usuário (armazenado em uma variável inteira), imprima cada um dos seus dígitos por extenso. Exemplo: 4571 Resultado: quatro, cinco, sete, um.
 
-02) Faça um programa que receba do usuário uma string. O programa imprime a string sem suas vogais. (retire as vogais e imprima).
+02) Faça um programa que receba do usuário uma string. O programa imprime a string sem suas vogais (retire as vogais e imprima).
 
 03) Faça um programa que leia um vetor de caracteres, gere e imprima um outro vetor onde as vogais, do primeiro vetor, sejam substituídas pelo caractere ‘*’.
 
