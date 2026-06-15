@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Nome em Inglês</title>
+</head>
+<body>
+
+<h1>nome em inglês</h1>
+
+<input type="text" id="n" placeholder="Escreva um nome">
+<br><br>
+
+<button onclick="calcular()">Mostrar</button>
+
+<p id="resultado"></p>
+
+<script>
+function calcular(){
+
+    let n = document.getElementById("n").value;
+    let nome = n.split(" ")
+    let últimoNome = nome[nome.length - 1];
+    let nomesemultimo = "";
+    
+    for (let i = 0; i < nome.length - 1; i++) {
+        nomesemultimo += nome[i] + " ";
+    }
+    
+    let resposta = últimoNome + ", " + nomesemultimo;
+
+
+    document.getElementById("resultado").innerHTML = resposta;
+}
+</script>
+
+</body>
+</html>
