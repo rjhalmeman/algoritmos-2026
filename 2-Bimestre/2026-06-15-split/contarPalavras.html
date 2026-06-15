@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Contador de Palavras</h1>
+    <input type="text" id="inputFrase" placeholder="Digite uma frase aqui">
+    <button onclick="botaoContar()">Contar Palavras</button>
+    <p id="contador">Número de palavras: 0</p>
+
+    <script src="variasFuncoes.js"></script>
+
+    <script>
+
+   
+
+        function botaoContar() {
+            const frase = document.getElementById("inputFrase").value;
+
+            const quantidadeDePalavras = contarPalavras(frase);
+            document.getElementById("contador").textContent = "Número de palavras: " + quantidadeDePalavras;
+        }
+    </script>
+
+</body>
+
+</html>

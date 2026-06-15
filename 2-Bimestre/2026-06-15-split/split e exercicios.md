@@ -107,6 +107,8 @@ Agora é sua vez: abra o console do seu navegador ou o VS Code e teste você mes
 Faça uma função que conte quantas palavras tem um texto.
 
 
+
+
 Retirados das listas
 
 AL8b - 1) Faça um programa, usando HTML e JS que lê um nome completo e imprime esse nome em formato inglês. Por exemplo, Ayrton Senna da Silva torna-se: Silva, Ayrton Senna da. Deve-se criar uma função chamada nomeEmIngles. Usar split.

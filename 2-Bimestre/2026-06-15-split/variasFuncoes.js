@@ -1,0 +1,21 @@
+
+
+function issoNaoFunciona(palavra) {
+    palavra[0] = palavra[0].toUpperCase();
+    return palavra;
+}
+
+function maneiraCorretaDeModificarStrings(palavra) {
+    let aux = palavra.split(''); //converte a string em um vetor de caracteres
+    aux[0] = aux[0].toUpperCase();
+    return aux.join(''); //converte o vetor de caracteres de volta para string
+}
+
+function contarPalavras(frase) {
+    const palavras = frase.split(' ');
+    return palavras.length;
+}
+
+//console.log(contarPalavras("a copa do mundo atrapalha a vida do professor"));
+//console.log(issoNaoFunciona("banana"));
+//console.log(maneiraCorretaDeModificarStrings("banana"));
