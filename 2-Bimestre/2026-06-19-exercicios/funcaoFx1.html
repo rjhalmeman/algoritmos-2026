@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Função Personalizada f(x)</title>
+</head>
+
+<body>
+    <h1>Valores de y conforme a função f(x)</h1>
+    <span>Escolha entre as seguintes funções:</span><br>
+    <p>1. f(x) = x² </p>
+    <p>2. f(x) = x³</p>
+    <p>3. <img src="f3.png" alt="situacao" width="125"></p> <br> <br>
+    <label for="qualFuncao">Qual função deseja utilizar?</label>
+    <input type="number" id="qualFuncao" value="1"><br><br>
+    <label for="xInicial">Valor inicial de x:</label>
+    <input type="number" id="xInicial" value="-3">
+    <label for="xFinal">Valor final de x:</label>
+    <input type="number" id="xFinal" value="3">
+    <button onclick="gerarValores()">Gerar Valores</button>
+    <div id="resultados"></div>
+    <script>
+        function f1(x) {
+            return x ** 2; // Define a função f(x) = x^2
+        }
+        function f2(x) {
+            return x ** 3; // Define a função f(x) = x^3
+        }
+        function f3(x) {
+            let y = 0;
+            if (x < 6) {
+                y = 0;
+            } else {
+                y = 1;
+            }
+            return y;
+        }
+
+        function gerarValores() {
+            const qualFuncao = parseInt(document.getElementById("qualFuncao").value);
+            const xInicial = parseInt(document.getElementById("xInicial").value);
+            const xFinal = parseInt(document.getElementById("xFinal").value);
+            document.getElementById("resultados").innerHTML = "";  // Limpar resultados anteriores
+            let item = "";
+            for (let x = xInicial; x <= xFinal; x++) {
+                let y;
+                if (qualFuncao === 1) {
+                    y = f1(x);
+                } else if (qualFuncao === 2) {
+                    y = f2(x);
+                } else if (qualFuncao === 3) {
+                    y = f3(x);
+                } else {
+                    alert("Função inválida. Por favor, escolha 1, 2 ou 3.");
+                    return;
+                }
+
+                item += "f(" + x + ") = " + y + "<br>";
+            }
+            document.getElementById("resultados").innerHTML = item;
+        }
+    </script>
+</body>
+
+</html>
