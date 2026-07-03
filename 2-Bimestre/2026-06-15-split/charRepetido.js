@@ -17,4 +17,4 @@ function semRepetidos(s) {
     return aux;
 }
 
-console.log(semRepetidos("banana"));
+console.log(semRepetidos("banana pera abacaxi"));

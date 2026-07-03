@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Empréstimos - Hogwarts</title>
+</head>
+
+<body>
+    <h2>Sistema de Empréstimos da Madame Pince</h2>
+    <label for="inputAluno">Nome do Aluno:</label>
+    <input type="text" id="inputAluno"> <br>
+    <label for="inputQuantidade">Quantidade de Livros:</label>
+    <input type="number" id="inputQuantidade"> <br><br>
+    <input type="button" value="Cadastrar Empréstimo" onclick="adicionar()"><br> <br>
+    <span id="spanLimite"></span><br><br>
+    <label for="outputContador">Alunos Cadastrados: </label>
+    <span id="outputContador">5/6</span>
+    <input type="button" value="Exibir Lista Completa" onclick="exibirLista()"><br><br>
+    <div id="outputLista"></div> <br>
+    <input type="button" value="Aluno com Maior Empréstimo" onclick="exibirNomesDosLeitoresQueMaisLeram()"><br><br>
+    <div id="outputMaior"></div>
+    <input type="text" id="inputUltimoNome" placeholder="Digite o último nome do aluno">
+    <input type="button" value="Procurar Aluno pelo Último Nome" onclick="procurar()"><br><br>
+    <div id="outputProcurar"></div>
+
+    <script>
+        let vetorNomes = ["José Carlos Friburgo", "Maria da Silva", "João Souza", "Ana Cordeiro", "Pedro Silva"];
+        let vetorLivros = [5, 20, 8, 20, 12];
+        let contador = vetorNomes.length; 
+        let limite = 6;  // Limite estipulado      
+
+        function adicionar() {            
+            if (contador >= limite) {
+                alert("As masmorras... digo, o sistema está cheio! Limite de " + limite + " alunos atingido.");
+                return;
+            }
+            let nome = document.getElementById("inputAluno").value;
+            let qtdLivros = parseInt(document.getElementById("inputQuantidade").value);
+            vetorNomes.push(nome);
+            vetorLivros.push(qtdLivros);
+            contador++;
+            document.getElementById("outputContador").innerHTML = contador + "/" + limite;
+            document.getElementById("inputAluno").value = "";
+            document.getElementById("inputQuantidade").value = "";
+        }
+
+        function classificarAluno(qtdLivros) {
+            let classificacao;
+            if (qtdLivros <= 5) {
+                classificacao = "Ocasional";
+            } else if (qtdLivros <= 12) {
+                classificacao = "Frequente";
+            } else {
+                classificacao = "Assíduo";
+            }
+            return classificacao;
+        }
+
+        function exibirLista() {       
+            let resultadoHTML = "<strong>Lista de Empréstimos:</strong><br><br>";
+            // Percorre os vetores paralelos com um laço for manual
+            for (let i = 0; i < vetorNomes.length; i++) {
+                let classificacao = classificarAluno(vetorLivros[i]);
+                // Monta a linha do aluno atual
+                resultadoHTML += "Aluno: " + vetorNomes[i] + " - " + vetorLivros[i] + " livros - " + classificacao + "<br>";
+            }
+            document.getElementById("outputLista").innerHTML = resultadoHTML;
+        }
+
+        function exibirNomesDosLeitoresQueMaisLeram() {
+            let osMaiores = [];
+            // achar o maior valor no vetorLivros
+            let maiorQuantidade = vetorLivros[0];
+            for (let i = 1; i < vetorLivros.length; i++) {
+                if (vetorLivros[i] > maiorQuantidade) {
+                    maiorQuantidade = vetorLivros[i];
+                }
+            }
+
+            // Agora, encontra todos os alunos que têm essa maior quantidade
+            for (let i = 0; i < vetorLivros.length; i++) {
+                if (vetorLivros[i] === maiorQuantidade) {
+                    osMaiores.push(vetorNomes[i]);
+                }
+            }
+
+            // Exibe o resultado na tela
+            document.getElementById("outputMaior").innerHTML =
+                "As pessoas com a maior quantidade de empréstimos leram " + maiorQuantidade + " livros:<br>" +
+                osMaiores.join("<br>");
+        }
+
+        function procurar() {
+            let ultimoNome = document.getElementById("inputUltimoNome").value;
+            let alunosEncontrados = procurarAlunoPeloUltimoNome(vetorNomes, ultimoNome);
+            if (alunosEncontrados.length > 0) {
+                document.getElementById("outputProcurar").innerHTML =
+                    "<strong>Alunos encontrados com o último nome '" + ultimoNome + "':</strong><br>" +
+                    alunosEncontrados.join(", ");
+            } else {
+                document.getElementById("outputProcurar").innerHTML =
+                    "Nenhum aluno encontrado com o último nome '" + ultimoNome + "'.";
+            }
+        }
+
+        function procurarAlunoPeloUltimoNome(vetorNomes, procurarPorUltimoNome) {
+            let alunosEncontrados = [];
+            let nomeBusca = procurarPorUltimoNome.toLowerCase();
+            for (let i = 0; i < vetorNomes.length; i++) {
+                let nomeCompleto = vetorNomes[i];
+                let partesNome = nomeCompleto.split(" ");
+                let ultimoNomeAluno = partesNome[partesNome.length - 1].toLowerCase();
+                if (ultimoNomeAluno === nomeBusca) {
+                    alunosEncontrados.push(nomeCompleto);
+                }
+            }
+            return alunosEncontrados;
+        }
+    </script>
+</body>
+
+</html>

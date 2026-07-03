@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="myInput" placeholder="Digite algo...">
+    <button onclick="displayInputValue()">Exibir Valor</button>
+    <p id="output"></p>
+    <script>
+        function displayInputValue() {
+            
+            const inputValue = myInput.value;
+
+
+            document.getElementById("output").innerText = "Você digitou: " + inputValue;
+        }
+    </script>
+</body>
+</html>
