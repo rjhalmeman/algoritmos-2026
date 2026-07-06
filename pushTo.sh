@@ -29,8 +29,6 @@ if ! git remote get-url "$remote_name" &> /dev/null; then
     git remote add "$remote_name" "$default_remote"
 fi
 
-# Adiciona todas as alterações ao índice do Git
-git add .
 
 # Obtém a data e hora atual
 timestamp=$(date +"%d/%m/%Y - %H:%M:%S")
