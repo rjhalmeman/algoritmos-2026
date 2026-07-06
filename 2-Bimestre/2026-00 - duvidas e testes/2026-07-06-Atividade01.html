@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 01</title>
+</head>
+
+<body>
+    <label for="inputFrase">Frase</label>
+    <input type="text" id="inputFrase" value="Uma frase qualquer para teste">
+
+    <input type="button" value="Converter" onclick="converter()">
+
+    <span id="resp">Resposta</span>
+
+    <script>
+        function inverterPalavra(p) {
+            let aux = "";
+            for (let i = p.length - 1; i >= 0; i--) {
+                aux += p[i];
+            }
+            return aux;
+        }
+
+        function converter() {
+            let frase = document.getElementById("inputFrase").value;
+            let fs = frase.split(" ");
+            let r = "";
+            for (let i = 0; i < fs.length; i++) {
+                let x = inverterPalavra(fs[i]);
+                r += x + " ";
+            }
+            document.getElementById("resp").innerHTML = r;
+        }
+
+
+    </script>
+
+</body>
+
+
+
+
+</html>
