@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MM</title>
+</head>
+
+<body>
+    <input type="text" name="inputFrase" id="inputFrase" placeholder="Digite uma frase qualquer">
+    <input type="button" value="Ache" onclick="acharMaiorMenor()">
+    <div id="resp">resposta</div>
+
+
+
+    <script>
+        //05) Desenvolva um algoritmo que leia uma frase e encontre a maior e a menor palavra, considerando o número de caracteres, nessa frase. Imprima as palavras encontradas.
+
+        function acharMaiorMenor() {
+            let f = document.getElementById("inputFrase").value;
+            let vf = f.split(" ");
+            let maior = 0; let posMaior = 0;
+            for (let i = 0; i < vf.length; i++) {
+                if (vf[i].length > maior) {
+                    maior = vf[i].length;
+                    posMaior = i;
+                }
+            }
+            let menor = 1000; let posMenor = 0;
+            for (let i = 0; i < vf.length; i++) {
+                if (vf[i].length < menor) {
+                    menor = vf[i].length;
+                    posMenor = i;
+                }
+            }
+            let r = "A maior palavra é " + vf[posMaior].toUpperCase() + " -<br> " +     "A menor palavra é " + vf[posMenor].toUpperCase();
+
+            document.getElementById("resp").innerHTML = r;
+    }
+
+    </script>
+</body>
+
+</html>
