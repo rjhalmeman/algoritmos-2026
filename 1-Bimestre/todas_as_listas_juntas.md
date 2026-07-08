@@ -7,7 +7,7 @@
 - [Lista 03 - Sequenciais](#lista-03)
 - [Lista 04 - Sequenciais](#lista-04)
 - [Lista 05 - Condicionais](#lista-05)
-- [Lista 05 - Condicionais](#lista-06)
+- [Lista 06 - Condicionais](#lista-06)
 - [Lista 07 - Condicionais / Funções](#lista-07)
 
 <p align="center">
