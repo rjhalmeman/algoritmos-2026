@@ -4,9 +4,10 @@
 
 - [Lista 01 - Sequenciais](#lista-01)
 - [Lista 02 - Sequenciais](#lista-02)
-- [Lista 02 - Sequenciais](#lista-03)
+- [Lista 03 - Sequenciais](#lista-03)
 - [Lista 04 - Sequenciais](#lista-04)
 - [Lista 05 - Condicionais](#lista-05)
+- [Lista 05 - Condicionais](#lista-06)
 - [Lista 07 - Condicionais / Funções](#lista-07)
 
 <p align="center">
@@ -105,6 +106,7 @@
 #### Considerando que uma variável é um local (na memória RAM) que guarda alguma coisa.
 #### Para todos os exercícios, calcule e mostre o valor que estará na variável ou variáveis da pergunta após realizar os cálculos (processamento). Não é necessário programar, apenas fazer o teste de mesa.
 
+<a id="lista-03"></a>
 # Lista 03 - Sequenciais
 
 [⬆ Voltar ao Índice](#indice)
@@ -313,6 +315,12 @@ diferentes.
 10) Escreva um algoritmo que receba a idade de uma pessoa e informe se ela é criança, adolescente, adulta ou idosa. Criança até 12 anos, adolescente até 18 anos, adulta até 60 anos e idosa acima de 60;
 
 11) Crie um algoritmo que determine se um número é divisível por 3 e por 5 ao mesmo tempo.## AL06 - Algoritmos - Lista de exercícios 06 - Condicionais
+
+<a id="lista-06"></a>
+
+# Lista 06 - Sequenciais
+
+[⬆ Voltar ao Índice](#indice)
 
 1) Escreva um algoritmo que leia 3 números inteiros e mostre o menor deles.
 
