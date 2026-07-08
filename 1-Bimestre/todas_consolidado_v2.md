@@ -4,6 +4,7 @@
 
 - [Lista 01 - Sequenciais](#lista-01)
 - [Lista 02 - Sequenciais](#lista-02)
+- [Lista 02 - Sequenciais](#lista-03)
 - [Lista 04 - Sequenciais](#lista-04)
 - [Lista 05 - Condicionais](#lista-05)
 - [Lista 07 - Condicionais / Funções](#lista-07)
@@ -104,6 +105,9 @@
 #### Considerando que uma variável é um local (na memória RAM) que guarda alguma coisa.
 #### Para todos os exercícios, calcule e mostre o valor que estará na variável ou variáveis da pergunta após realizar os cálculos (processamento). Não é necessário programar, apenas fazer o teste de mesa.
 
+# Lista 03 - Sequenciais
+
+[⬆ Voltar ao Índice](#indice)
 
 1) Qual o valor de soma? (exemplo do que deve ser feito para cada um dos exercícios)
 
@@ -267,10 +271,11 @@
 </p>
 
 <a id="lista-05"></a>
-
-# Lista 05 - Condicionais
+# Lista 05 - Sequenciais
 
 [⬆ Voltar ao Índice](#indice)
+
+
 
 
 1) Escreva um programa que resolva o seguinte problema: uma cópia “xerox” custa R$ 0,25 por folha, mas acima de 100 folhas esse valor cai para R$ 0,20 por unidade. Dado o total de cópias, informe o valor a ser pago.
