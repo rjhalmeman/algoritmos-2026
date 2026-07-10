@@ -54,9 +54,28 @@ Para guardar dados na memória (RAM), definimos caixinhas chamadas variáveis. V
 * **FLOAT:** Números com casas decimais (ex: `1.75`, `59.5`). *Dica: em programação, usamos ponto no lugar da vírgula!*
 * **STRING:** Textos (ex: `"Olá Mundo"`, `"João"`). Ficam sempre entre aspas.
 
+Enfatize que usar nomes significativos facilita o raciocínio e avise que nomes aleatórios dificultam a correção de avaliações, por isso, o professor não gosta.
+
 ### Concatenação
 É o ato de **juntar** textos ou variáveis. Em JavaScript, usamos o símbolo de mais (`+`) para grudar uma informação na outra.
 * Exemplo: `"O resultado é: " + soma`
+
+mostre exemplo mais simples
+
+let a = 4; //destaque que está sendo inicializado com um número
+let b = 3;
+let soma = a + b;
+console.log("A soma dos números é "+ soma);
+
+contraponha
+
+let a = "4"; //destaque que está sendo inicializado com um texto (string)
+let b = "3";
+let res = a + b;
+console.log("A CONCATENAÇÃO de a + b é "+ res);
+
+pergunte se quer exercícios para confirmar se entendeu isso.
+
 
 ### Código Modelo (Soma de Dois Números)
 Utilize o código abaixo como base e modelo para criar os seus próximos exercícios. Ele cria a interface em HTML e processa os dados com JavaScript:
