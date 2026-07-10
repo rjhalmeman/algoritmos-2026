@@ -100,7 +100,9 @@ A IA deve ser utilizada para:
 
 Ela **não deve ser utilizada apenas para gerar respostas que serão copiadas**.
 
+Na página https://github.com/rjhalmeman/algoritmos-2026/tree/main/5%20-%20Repescagem tem as listas a serem resolvidas.
 Na página 
+
 
 ---
 
