@@ -101,16 +101,14 @@ A IA deve ser utilizada para:
 Ela **não deve ser utilizada apenas para gerar respostas que serão copiadas**.
 
 Na página https://github.com/rjhalmeman/algoritmos-2026/tree/main/5%20-%20Repescagem tem as listas a serem resolvidas.
-Na página 
-
 
 ---
 
 # Dúvidas
 
-Durante o período de férias, eventuais dúvidas poderão ser enviadas ao professor por **WhatsApp**.
+Durante o período de férias, eventuais dúvidas poderão ser enviadas ao professor por **WhatsApp**. 
 
-As respostas serão fornecidas conforme a disponibilidade do professor.
+As respostas serão fornecidas conforme a disponibilidade do professor após 03/08/2026.
 
 Antes de perguntar, procure reler o enunciado do exercício, consultar seu material de aula e tentar resolver o problema. Esse esforço faz parte do processo de aprendizagem.
 
@@ -118,11 +116,13 @@ Antes de perguntar, procure reler o enunciado do exercício, consultar seu mater
 
 # Material de Apoio
 
+Na página https://github.com/rjhalmeman/algoritmos-2026/tree/main/6%20-%20IA%20a%20seu%20favor há 3 prompts para serem usados com IA's. Eles auxiliam no aprendizado.
+
 Para auxiliar na recuperação dos conteúdos, utilize os materiais disponibilizados:
 
 - **Prompt 00** – Neurociência a seu favor.
-- **Prompt 01** – Revisão dos conteúdos e explicação dos principais conceitos;
-- **Prompt 02** – Auxílio na resolução de exercícios, revisão de lógica e esclarecimento de dúvidas.
+- **Prompt 01** – Revisão dos conteúdos e explicação dos principais conceitos - 1bimestre;
+- **Prompt 02** – Auxílio na resolução de exercícios, revisão de lógica e esclarecimento de dúvidas - 2 bimestre.
 
 Esses materiais foram preparados para orientar seus estudos e tornar o aprendizado mais eficiente.
 
@@ -134,7 +134,7 @@ A repescagem representa uma **nova oportunidade** para melhorar seu desempenho n
 
 Entretanto, essa oportunidade somente fará sentido se for aproveitada com dedicação e honestidade.
 
-O conhecimento adquirido agora será utilizado nos próximos bimestres. Portanto, não encare esta atividade apenas como uma forma de recuperar notas, mas como uma oportunidade de fortalecer sua base de conhecimentos.
+O conhecimento adquirido agora será utilizado nos próximos bimestres e anos do curso. Portanto, não encare esta atividade apenas como uma forma de recuperar notas, mas como uma oportunidade de fortalecer sua base de conhecimentos.
 
 **Estude, pratique, erre, corrija seus erros e tente novamente.** É assim que o aprendizado acontece.
 
