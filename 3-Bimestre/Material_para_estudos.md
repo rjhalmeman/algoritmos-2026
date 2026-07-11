@@ -1,6 +1,6 @@
-# Revisão e Novo Conteúdo – Algoritmos e Matrizes
+# Algoritmos e Matrizes
 
-# Resumo dos Conteúdos Estudados
+# Resumo dos Conteúdos Estudados anteriormente
 
 Ao longo da disciplina aprendemos a construir algoritmos para resolver problemas de forma organizada e lógica.
 
