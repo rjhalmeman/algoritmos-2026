@@ -36,6 +36,8 @@ Enquanto um vetor possui apenas uma sequência de posições, a matriz organiza 
 
 Na matriz, temos índices nas linhas e colunas
 
+![alt text](matriz_indices.jpeg)
+
 Podemos imaginar uma matriz como:
 
 - uma planilha do Excel;
