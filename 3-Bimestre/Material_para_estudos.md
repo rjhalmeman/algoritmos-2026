@@ -1,6 +1,6 @@
 # Algoritmos e Matrizes
 
-# Resumo dos Conteúdos Estudados anteriormente
+# Resumo dos conteúdos estudados anteriormente
 
 Ao longo da disciplina aprendemos a construir algoritmos para resolver problemas de forma organizada e lógica.
 
@@ -28,7 +28,13 @@ Esses quatro conceitos formam a base da programação e aparecem em praticamente
 
 Uma **matriz** é um **array com duas ou mais dimensões**.
 
+Um exemplo bem conhecido...
+
+![alt text](jogo-da-velha.png)
+
 Enquanto um vetor possui apenas uma sequência de posições, a matriz organiza os dados em **linhas e colunas**, semelhante a uma tabela.
+
+Na matriz, temos índices nas linhas e colunas
 
 Podemos imaginar uma matriz como:
 
