@@ -1,5 +1,7 @@
 # Repescagem – Recuperação dos Conteúdos do 1º e 2º Bimestres
 
+## Disciplina de algoritmos - Professor Radames
+
 ## Objetivo
 
 A **Repescagem** tem como objetivo oferecer aos alunos uma oportunidade de revisar os conteúdos estudados no **1º e no 2º bimestres**, utilizando o período de férias para fortalecer a aprendizagem e, consequentemente, recuperar as notas obtidas nesse período.
@@ -44,7 +46,7 @@ Uma boa apresentação facilita a correção e demonstra cuidado com a atividade
 
 Além da versão manuscrita, **todos os exercícios deverão ser implementados e testados no computador**.
 
-Os arquivos deverão ser organizados em uma pasta e enviados ao professor em formato digital, conforme orientações da disciplina.
+Os arquivos deverão ser organizados em uma pasta, compactados (zipados) e enviados ao professor em formato digital, conforme orientações da disciplina. Organize nos nomes dos arquivos da seguinte maneira. L01-Ex05-Pisos.html (lista 01, exercício 05 cujo tema envolve pisos).
 
 ---
 
@@ -59,15 +61,17 @@ Somente poderá realizar a avaliação de repescagem o aluno que entregar:
 
 O aluno que **não apresentar os exercícios** perderá o direito de realizar a avaliação de repescagem.
 
-> **Exceção:** alunos que já possuem **nota igual ou superior a 7,0** não precisam cumprir essa exigência, pois já atingiram o desempenho esperado.
+> **Exceção:** alunos que já possuem **nota igual ou superior a 7,0** não precisam cumprir essa exigência, pois já atingiram o desempenho esperado. Podem fazer a repescagem para tentar melhorar ainda mais a nota.
+
+A nota obtida na avaliação de repescagem vai substituir a menor nota bimestral (do primeiro ou do segundo bimestre).
 
 ---
 
 # Prazo de Entrega
 
-Os exercícios deverão ser entregues **na primeira semana após o retorno das aulas**, na data informada pelo professor.
+Os exercícios (manuscritos e digitais) deverão ser entregues até 17/08/2026 **na primeira semana após o retorno das aulas**.
 
-Não deixe para fazer tudo nos últimos dias. Utilize o período de férias para estudar com tranquilidade.
+Não deixe para fazer tudo nos últimos dias. Utilize o período de férias para estudar com tranquilidade. Um pouco todo dia funciona, tentar fazer todos os exercícios na última semana antes do prazo final não costuma funcionar.
 
 ---
 
@@ -77,9 +81,11 @@ Ferramentas de **Inteligência Artificial (IA)** podem ser utilizadas como apoio
 
 Lembre-se de que:
 
-- copiar respostas geradas por IA sem compreender a solução **não ajudará na hora da prova**;
+Assistir vídeos no youtube (ou similar) ou pedir para um IA explicar como se anda de bicicleta, pode ajudar a perceber os princípios básicos. Mas VOCÊ precisa pegar a bicicleta e andar com ela. Se realmente aprender, mesmo depois de muito tempo. Continuará sabendo andar de bicicleta.
+
+- copiar respostas geradas por IA sem ter tentado fazer sozinho e compreender a solução **não ajudará na hora da prova**;
 - copiar exercícios de colegas também não contribui para sua aprendizagem;
-- pedir para outra pessoa resolver e apenas copiar para o papel produz uma falsa sensação de aprendizado.
+- pedir para outra pessoa ou IA resolver e apenas copiar para o papel produz uma falsa sensação de aprendizado.
 
 O objetivo desta atividade é que **você desenvolva a capacidade de resolver os problemas sozinho**.
 
@@ -94,13 +100,15 @@ A IA deve ser utilizada para:
 
 Ela **não deve ser utilizada apenas para gerar respostas que serão copiadas**.
 
+Na página https://github.com/rjhalmeman/algoritmos-2026/tree/main/5%20-%20Repescagem tem as listas a serem resolvidas.
+
 ---
 
 # Dúvidas
 
-Durante o período de férias, eventuais dúvidas poderão ser enviadas ao professor por **WhatsApp**.
+Durante o período de férias, eventuais dúvidas poderão ser enviadas ao professor por **WhatsApp**. 
 
-As respostas serão fornecidas conforme a disponibilidade do professor.
+As respostas serão fornecidas conforme a disponibilidade do professor após 03/08/2026.
 
 Antes de perguntar, procure reler o enunciado do exercício, consultar seu material de aula e tentar resolver o problema. Esse esforço faz parte do processo de aprendizagem.
 
@@ -108,11 +116,13 @@ Antes de perguntar, procure reler o enunciado do exercício, consultar seu mater
 
 # Material de Apoio
 
+Na página https://github.com/rjhalmeman/algoritmos-2026/tree/main/6%20-%20IA%20a%20seu%20favor há 3 prompts para serem usados com IA's. Eles auxiliam no aprendizado.
+
 Para auxiliar na recuperação dos conteúdos, utilize os materiais disponibilizados:
 
 - **Prompt 00** – Neurociência a seu favor.
-- **Prompt 01** – Revisão dos conteúdos e explicação dos principais conceitos;
-- **Prompt 02** – Auxílio na resolução de exercícios, revisão de lógica e esclarecimento de dúvidas.
+- **Prompt 01** – Revisão dos conteúdos e explicação dos principais conceitos - 1bimestre;
+- **Prompt 02** – Auxílio na resolução de exercícios, revisão de lógica e esclarecimento de dúvidas - 2 bimestre.
 
 Esses materiais foram preparados para orientar seus estudos e tornar o aprendizado mais eficiente.
 
@@ -124,7 +134,7 @@ A repescagem representa uma **nova oportunidade** para melhorar seu desempenho n
 
 Entretanto, essa oportunidade somente fará sentido se for aproveitada com dedicação e honestidade.
 
-O conhecimento adquirido agora será utilizado nos próximos bimestres. Portanto, não encare esta atividade apenas como uma forma de recuperar notas, mas como uma oportunidade de fortalecer sua base de conhecimentos.
+O conhecimento adquirido agora será utilizado nos próximos bimestres e anos do curso. Portanto, não encare esta atividade apenas como uma forma de recuperar notas, mas como uma oportunidade de fortalecer sua base de conhecimentos.
 
 **Estude, pratique, erre, corrija seus erros e tente novamente.** É assim que o aprendizado acontece.
 
