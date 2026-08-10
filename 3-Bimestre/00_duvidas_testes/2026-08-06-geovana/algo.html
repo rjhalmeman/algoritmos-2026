@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Diagonal da Matriz</title>
+</head>
+
+<body>
+
+    <h2>Matriz 4x4</h2>
+
+    <script>
+
+        let matriz = [];
+
+        // Gerar e preencher a matriz com números aleatórios
+        for (let i = 0; i < 4; i++) {
+            matriz[i] = [];
+
+            for (let j = 0; j < 4; j++) {
+                matriz[i][j] = Math.floor(Math.random() * 100);
+            }
+        }
+
+        // Mostrar a matriz
+        document.write("<table border='1' cellspacing='0' cellpadding='8'>");
+
+        for (let i = 0; i < 4; i++) {
+            document.write("<tr>");
+
+            for (let j = 0; j < 4; j++) {
+                document.write("<td>" + matriz[i][j] + "</td>");
+            }
+
+            document.write("</tr>");
+        }
+
+        document.write("</table><br>");
+
+        // Função da diagonal principal
+        function somaPrincipal(m) {
+            let soma = 0;
+
+            for (let i = 0; i < 4; i++) {
+                soma += m[i][i];
+            }
+
+            return soma;
+        }
+
+        // Função da diagonal secundária
+        function somaSecundaria(m) {
+            let soma = 0;
+
+            for (let i = 0; i < 4; i++) {
+                soma += m[i][3 - i];
+            }
+
+            return soma;
+        }
+
+        document.write("Soma da diagonal principal: " + somaPrincipal(matriz) + "<br>");
+        document.write("Soma da diagonal secundária: " + somaSecundaria(matriz));
+
+    </script>
+
+</body>
+
+</html>
