@@ -1,4 +1,6 @@
-Cmd + , 
+
+
+Ctrl + , 
 
 Na barra de pesquisa no topo da página de configurações, digite 
 
