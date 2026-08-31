@@ -11,9 +11,23 @@
     <label for="inputValor">Digite um número</label>
     <input type="number" id="inputValor">
     <button type="button" onclick="adicionarValor()">Adiciona</button>
+    <button type="button" onclick="mostrarMatriz()">Mostrar Matriz</button>
+    <button type="button" onclick="mostrarTransposta()">Mostrar Transposta</button>
+    <p id="saida">Saída</p>
+    <p id="saidaProcessamento">Saída</p>
 
 
     <script>
+        //variáveis globais
+        let maxLinhas = 2;
+        let maxColunas = 3;
+        let maxElementos = maxLinhas * maxColunas;
+        let contElementos = 0;
+        let i = 0;
+        let j = 0;
+
+        let matriz = criarMatrizVazia(maxLinhas, maxColunas);
+
         function criarMatrizVazia(linhas, colunas) {
             let m = new Array(linhas);
             for (let i = 0; i < linhas; i++) {
@@ -25,19 +39,24 @@
             }
             return m;
         }
-        let maxLinhas = 2;
-        let maxColunas = 3;
-        let maxElementos = maxLinhas * maxColunas;
-        let contElementos = 0;
 
-        let matriz = criarMatrizVazia(maxLinhas, maxColunas);
+        function mostrarMatriz() {
+            let saida = imprimirMatriz();
+            document.getElementById("saida").innerText = saida;
+        }
+
+        function mostrarTransposta() {
+            let transposta = processamentoTransposta();
+            let saida = imprimirMatriz(transposta);
+            document.getElementById("saidaProcessamento").innerText = saida;
+        }
 
         function adicionarValor() {
-            let i = 0;
-            let j = 0;
-            matriz[i, j] = parseInt(document.getElementById("inputValor").value);
-            contElementos++;
-            if (contElementos > maxElementos) {
+
+            matriz[i][j] = parseInt(document.getElementById("inputValor").value);
+            contElementos++;            
+            if (contElementos >= maxElementos) {
+                mostrarMatriz();
                 alert("matriz cheia");
                 return;
             }
@@ -46,8 +65,35 @@
                 i++;
                 j = 0;
             }
+            document.getElementById("inputValor").focus();
+            document.getElementById("inputValor").select();
 
+            mostrarMatriz();
         }
+
+
+        function imprimirMatriz() {
+            let saida = "";
+            for (let i = 0; i < maxLinhas; i++) {
+                for (let j = 0; j < maxColunas; j++) {
+                    saida += matriz[i][j] + " ";
+                }
+                saida += "\n";
+            }
+            return saida;
+        }
+
+
+        function processamentoTransposta() {
+            let matrizTransposta = criarMatrizVazia(maxColunas, maxLinhas);
+            for (let i = 0; i < maxLinhas; i++) {
+                for (let j = 0; j < maxColunas; j++) {
+                    matrizTransposta[j][i] = matriz[i][j];
+                }
+            }
+            return matrizTransposta;
+        }
+
     </script>
 
 </body>
