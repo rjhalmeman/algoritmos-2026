@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados para matriz</title>
+</head>
+
+<body>
+    <label for="inputValor">Digite um número</label>
+    <input type="number" id="inputValor">
+    <button type="button" onclick="adicionarValor()">Adiciona</button>
+
+
+    <script>
+        function criarMatrizVazia(linhas, colunas) {
+            let m = new Array(linhas);
+            for (let i = 0; i < linhas; i++) {
+                let linha = new Array(colunas);
+                for (let j = 0; j < colunas; j++) {
+                    linha[j] = 0;
+                }
+                m[i] = linha;
+            }
+            return m;
+        }
+        let maxLinhas = 2;
+        let maxColunas = 3;
+        let maxElementos = maxLinhas * maxColunas;
+        let contElementos = 0;
+
+        let matriz = criarMatrizVazia(maxLinhas, maxColunas);
+
+        function adicionarValor() {
+            let i = 0;
+            let j = 0;
+            matriz[i, j] = parseInt(document.getElementById("inputValor").value);
+            contElementos++;
+            if (contElementos > maxElementos) {
+                alert("matriz cheia");
+                return;
+            }
+            j++;
+            if (j >= maxColunas) {
+                i++;
+                j = 0;
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

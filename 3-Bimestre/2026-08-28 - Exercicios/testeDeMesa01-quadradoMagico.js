@@ -64,5 +64,5 @@ function facaIsso(ordem) {
     return m;
 }
 console.clear();
-let m = facaIsso(3);
+let m = facaIsso(13);
 mostrarMatriz(m);
