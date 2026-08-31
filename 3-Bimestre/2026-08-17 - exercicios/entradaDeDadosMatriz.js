@@ -5,7 +5,7 @@ let totalLinhas = 0;
 let totalColunas = 0;
 let linhaAtual = 0;
 let colunaAtual = 0;
-let contadorTotal = 0; 
+let contadorTotal = 0;
 let inputNum = document.getElementById("inputNumero");
 
 // Função para ler os inputs de dimensão e criar a estrutura inicial da Matriz
@@ -21,15 +21,20 @@ function criarMatriz() {
 
     // Inicialização da matriz como um array de arrays (vetor de linhas)
     matriz = [];
+    
     for (let i = 0; i < totalLinhas; i++) {
-        matriz.push([]); // Cria uma linha vazia para cada índice 'i'
+        let linha = [];
+        for (let j = 0; j < totalColunas; j++) {
+            linha.push(0); // Inicializa cada elemento da matriz com zero
+        }
+        matriz.push(linha); // Cria uma linha vazia para cada índice 'i'
     }
 
     // Reseta a posição de inserção e os contadores
     linhaAtual = 0;
     colunaAtual = 0;
     contadorTotal = 0;
-   
+
     // Habilita o campo e o botão de entrada
     inputNum.disabled = false;
     document.getElementById("btnAdicionar").disabled = false;
@@ -39,10 +44,9 @@ function criarMatriz() {
     document.getElementById("spanPosicaoAtual").innerHTML = "Próxima inserção em: <b>Matriz[0][0]</b>";
     document.getElementById("outputContador").innerHTML = "0 / " + (totalLinhas * totalColunas);
     document.getElementById("resultadoSoma").innerHTML = "0";
-    document.getElementById("resultadoMedia").innerHTML = "0";
     exibirMatriz();
 
-    
+
     // Coloca o foco no input de inserção de números
     inputNum.focus();
     //seleciona o conteúdo do input para facilitar a digitação
@@ -68,6 +72,7 @@ function adicionar() {
     }
 
     // CONCEITO 2: Atribuição por coordenadas de Linha e Coluna
+    debugger;
     matriz[linhaAtual][colunaAtual] = num;
     contadorTotal++;
 
