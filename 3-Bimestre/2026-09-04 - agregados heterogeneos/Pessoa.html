@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,33 +9,28 @@
 <body>
     <input type="button" value="Listar Pessoas" onclick="listarTodasAsPessoas()">
     <span id="todasAsPessoas"></span>
-
     <script src="Pessoa.js"></script>
-
     <script>
         let listaPessoas = [];
-
         let pessoa = new Pessoa(123, "Rebeca", "2010-10-25", 1.65);
         listaPessoas.push(pessoa);
-
         pessoa = new Pessoa(124, "Sofia"," 2010-10-25", 1.65);
         listaPessoas.push(pessoa);
-
          pessoa = new Pessoa(122, "Kamily"," 2010-12-25", 1.66);
         listaPessoas.push(pessoa);
 
-        function listarTodasAsPessoas(){
-            let listagem = "<br>";
+        function mostrarListaPessoas(listaPessoas){
+             let listagem = "<br>";
             for (let i = 0; i < listaPessoas.length; i++) {
                 const linha = listaPessoas[i];
                 listagem += linha.nome+" - "+ linha.cpf
                 + " - "+ linha.dataNascimento+ "<br>"                
             }
-            document.getElementById("todasAsPessoas").innerHTML = listagem;
+            return listagem;
         }
-
-
+        function listarTodasAsPessoas(){           
+            document.getElementById("todasAsPessoas").innerHTML = mostrarListaPessoas(listaPessoas);
+        }
     </script>
 </body>
-
 </html>
