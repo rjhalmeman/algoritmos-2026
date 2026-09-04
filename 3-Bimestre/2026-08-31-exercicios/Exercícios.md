@@ -1,7 +1,7 @@
 Exercícios da aula anterior que não foram concluídos
 
-3)Implemente um algoritmo que leia uma **matriz 4x4 de números inteiros** e crie uma **função** que gere a sua **matriz transposta**.
+3)Implemente um algoritmo que LEIA uma **matriz 4x4 de números inteiros** e crie uma **função** que gere a sua **matriz transposta**.
 
 4) Crie uma **função** que gere uma **matriz identidade** de ordem N (onde o valor de **N** deve ser fornecido pelo usuário). *(Nota: A matriz identidade é uma matriz quadrada onde os elementos da diagonal principal são iguais a 1 e os demais são 0).*
 
-5) preencha uma matriz com números aleatórios de 0 a 100. Dica: Math.floor(Math.random() * 101);
+5) preencha uma matriz com dimensões informadas pelo usuário. A matriz deverá ser preenchida com números aleatórios de 0 a 100. Dica: Math.floor(Math.random() * 101);

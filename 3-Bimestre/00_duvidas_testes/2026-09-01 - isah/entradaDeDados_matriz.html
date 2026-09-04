@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>31/08/2026</title>
+</head>
+
+<body>
+    <h1>Aula do dia trinta e um de agosto de dois mil e vinte seis</h1>
+    <label for="Linhas">Quantas linhas?</label>
+    <input type="number" id="Linhas" placeholder="Insira a quantia">
+    <br>
+    <br>
+    <label for="Colunas">Quantas colunas?</label>
+    <input type="number" id="Colunas" placeholder="Insira a quantia">
+    <br>
+    <br>
+    <input type="button" value="Criar matriz" onclick="MatrizLinhaseColunas()">
+    <br>
+    <br>
+    <label for="Valores">Quais valores você quer inserir?</label>
+    <input type="number" id="Valores" placeholder="Insira os valores">
+    <br>
+    <br>
+    <input type="button" value="Inserir os valores na matriz" onclick="InserirValores()">
+    <br>
+    <p id="MostrarMatrizNaTela"></p>
+    <script>
+        let matriz = [];
+        let atLinha = 0;
+        let atColuna = 0;
+        function MatrizLinhaseColunas() {
+            let linhas = parseInt(document.getElementById("Linhas").value);
+            let colunas = parseInt(document.getElementById("Colunas").value);
+            matriz = [];
+            for (let i = 0; i < linhas; i++) {
+                let linha = [];
+                for (let j = 0; j < colunas; j++) {
+                    linha.push(0);
+                }
+                matriz.push(linha);
+            }
+        }
+        function InserirValores() {
+            let valor = parseInt(document.getElementById("Valores").value);
+            let colunas = parseInt(document.getElementById("Colunas").value);
+            matriz[atLinha][atColuna] = valor;
+            atColuna++;
+            if (atColuna == colunas) {
+                atColuna = 0;
+                atLinha++;
+            }
+            functionfinal();
+        }
+        function functionfinal() {
+            let linhas = parseInt(document.getElementById("Linhas").value);
+            let colunas = parseInt(document.getElementById("Colunas").value);
+            let matrizvisível = "";
+            for (let i = 0; i < linhas; i++) {
+                for (let j = 0; j < colunas; j++) {
+                    matrizvisível += matriz[i][j] + " ";
+                }
+                matrizvisível += "<br>";
+            }
+           return document.getElementById("MostrarMatrizNaTela").innerHTML = matrizvisível;
+        }
+    </script>
+</body>
+
+</html>
