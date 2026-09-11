@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Jogo da Velha</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background: #1e1e2f;
+    color: #fff;
+  }
+  h1 { margin-bottom: 10px; }
+  #status {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    min-height: 1.5em;
+  }
+  #tabuleiro {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    background: #444;
+    padding: 5px;
+    border-radius: 8px;
+  }
+  .celula {
+    background: #2a2a40;
+    border: none;
+    font-size: 3em;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    border-radius: 5px;
+  }
+  .celula:hover { background: #3a3a55; }
+  .celula.X { color: #4fc3f7; }
+  .celula.O { color: #ff8a65; }
+  .celula.vencedora { background: #2e7d32; }
+  #reiniciar {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background: #4fc3f7;
+    color: #1e1e2f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  #reiniciar:hover { background: #29b6f6; }
+</style>
+</head>
+<body>
+
+<h1>Jogo da Velha</h1>
+<div id="status">Vez do jogador: X</div>
+
+<div id="tabuleiro"></div>
+
+<button id="reiniciar">Reiniciar</button>
+
+<script>
+  const tabuleiro = document.getElementById("tabuleiro");
+  const status = document.getElementById("status");
+  const botaoReiniciar = document.getElementById("reiniciar");
+
+  let estado = ["", "", "", "", "", "", "", "", ""];
+  let jogadorAtual = "X";
+  let jogoAtivo = true;
+
+  const combinacoesVitoria = [
+    [0, 1, 2], [3, 4, 5], [6, 7, 8], // linhas
+    [0, 3, 6], [1, 4, 7], [2, 5, 8], // colunas
+    [0, 4, 8], [2, 4, 6]             // diagonais
+  ];
+
+  // Cria as células do tabuleiro
+  for (let i = 0; i < 9; i++) {
+    const celula = document.createElement("button");
+    celula.classList.add("celula");
+    celula.dataset.indice = i;
+    celula.addEventListener("click", jogar);
+    tabuleiro.appendChild(celula);
+  }
+
+  const celulas = document.querySelectorAll(".celula");
+
+  function jogar(evento) {
+    const indice = evento.target.dataset.indice;
+
+    if (!jogoAtivo || estado[indice] !== "") return;
+
+    estado[indice] = jogadorAtual;
+    evento.target.textContent = jogadorAtual;
+    evento.target.classList.add(jogadorAtual);
+
+    if (verificarVitoria()) {
+      status.textContent = "Jogador " + jogadorAtual + " venceu!";
+      jogoAtivo = false;
+      return;
+    }
+
+    if (estado.every(c => c !== "")) {
+      status.textContent = "Empate!";
+      jogoAtivo = false;
+      return;
+    }
+
+    jogadorAtual = jogadorAtual === "X" ? "O" : "X";
+    status.textContent = "Vez do jogador: " + jogadorAtual;
+  }
+
+  function verificarVitoria() {
+    for (const combo of combinacoesVitoria) {
+      const [a, b, c] = combo;
+      if (estado[a] && estado[a] === estado[b] && estado[a] === estado[c]) {
+        combo.forEach(i => celulas[i].classList.add("vencedora"));
+        return true;
+      }
+    }
+    return false;
+  }
+
+  function reiniciar() {
+    estado = ["", "", "", "", "", "", "", "", ""];
+    jogadorAtual = "X";
+    jogoAtivo = true;
+    status.textContent = "Vez do jogador: X";
+
+    celulas.forEach(celula => {
+      celula.textContent = "";
+      celula.classList.remove("X", "O", "vencedora");
+    });
+  }
+
+  botaoReiniciar.addEventListener("click", reiniciar);
+</script>
+
+</body>
+</html>
