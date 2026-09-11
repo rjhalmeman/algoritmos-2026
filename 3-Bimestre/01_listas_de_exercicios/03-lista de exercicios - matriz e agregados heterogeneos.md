@@ -102,14 +102,13 @@ Faça um html, com a solução de todos os exercícios. Um botão para cada exer
 
 Saída esperada (exemplo):
 
-text
-              Jovem  Adulto  Idoso  | Total
-Unimed          1      2       1    |   4
-Bradesco        1      2       1    |   4
-Amil            2      1       0    |   3
-SUS             0      2       2    |   4
------------------------------------------
-Total           4      7       4    |  15
+| Convênio | Jovem | Adulto | Idoso | **Total** |
+| :--- | :--: | :--: | :--: | :--: |
+| **Unimed** | 1 | 2 | 1 | **4** |
+| **Bradesco** | 1 | 2 | 1 | **4** |
+| **Amil** | 2 | 1 | 0 | **3** |
+| **SUS** | 0 | 2 | 2 | **4** |
+| **Total** | **4** | **7** | **4** | **15** |
 
 22. Matriz Convênio × Classificação de IMC: Construa uma matriz 4×6 cruzando: Linhas: Unimed, Bradesco, Amil, SUS.
 Colunas: Abaixo do peso, Peso normal, Sobrepeso, Obesidade I, Obesidade II, Obesidade III. Cada célula deve conter a quantidade de pacientes daquele convênio com aquela classificação de IMC. Calcule o IMC com peso / (altura * altura) e use a tabela da OMS para classificar.
