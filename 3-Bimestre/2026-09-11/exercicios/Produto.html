@@ -100,18 +100,18 @@
             }
            return pos;
         }
-
+        //06
         function mostrarprodutoMaisLeve() {
             const posMaisLeve = produtoMaisLeve(listaProdutos);
             document.getElementById("resposta").innerHTML = "Produto mais leve: " + listaProdutos[posMaisLeve].nome + " - " + listaProdutos[posMaisLeve].peso.toFixed(2) + " kg"; 
         }
 
-        //06
+        //04
           function mostrarProdutoMaisPesado() {
             document.getElementById("resposta").innerHTML = produtoMaisPesado(listaProdutos);
         }
 
-
+        //03
         function listarTodosOsProdutos() {
             document.getElementById("resposta").innerHTML = mostrarListaProdutos(listaProdutos);
         }
