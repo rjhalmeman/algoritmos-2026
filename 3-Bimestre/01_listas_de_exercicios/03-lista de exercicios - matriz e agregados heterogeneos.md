@@ -56,7 +56,7 @@ Faça um html, com a solução de todos os exercícios. Um botão para cada exer
 
 10. **Pacientes Acima de 50 Anos:** Escreva um algoritmo que percorra a lista e exiba o **nome** e a **idade** apenas dos pacientes que possuem **mais de 50 anos**.
 
-11. **Filtro por Convênio (SUS):** Crie um procedimento que liste o **nome** e o **convênio** de todos os pacientes atendidos por um convênio. Vai precisar de um input para ler o nome do convênio antes de fazer a pesquisa.
+11. **Filtro por Convênio:** Crie um procedimento que liste o **nome** e o **convênio** de todos os pacientes atendidos por um convênio. Vai precisar de um input para ler o nome do convênio antes de fazer a pesquisa.
 
 12. **Busca por Nome:** Implemente um algoritmo de pesquisa que procure um paciente pelo seu **nome** (ex: `"Marina Paiva"`). Se encontrar, exiba os dados do registro; caso contrário, exiba uma mensagem de alerta.
 
