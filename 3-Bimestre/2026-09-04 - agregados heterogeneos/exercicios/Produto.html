@@ -159,7 +159,24 @@
             document.getElementById("resposta").innerHTML = valorestoque(listaProdutos);
         }
 
-        ////
+        function funcaoBubbleSort(conj) { //com performance melhorada
+            debugger;
+            for (let topo = conj.length - 1; topo > 0; topo--) {
+                let trocou = false; // Variável para verificar se houve troca
+                for (let i = 0; i < topo; i++) {
+                    if (conj[i] > conj[i + 1]) {
+                        let bolha = conj[i];
+                        conj[i] = conj[i + 1];
+                        conj[i + 1] = bolha;
+                        trocou = true; // Marca que houve troca
+                    }
+                }
+                if (!trocou) { // Se não houve troca, o array já está ordenado
+                    break;
+                }
+            }
+            return conj;
+        }
 
 
     </script>
