@@ -16,6 +16,8 @@
     <input type="text" id="inputNomeProcurado" placeholder="Digite o nome a ser procurado">
     <input type="button" value="ex12 - Procurar por nome" onclick="mostrarProcuradoPeloNome()"><br>
 
+    <input type="button" value="ex13 - Valor acumulado" onclick="mostrarValorAcumulado()"><br>
+
     <span id="resposta"></span>
 
     <script src="Produto.js"></script>
@@ -141,6 +143,23 @@
             const nomeProcurado = document.getElementById("inputNomeProcurado").value;
             document.getElementById("resposta").innerHTML = procurarPorNome(listaProdutos, nomeProcurado);
         }
+        ////////////////////////////////////
+        //13 - colaboração da Lais
+
+        function valorestoque(listaProdutos) {
+            let resp = ""
+            for (let i = 0; i < listaProdutos.length; i++) {
+                let linha = listaProdutos[i];
+                resp += linha.nome + "- R$" + (linha.precoUnitario * linha.quantidadeEstoque).toFixed(2) + "<br>"
+            }
+
+            return resp
+        }
+        function mostrarValorAcumulado() {
+            document.getElementById("resposta").innerHTML = valorestoque(listaProdutos);
+        }
+
+        ////
 
 
     </script>
