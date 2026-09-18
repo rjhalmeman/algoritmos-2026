@@ -8,12 +8,18 @@
 </head>
 
 <body>
-    <input type="button" value="ex03 - Listar Produtos" onclick="listarTodosOsProdutos()"><br>
+    <input type="button" value="ex03 - Listar Produtos" onclick="mostrarListaComTodosOsProdutos()"><br>
     <input type="button" value="ex04 - Produto Mais Pesado" onclick="mostrarProdutoMaisPesado()"><br>
+    <input type="button" value="ex10 - Listar produtos com poucas unidades no estoque"
+        onclick="mostrarEstoqueBaixo()"><br>
+    <!-- 12 -->
+    <input type="text" id="inputNomeProcurado" placeholder="Digite o nome a ser procurado">
+    <input type="button" value="ex12 - Procurar por nome" onclick="mostrarProcuradoPeloNome()"><br>
+
     <span id="resposta"></span>
 
     <script src="Produto.js"></script>
-    
+
     <script>
         let listaProdutos = [];
         // Instanciando todos os produtos
@@ -62,7 +68,9 @@
         produto = new Produto(15, "Kimono de Jiu-Jitsu", 380.00, 1.80, 7);
         listaProdutos.push(produto);
 
-        function mostrarListaProdutos(listaProdutos) {
+
+        //01
+        function todosOsProdutos(listaProdutos) {
             let listagem = "<br>";
             listagem += "<strong>Nome | Preço Unitário </strong><br>";
             listagem += "------------------------------------------------<br>";
@@ -74,7 +82,13 @@
             return listagem;
         }
 
-        function produtoMaisPesado(listaProdutos) {   
+        function mostrarListaComTodosOsProdutos() {
+            document.getElementById("resposta").innerHTML = todosOsProdutos(listaProdutos);
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        //04
+        function produtoMaisPesado(listaProdutos) {
             let maisPesado = listaProdutos[0].peso;
             let pos = 0;
             for (let i = 1; i < listaProdutos.length; i++) {
@@ -84,16 +98,51 @@
                     pos = i;
                 }
             }
-           return "Produto mais pesado: " + listaProdutos[pos].nome + " - " + listaProdutos[pos].peso.toFixed(2) + " kg";
+            return "Produto mais pesado: " + listaProdutos[pos].nome + " - " + listaProdutos[pos].peso.toFixed(2) + " kg";
         }
-
         function mostrarProdutoMaisPesado() {
             document.getElementById("resposta").innerHTML = produtoMaisPesado(listaProdutos);
         }
 
-        function listarTodosOsProdutos() {
-            document.getElementById("resposta").innerHTML = mostrarListaProdutos(listaProdutos);
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        //10
+        function estoqueBaixo(listaProdutos) {
+            let listagem = "<br>";
+            listagem += "<strong>Nome | Preço Unitário </strong><br>";
+            listagem += "------------------------------------------------<br>";
+            for (let i = 0; i < listaProdutos.length; i++) {
+                const linha = listaProdutos[i];
+                if (linha.quantidadeEstoque < 10) {
+
+                    listagem += linha.nome + " - R$ " + linha.precoUnitario.toFixed(2) + " - " + linha.quantidadeEstoque + "<br>";
+                }
+            }
+            return listagem;
         }
+        function mostrarEstoqueBaixo() {
+            document.getElementById("resposta").innerHTML = estoqueBaixo(listaProdutos);
+        }
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        //12
+        function procurarPorNome(listaProdutos, nomeProcurado) {
+            let listagem = "<br>";
+            listagem += "<strong>Nome | Preço Unitário </strong><br>";
+            listagem += "------------------------------------------------<br>";
+            for (let i = 0; i < listaProdutos.length; i++) {
+                const linha = listaProdutos[i];
+                if (linha.nome == nomeProcurado) {
+                    listagem += linha.nome + " - R$ " + linha.precoUnitario.toFixed(2) + " - " + linha.quantidadeEstoque + "<br>";
+                }
+            }
+            return listagem;
+        }
+        function mostrarProcuradoPeloNome() {
+            const nomeProcurado = document.getElementById("inputNomeProcurado").value;
+            document.getElementById("resposta").innerHTML = procurarPorNome(listaProdutos, nomeProcurado);
+        }
+
+
     </script>
 </body>
 
