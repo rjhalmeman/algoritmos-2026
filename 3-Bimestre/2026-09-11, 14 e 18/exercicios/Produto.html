@@ -14,7 +14,7 @@
     <span id="resposta"></span>
 
     <script src="Produto.js"></script>
-    
+
     <script>
         let listaProdutos = [];
         // Instanciando todos os produtos
@@ -75,7 +75,7 @@
             return listagem;
         }
 
-        function produtoMaisPesado(listaProdutos) {   
+        function produtoMaisPesado(listaProdutos) {
             let maisPesado = listaProdutos[0].peso;
             let pos = 0;
             for (let i = 1; i < listaProdutos.length; i++) {
@@ -85,10 +85,10 @@
                     pos = i;
                 }
             }
-           return "Produto mais pesado: " + listaProdutos[pos].nome + " - " + listaProdutos[pos].peso.toFixed(2) + " kg";
+            return "Produto mais pesado: " + listaProdutos[pos].nome + " - " + listaProdutos[pos].peso.toFixed(2) + " kg";
         }
 
-         function produtoMaisLeve(listaProdutos) {   
+        function produtoMaisLeve(listaProdutos) {
             let maisLeve = listaProdutos[0].peso;
             let pos = 0;
             for (let i = 1; i < listaProdutos.length; i++) {
@@ -98,16 +98,16 @@
                     pos = i;
                 }
             }
-           return pos;
+            return pos;
         }
         //06
         function mostrarprodutoMaisLeve() {
             const posMaisLeve = produtoMaisLeve(listaProdutos);
-            document.getElementById("resposta").innerHTML = "Produto mais leve: " + listaProdutos[posMaisLeve].nome + " - " + listaProdutos[posMaisLeve].peso.toFixed(2) + " kg"; 
+            document.getElementById("resposta").innerHTML = "Produto mais leve: " + listaProdutos[posMaisLeve].nome + " - " + listaProdutos[posMaisLeve].peso.toFixed(2) + " kg";
         }
 
         //04
-          function mostrarProdutoMaisPesado() {
+        function mostrarProdutoMaisPesado() {
             document.getElementById("resposta").innerHTML = produtoMaisPesado(listaProdutos);
         }
 
@@ -115,6 +115,28 @@
         function listarTodosOsProdutos() {
             document.getElementById("resposta").innerHTML = mostrarListaProdutos(listaProdutos);
         }
+
+
+        function funcaoBubbleSort(conj) { //com performance melhorada
+            debugger;
+            for (let topo = conj.length - 1; topo > 0; topo--) {
+                let trocou = false; // Variável para verificar se houve troca
+                for (let i = 0; i < topo; i++) {
+                    if (conj[i] > conj[i + 1]) {
+                        let bolha = conj[i];
+                        conj[i] = conj[i + 1];
+                        conj[i + 1] = bolha;
+                        trocou = true; // Marca que houve troca
+                    }
+                }
+                if (!trocou) { // Se não houve troca, o array já está ordenado
+                    break;
+                }
+            }
+            return conj;
+        }
+
+
     </script>
 </body>
 
