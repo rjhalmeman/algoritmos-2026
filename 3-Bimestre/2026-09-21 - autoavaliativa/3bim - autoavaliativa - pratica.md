@@ -38,7 +38,7 @@ Isso irá filtrar diretamente a opção correta .Marque a opção Desabilite e o
     obterDistancia(origem, destino);
 
      ``` 
-3) Modele uma classe para gerenciar dados de alunos, possuindo os atributos: *RA, nome e curso*.  
+3) Modele uma classe para gerenciar dados de alunos, possuindo os atributos: **RA, nome e curso**.  
    1) Adicione inicialmente 3 alunos à sua lista.  
    2) Liste os nomes dos alunos e os cursos em que estão matriculados.   
    3) Crie uma função que receba um RA e retorne, se existir, todos os dados do aluno correspondente.  
