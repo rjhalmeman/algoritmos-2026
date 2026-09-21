@@ -12,7 +12,8 @@ Isso irá filtrar diretamente a opção correta .Marque a opção Desabilite e o
   ```js 
     
     let cidades = ["Campo Mourão", "Goioerê", "Ubiratã", "Peabiru", "Terra Boa"];
-    let matrizDistancias = [[0, 67, 83, 16, 31],[67, 0, 65, 87, 95],[83, 65, 0, 96, 102],[16, 87, 96, 0, 23],[31, 95, 102, 23, 0]];
+    let matrizDistancias = [[0, 67, 83, 16, 31],[67, 0, 65, 87, 95],[83, 65, 0, 96, 102],
+    [16, 87, 96, 0, 23],[31, 95, 102, 23, 0]];
 
     function obterDistancia(cidadeOrigem, cidadeDestino) {
         let posOrigem = -1;
