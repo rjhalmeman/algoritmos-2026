@@ -2,13 +2,13 @@
 
 1) Desabilitar IA
 
-No VSCode, pressione as teclas Ctrl , (segurar o ctrl e pressionar vírgula)  
-Na barra de pesquisa no topo da página de configurações, digite  
-@id:chat.disableAIFeatures e pressione Enter.  
-Isso irá filtrar diretamente a opção correta .Marque a opção Desabilite e oculte
+    a) No VSCode, pressione as teclas Ctrl , (segurar o ctrl e pressionar vírgula)  
+    b) Na barra de pesquisa no topo da página de configurações, digite  
+    c) @id:chat.disableAIFeatures e pressione Enter.  
+    d) Isso irá filtrar diretamente a opção correta .Marque a opção Desabilite e oculte
 …
 
-2) Faça o teste de mesa o mostre o desenvolvimento:  
+2) Faça o teste de mesa e mostre o desenvolvimento:  
   ```js 
     
     let cidades = ["Campo Mourão", "Goioerê", "Ubiratã", "Peabiru", "Terra Boa"];
