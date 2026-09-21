@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paciente</title>
+</head>
+
+<body>
+    <input type="button" value="ex03 - Listar Pacientes" onclick="mostrarTodosOsPacientes()"><br>
+    <input type="button" value="ex04 - Paciente Mais Pesado" onclick="mostrarPacienteMaisPesado()"><br>
+    <input type="button" value="exX - Lista ordenada" onclick="mostrarListaOrdenada()"><br>
+    <span id="resposta"></span>
+
+    <script src="Paciente.js"></script>
+
+    <script>
+        let listaPacientes = [];
+        // Instanciando todos os pacientes
+        let paciente = new Paciente(1, "Ana Souza", "Unimed", 34, 62.5, 1.65);
+        listaPacientes.push(paciente);
+
+        paciente = new Paciente(2, "Bruno Lima", "Amil", 45, 88.0, 1.78);
+        listaPacientes.push(paciente);
+
+        paciente = new Paciente(3, "Carla Dias", "SUS", 28, 55.0, 1.60);
+        listaPacientes.push(paciente);
+
+        paciente = new Paciente(4, "Diego Rocha", "Amil", 52, 95.5, 1.82);
+        listaPacientes.push(paciente);
+
+        paciente = new Paciente(5, "Elisa Martins", "Unimed", 19, 50.0, 1.58);
+        listaPacientes.push(paciente);
+
+        paciente = new Paciente(6, "Fábio Nunes", "SUS", 61, 78.0, 1.70);
+        listaPacientes.push(paciente);
+
+        paciente = new Paciente(7, "Gisele Alves", "Bradesco", 37, 68.0, 1.66);
+        listaPacientes.push(paciente);
+
+        paciente = new Paciente(8, "Hugo Prado", "Amil", 24, 82.0, 1.85);
+        listaPacientes.push(paciente);
+
+        paciente = new Paciente(9, "Isabel Costa", "Unimed", 48, 70.5, 1.63);
+        listaPacientes.push(paciente);
+
+        paciente = new Paciente(10, "João Vilela", "SUS", 55, 90.0, 1.75);
+        listaPacientes.push(paciente);
+
+        paciente = new Paciente(11, "Karen Melo", "Bradesco", 31, 58.0, 1.62);
+        listaPacientes.push(paciente);
+
+        paciente = new Paciente(12, "Lucas Reis", "Amil", 42, 75.0, 1.72);
+        listaPacientes.push(paciente);
+
+        paciente = new Paciente(13, "Marina Paiva", "Unimed", 29, 60.0, 1.68);
+        listaPacientes.push(paciente);
+
+        paciente = new Paciente(14, "Nelson Braga", "SUS", 67, 85.0, 1.74);
+        listaPacientes.push(paciente);
+
+        paciente = new Paciente(15, "Olívia Ferraz", "Bradesco", 22, 53.0, 1.60);
+        listaPacientes.push(paciente);
+    </script>
+
+    <script>
+
+        //exercício 03
+        function listarPacientes(lista) {
+            let listagem = "";
+            listagem += "<strong>Nome | Convênio | Idade</strong><br>";
+            listagem += "----------------------------------------<br>";
+            for (let i = 0; i < lista.length; i++) {
+                const linha = lista[i];
+                listagem += i + " - " + linha.nome + " - " + linha.convenio + " - " + linha.idade + " anos<br>";
+            }
+            return listagem;
+        }
+
+        function mostrarTodosOsPacientes() {
+            document.getElementById("resposta").innerHTML = listarPacientes(listaPacientes);
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //exercício 04
+
+        function pacienteMaisPesado(lista) {
+            let maisPesado = lista[0].peso;
+            let pos = 0;
+            for (let i = 1; i < lista.length; i++) {
+                if (lista[i].peso > maisPesado) {
+                    maisPesado = lista[i].peso;
+                    pos = i;
+                }
+            }
+            return pos;
+        }
+
+        function mostrarPacienteMaisPesado() {
+            const pos = pacienteMaisPesado(listaPacientes);
+            const p = listaPacientes[pos];
+            document.getElementById("resposta").innerHTML =
+                "Paciente mais pesado: <strong>" + p.nome +
+                "</strong> — " + p.peso + " kg (convênio: " + p.convenio + ")";
+        }
+
+
+
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //função auxiliar
+        function bubbleSortConvenio(lista) {
+            // cópia  da lista - reservar o espaço e preservar a lista original
+            let novaLista = [];
+            for (let i = 0; i < lista.length; i++) {
+                novaLista[i] = lista[i];
+            }
+            let n = novaLista.length;
+
+            for (let i = 0; i < n - 1; i++) {
+                for (let j = 0; j < n - i - 1; j++) {
+                    if (novaLista[j].convenio > novaLista[j + 1].convenio) {
+                        let temp = novaLista[j];
+                        novaLista[j] = novaLista[j + 1];
+                        novaLista[j + 1] = temp;
+                    }
+                }
+            }
+            return novaLista;
+        }
+
+
+        // mostrar lista ordenada
+        function mostrarListaOrdenada() {
+            let listaOrdenadaPorConvenio = bubbleSortConvenio(listaPacientes);
+            document.getElementById("resposta").innerHTML = listarPacientes(listaOrdenadaPorConvenio);
+        }
+
+    </script>
+
+</body>
+
+</html>
