@@ -6,7 +6,6 @@
     b) Na barra de pesquisa no topo da página de configurações, digite  
     c) @id:chat.disableAIFeatures e pressione Enter.  
     d) Isso irá filtrar diretamente a opção correta .Marque a opção Desabilite e oculte
-…
 
 2) Faça o teste de mesa e mostre o desenvolvimento:  
   ```js 
@@ -39,8 +38,8 @@
 
      ``` 
 3) Modele uma classe para gerenciar dados de alunos, possuindo os atributos: **RA, nome e curso**.  
-   1) Adicione inicialmente 3 alunos à sua lista.  
-   2) Liste os nomes dos alunos e os cursos em que estão matriculados.   
-   3) Crie uma função que receba um RA e retorne, se existir, todos os dados do aluno correspondente.  
-   4) Crie uma função que pegue a lista atual e a retorne classificada em ordem crescente pelo nome dos alunos.
+   a) Adicione inicialmente 3 alunos à sua lista.  
+   b) Liste os nomes dos alunos e os cursos em que estão matriculados.   
+   c) Crie uma função que receba um RA e retorne, se existir, todos os dados do aluno correspondente.  
+   d) Crie uma função que pegue a lista atual e a retorne classificada em ordem crescente pelo nome dos alunos.
 
