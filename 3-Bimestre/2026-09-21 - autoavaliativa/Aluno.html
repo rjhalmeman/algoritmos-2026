@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluno</title>
+</head>
+
+<body>
+    <input type="button" value="b - Listar Alunos e Cursos" onclick="mostrarListaComTodosOsAlunos()"><br>
+
+    <!-- c -->
+    <input type="text" id="inputRaProcurado" placeholder="Digite o RA a ser procurado">
+    <input type="button" value="c - Procurar por RA" onclick="mostrarProcuradoPeloRA()"><br>
+
+    <input type="button" value="d - Ordenar por nome" onclick="mostrarAlunosOrdenados()"><br>
+
+    <span id="resposta"></span>
+
+    <script src="Aluno.js"></script>
+
+    <script>
+        let listaAlunos = [];
+
+        // Instanciando 3 alunos
+        let aluno = new Aluno(1001, "Maria Silva", "Engenharia de Software");
+        listaAlunos.push(aluno);
+
+        aluno = new Aluno(1002, "João Souza", "Ciência da Computação");
+        listaAlunos.push(aluno);
+
+        aluno = new Aluno(1003, "Ana Costa", "Sistemas de Informação");
+        listaAlunos.push(aluno);
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        //b
+        function todosOsAlunos(listaAlunos) {
+            let listagem = "<br>";
+            listagem += "<strong>Nome | Curso </strong><br>";
+            listagem += "------------------------------------------------<br>";
+            for (let i = 0; i < listaAlunos.length; i++) {
+                const linha = listaAlunos[i];
+                listagem += linha.ra + " - "+linha.nome + " - " + linha.curso + "<br>";
+            }
+            return listagem;
+        }
+
+        function mostrarListaComTodosOsAlunos() {
+            document.getElementById("resposta").innerHTML = todosOsAlunos(listaAlunos);
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        //c
+        function procurarPorRA(listaAlunos, raProcurado) {
+            for (let i = 0; i < listaAlunos.length; i++) {
+                const linha = listaAlunos[i];
+                if (linha.ra == raProcurado) {
+                    return "RA: " + linha.ra + "<br>" +
+                           "Nome: " + linha.nome + "<br>" +
+                           "Curso: " + linha.curso;
+                }
+            }
+            return "Aluno com RA " + raProcurado + " não encontrado.";
+        }
+
+        function mostrarProcuradoPeloRA() {
+            const raProcurado = document.getElementById("inputRaProcurado").value;
+            document.getElementById("resposta").innerHTML = procurarPorRA(listaAlunos, raProcurado);
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        //d - Bubble Sort otimizado por nome
+        function funcaoBubbleSortPorNome(conj) {
+            for (let topo = conj.length - 1; topo > 0; topo--) {
+                let trocou = false;
+                for (let i = 0; i < topo; i++) {
+                    if (conj[i].nome > conj[i + 1].nome) {
+                        let bolha = conj[i];
+                        conj[i] = conj[i + 1];
+                        conj[i + 1] = bolha;
+                        trocou = true;
+                    }
+                }
+                if (!trocou) {
+                    break;
+                }
+            }
+            return conj;
+        }
+
+        function mostrarAlunosOrdenados() {
+            // Cria uma cópia para não alterar a lista original
+            let copia = listaAlunos.slice();
+            let ordenados = funcaoBubbleSortPorNome(copia);
+
+            let listagem = "<br>";
+            listagem += "<strong>Nome | Curso (ordenado por nome) </strong><br>";
+            listagem += "------------------------------------------------<br>";
+            for (let i = 0; i < ordenados.length; i++) {
+                const linha = ordenados[i];
+                listagem += linha.nome + " - " + linha.curso + "<br>";
+            }
+            document.getElementById("resposta").innerHTML = listagem;
+        }
+    </script>
+</body>
+
+</html>
