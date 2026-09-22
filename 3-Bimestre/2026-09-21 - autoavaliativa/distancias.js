@@ -25,6 +25,6 @@ function obterDistancia(cidadeOrigem, cidadeDestino) {
         console.log("Erro: Cidade não encontrada.");
     }
 }
-let origem = 'Ubiratã'; // o professor pode solicitar outros dados de origem e destino
-let destino = 'Terra Boa';
+let origem = 'Peabiru'; // o professor pode solicitar outros dados de origem e destino
+let destino = 'Goioerê';
 obterDistancia(origem, destino);
