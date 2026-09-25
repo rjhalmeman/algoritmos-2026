@@ -11,6 +11,7 @@
     <input type="button" value="ex03 - Listar Pacientes" onclick="mostrarTodosOsPacientes()"><br>
     <input type="button" value="ex04 - Paciente Mais Pesado" onclick="mostrarPacienteMaisPesado()"><br>
     <input type="button" value="exX - Lista ordenada" onclick="mostrarListaOrdenada()"><br>
+    <input type="button" value="exY - Lista de convenios" onclick="mostrarConvenios()"><br>
     <span id="resposta"></span>
 
     <script src="Paciente.js"></script>
@@ -27,7 +28,7 @@
         paciente = new Paciente(3, "Carla Dias", "SUS", 28, 55.0, 1.60);
         listaPacientes.push(paciente);
 
-        paciente = new Paciente(4, "Diego Rocha", "Amil", 52, 95.5, 1.82);
+        paciente = new Paciente(4, "Diego Rocha", "Prever", 52, 95.5, 1.82);
         listaPacientes.push(paciente);
 
         paciente = new Paciente(5, "Elisa Martins", "Unimed", 19, 50.0, 1.58);
@@ -105,7 +106,31 @@
                 "</strong> — " + p.peso + " kg (convênio: " + p.convenio + ")";
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //função auxiliar
 
+        function conveniosNaLista(lista) {
+            let listaOrdenada = bubbleSortConvenio(lista);
+            let vetorConvenios = [];
+
+            if (listaOrdenada.length === 0) {
+                return vetorConvenios;
+            }
+
+            for (let i = 0; i < listaOrdenada.length; i++) {
+                // Se for o primeiro elemento OU for diferente do anterior, adiciona
+                if (i === 0 || listaOrdenada[i].convenio !== listaOrdenada[i - 1].convenio) {
+                    vetorConvenios.push(listaOrdenada[i].convenio);
+                }
+            }
+
+            return vetorConvenios;
+        }
+
+        function mostrarConvenios() {
+            let conv = conveniosNaLista(listaPacientes);
+            document.getElementById("resposta").innerHTML = conv;
+        }
 
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////
