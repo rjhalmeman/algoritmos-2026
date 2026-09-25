@@ -1,0 +1,1 @@
+[Lista de exercícios - matriz e agregados](https://github.com/rjhalmeman/algoritmos-2026/blob/main/3-Bimestre/01_listas_de_exercicios/03-lista%20de%20exercicios%20-%20matriz%20e%20agregados%20heterogeneos.md)
