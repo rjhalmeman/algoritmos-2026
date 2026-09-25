@@ -11,7 +11,12 @@
     <input type="button" value="ex03 - Listar Pacientes" onclick="mostrarTodosOsPacientes()"><br>
     <input type="button" value="ex04 - Paciente Mais Pesado" onclick="mostrarPacienteMaisPesado()"><br>
     <input type="button" value="exX - Lista ordenada" onclick="mostrarListaOrdenada()"><br>
-    <input type="button" value="exY - Lista de convenios" onclick="mostrarConvenios()"><br>
+    <input type="button" value="exY - Lista de convênios" onclick="mostrarConvenios()"><br>
+    <input type="button" value="exZ - Contar por convênio" onclick="mostrarContagemPorConvenio()"><br>
+
+
+
+
     <span id="resposta"></span>
 
     <script src="Paciente.js"></script>
@@ -132,6 +137,30 @@
             document.getElementById("resposta").innerHTML = conv;
         }
 
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //função auxiliar    
+        function contarPorConvenio(lista) {
+            let vetorConvenios = conveniosNaLista(lista)
+            let resp = [];
+            for (let i = 0; i < vetorConvenios.length; i++) {
+                let cont = 0;
+                for (let k = 0; k < lista.length; k++) {
+                    if (vetorConvenios[i] == lista[k].convenio) {
+                        cont++;
+                    }
+                }
+                resp.push(vetorConvenios[i] + " - " + cont);
+
+            }
+            return resp;
+        }
+
+
+        function mostrarContagemPorConvenio() {
+            let r = contarPorConvenio(listaPacientes);
+            document.getElementById("resposta").innerHTML = r;
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //função auxiliar
