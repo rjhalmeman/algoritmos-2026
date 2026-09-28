@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veículos</title>
+</head>
+
+<body>
+    <input type="button" value="ex03 - Listar Veículos" onclick="mostrarTodosOsVeiculos()"><br>
+    <input type="button" value="ex04 - Buscar por Placa" onclick="mostrarVeiculoPorPlaca()"><br>
+    <input type="button" value="ex05 - Lista ordenada por Modelo" onclick="mostrarListaOrdenada()"><br>
+    <br>
+    <span id="resposta"></span>
+    <script src="Veiculo.js"></script>
+    <script>
+        // FROTA       
+        let frota = [];
+        // Adicionando 3 veículos à frota
+        let veiculo = new Veiculo("ABC-1234", "Civic", 2020, "Honda"); frota.push(veiculo);
+        veiculo = new Veiculo("DEF-5678", "Corolla", 2022, "Toyota"); frota.push(veiculo);
+        veiculo = new Veiculo("GHI-9012", "Onix", 2021, "Chevrolet"); frota.push(veiculo);
+
+        // EXERCÍCIO C      // Listar todos os atributos de todos os veículos       
+        function listarVeiculos(lista) {
+            let listagem = "";
+            for (let i = 0; i < lista.length; i++) {
+                listagem += "<strong>Veículo " + (i + 1) + "</strong><br>"; listagem += "Placa: " + lista[i].placa + "<br>"; listagem += "Modelo: " + lista[i].modelo + "<br>"; listagem += "Ano de fabricação: " + lista[i].anoFabricacao + "<br>"; listagem += "Marca: " + lista[i].marca + "<br>"; listagem += "<br>";
+            }
+            return listagem;
+        }
+
+        function mostrarTodosOsVeiculos() {
+            document.getElementById("resposta").innerHTML = listarVeiculos(frota);
+        }
+
+        // EXERCÍCIO D      // Recebe uma placa e retorna o veículo       
+        function buscarVeiculoPorPlaca(lista, placa) {
+            for (let i = 0; i < lista.length; i++) {
+                if (lista[i].placa == placa) { return lista[i]; }
+            }
+            return null;
+        }
+
+        function mostrarVeiculoPorPlaca() {
+            let placa = prompt("Digite a placa do veículo:");
+            let veiculo = buscarVeiculoPorPlaca(frota, placa);
+            if (veiculo != null) {
+                document.getElementById("resposta").innerHTML = "Placa: " + veiculo.placa + "<br>" + "Modelo: " + veiculo.modelo + "<br>" + "Ano de fabricação: " + veiculo.anoFabricacao + "<br>" + "Marca: " + veiculo.marca;
+            } else {
+                document.getElementById("resposta").innerHTML = "Veículo não encontrado.";
+            }
+        }
+
+        // EXERCÍCIO E      // Bubble Sort melhorado      // Ordenar pelo modelo       
+        function bubbleSortModelo(lista) {
+            // Cria uma cópia da lista          // para não alterar a frota original
+            let novaLista = [];
+            for (let i = 0; i < lista.length; i++) { novaLista[i] = lista[i]; }
+            let n = novaLista.length;
+            // Bubble Sort
+            for (let i = 0; i < n - 1; i++) {
+                let houveTroca = false;
+                for (let j = 0; j < n - i - 1; j++) {
+                    if (novaLista[j].modelo > novaLista[j + 1].modelo) {
+                        let temp = novaLista[j];
+                        novaLista[j] = novaLista[j + 1];
+                        novaLista[j + 1] = temp;
+                        houveTroca = true;
+                    }
+                }
+                // Bubble Sort melhorado:              // se não houve troca, a lista já está ordenada
+                if (houveTroca == false) { break; }
+            }
+            return novaLista;
+        }
+
+        function mostrarListaOrdenada() {
+            let listaOrdenada = bubbleSortModelo(frota);
+            document.getElementById("resposta").innerHTML = listarVeiculos(listaOrdenada);
+        }
+    </script>
+
+</body>
+
+</html>
