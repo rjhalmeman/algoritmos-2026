@@ -35,7 +35,7 @@
 
     <button onclick="IMCclass()">13 - IMC e classificação</button><br>
     <button onclick="Sobrepeso()">14 - Filtrar Pacientes Sobrepeso</button><br>
-    <button onclick="porcentagemConvenios()">15 - Contagem de pacientes por convênio</button><br>
+    <button onclick="contagemDePacientesPorConvenio()">15 - Contagem de pacientes por convênio</button><br>
 
 
     <p id="resp"></p>
@@ -346,10 +346,9 @@
 
      
 
-        function porcentagemConvenios() {
+        function contagemDePacientesPorConvenio() {
             let vetorComConveniosNaLista = conveniosNaLista(listaPacientes);
-            let  aux  = vetorComConveniosNaLista + "<br><br>"
-            
+            let  aux  = vetorComConveniosNaLista + "<br><br>";            
             for (let i = 0; i < vetorComConveniosNaLista.length; i++) {
                 //para cada um dos convenios
                 let cont = 0;
