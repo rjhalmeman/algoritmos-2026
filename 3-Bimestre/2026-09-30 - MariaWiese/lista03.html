@@ -37,6 +37,9 @@
     <button onclick="Sobrepeso()">14 - Filtrar Pacientes Sobrepeso</button><br>
     <button onclick="contagemDePacientesPorConvenio()">15 - Contagem de pacientes por convênio</button><br>
     <button onclick="contagemDePacientesPorFaixaEtaria()">17 - Contagem de pacientes por faixa etária</button><br>
+    <button onclick="ordenadoPorIdade()">19 - Ordenado por idade</button><br>
+
+    
 
 
 
@@ -82,6 +85,7 @@
 
             criarConvenios();
         }
+
 
         function Exibir() {
             let aux = "<table border='1'>";
@@ -321,6 +325,27 @@
             return novaLista;
         }
 
+          ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //função auxiliar
+        function bubbleSortIdade(lista) {
+            // cópia  da lista - reservar o espaço e preservar a lista original
+            let novaLista = [];
+            for (let i = 0; i < lista.length; i++) {
+                novaLista[i] = lista[i];
+            }
+            let n = novaLista.length;
+
+            for (let i = 0; i < n - 1; i++) {
+                for (let j = 0; j < n - i - 1; j++) {
+                    if (novaLista[j].idade > novaLista[j + 1].idade) {
+                        let temp = novaLista[j];
+                        novaLista[j] = novaLista[j + 1];
+                        novaLista[j + 1] = temp;
+                    }
+                }
+            }
+            return novaLista;
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //função auxiliar
@@ -366,11 +391,8 @@
             document.getElementById("resp").innerHTML = aux;
         }
 
-         function contarPorFaixa(lista) {
-            
+         function contarPorFaixa(lista) {            
             let contPorFaixa = [0, 0, 0];
-
-
             //para cada um dos convenios
             for (let k = 0; k < lista.length; k++) {
                 if (lista[k].idade < 30) {
@@ -381,7 +403,6 @@
                     contPorFaixa[2]++;
                 }
             }
-
            return contPorFaixa;
         }
 
@@ -393,6 +414,17 @@
             for (let i = 0; i < vetorComFaixasEtarias.length; i++) {
                 aux += vetorComFaixasEtarias[i] + " possui " + contPorFaixa[i] + " pacientes <br>";
             }
+            document.getElementById("resp").innerHTML = aux;
+        }
+
+
+        function ordenadoPorIdade() {
+            let aux = "Ordenado por idade <br><br>";
+            const lista = bubbleSortIdade(listaPacientes);
+            for (let i = 0; i < lista.length; i++) {
+                aux += lista[i].nome + " - " + lista[i].idade + "<br>";
+            }
+
             document.getElementById("resp").innerHTML = aux;
         }
 
