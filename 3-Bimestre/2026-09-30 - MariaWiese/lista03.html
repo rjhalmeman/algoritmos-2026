@@ -36,6 +36,10 @@
     <button onclick="IMCclass()">13 - IMC e classificação</button><br>
     <button onclick="Sobrepeso()">14 - Filtrar Pacientes Sobrepeso</button><br>
     <button onclick="contagemDePacientesPorConvenio()">15 - Contagem de pacientes por convênio</button><br>
+    <button onclick="contagemDePacientesPorFaixaEtaria()">17 - Contagem de pacientes por faixa etária</button><br>
+
+
+
 
 
     <p id="resp"></p>
@@ -344,23 +348,47 @@
             document.getElementById("resp").innerHTML = conv;
         }
 
-     
+
 
         function contagemDePacientesPorConvenio() {
             let vetorComConveniosNaLista = conveniosNaLista(listaPacientes);
-            let  aux  = vetorComConveniosNaLista + "<br><br>";            
+            let aux = vetorComConveniosNaLista + "<br><br>";
             for (let i = 0; i < vetorComConveniosNaLista.length; i++) {
                 //para cada um dos convenios
                 let cont = 0;
                 for (let k = 0; k < listaPacientes.length; k++) {
-                    if (listaPacientes[k].convenio==vetorComConveniosNaLista[i]) {
+                    if (listaPacientes[k].convenio == vetorComConveniosNaLista[i]) {
                         cont++;
-                    }                    
+                    }
                 }
-                aux+=vetorComConveniosNaLista[i]+" possui "+ cont + " pacientes <br>";                
+                aux += vetorComConveniosNaLista[i] + " possui " + cont + " pacientes <br>";
             }
             document.getElementById("resp").innerHTML = aux;
         }
+
+
+        function contagemDePacientesPorFaixaEtaria() {
+            let vetorComFaixasEtarias = ["Jovem", "Adulto", "Idoso"]
+            let contPorFaixa = [0, 0, 0];
+
+            //para cada um dos convenios
+            for (let k = 0; k < listaPacientes.length; k++) {
+                if (listaPacientes[k].idade < 30) {
+                    contPorFaixa[0]++;
+                } else if (listaPacientes[k].idade < 60) {
+                    contPorFaixa[1]++;
+                } else {
+                    contPorFaixa[2]++;
+                }
+            }
+
+            let aux = vetorComFaixasEtarias + "<br><br>";
+            for (let i = 0; i < vetorComFaixasEtarias.length; i++) {
+                aux += vetorComFaixasEtarias[i] + " possui " + contPorFaixa[i] + " pacientes <br>";
+            }
+            document.getElementById("resp").innerHTML = aux;
+        }
+
 
     </script>
 </body>
