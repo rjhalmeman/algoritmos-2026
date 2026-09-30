@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convênios</title>
+</head>
+
+<body>
+    <script src="Paciente.js"></script>
+    <h1>Lista de exercícios 03 - Maria Wiese</h1>
+    <h3>Ajustes feitos por Prof. Radames</h3><br>
+    <button id="iniciar" onclick="iniciar()">2 - Iniciar e popular vetor</button><br>
+    <button onclick="NomeIdade()">3 - Listagem nome e idade</button><br>
+    <button onclick="Exibir()">Extra - Exibir tabela</button><br>
+    <button onclick="MaisVelho()">4 - Paciente mais velho</button><br>
+    <button onclick="MaisNovo()">5 - Paciente mais novo</button><br>
+    <button onclick="Pesado()">6 - Paciente mais pesado</button><br>
+    <button onclick="Leve()">7 - Paciente mais leve</button><br>
+    <button onclick="MediaIdades()">8 - Média das idades</button><br>
+    <button onclick="MediaPesos()">9 - Média dos pesos</button><br>
+    <button onclick="acima50()">10 - Pacientes acima de 50 anos</button><br>
+
+    <label>Digite o convênio:</label>
+    <input type="text" id="convenio">
+    <button onclick="filtroConvenio()">11 - Filtro por convênio</button><br>
+    <br>
+
+    <label>Digite o nome:</label>
+    <input type="text" id="nomebusc">
+    <button onclick="buscaNome()">12 - Filtro por convênio</button>
+
+    <br><br>
+
+    <button onclick="IMCclass()">13 - IMC e classificação</button><br>
+    <button onclick="Sobrepeso()">14 - Filtrar Pacientes Sobrepeso</button><br>
+    <button onclick="porcentagemConvenios()">15 - Contagem de pacientes por convênio</button><br>
+
+
+    <p id="resp"></p>
+
+    <script>
+        let listaPacientes = [];
+        let listaimc = [];
+        let abaixo = "";
+        let normal = "";
+        let sobrepeso = "";
+        let obesidade1 = "";
+        let obesidade2 = "";
+        let obesidade3 = "";
+        let convenios = [];
+
+        iniciar(); // inicia sem precisar clicar no botão
+
+
+        function iniciar() {
+            if (listaPacientes.length > 0) {
+                alert("O vetor já foi preenchido!");
+                return;
+            }
+
+            listaPacientes.push(new Paciente(1, "Ana Souza", "Unimed", 34, 62.5, 1.65));
+            listaPacientes.push(new Paciente(2, "Bruno Lima", "Bradesco", 45, 88.0, 1.78));
+            listaPacientes.push(new Paciente(3, "Carla Dias", "SUS", 28, 55.0, 1.6));
+            listaPacientes.push(new Paciente(4, "Diego Rocha", "Amil", 52, 95.5, 1.82));
+            listaPacientes.push(new Paciente(5, "Elisa Martins", "Unimed", 19, 50.0, 1.58));
+            listaPacientes.push(new Paciente(6, "Fábio Nunes", "SUS", 61, 78.0, 1.7));
+            listaPacientes.push(new Paciente(7, "Gisele Alves", "Bradesco", 37, 68.0, 1.66));
+            listaPacientes.push(new Paciente(8, "Hugo Prado", "Amil", 24, 82.0, 1.85));
+            listaPacientes.push(new Paciente(9, "Isabel Costa", "Unimed", 48, 70.5, 1.63));
+            listaPacientes.push(new Paciente(10, "João Vilela", "SUS", 55, 90.0, 1.75));
+            listaPacientes.push(new Paciente(11, "Karen Melo", "Bradesco", 31, 58.0, 1.62));
+            listaPacientes.push(new Paciente(12, "Lucas Reis", "Amil", 42, 75.0, 1.72));
+            listaPacientes.push(new Paciente(13, "Marina Paiva", "Unimed", 29, 60.0, 1.68));
+            listaPacientes.push(new Paciente(14, "Nelson Braga", "SUS", 67, 85.0, 1.74));
+            listaPacientes.push(new Paciente(15, "Olívia Ferraz", "Bradesco", 22, 53.0, 1.6));
+
+            criarConvenios();
+        }
+
+        function Exibir() {
+            let aux = "<table border='1'>";
+
+            aux += "<tr>";
+            aux += "<th>ID</th>";
+            aux += "<th>Nome</th>";
+            aux += "<th>Convênio</th>";
+            aux += "<th>Idade</th>";
+            aux += "<th>Peso</th>";
+            aux += "<th>Altura</th>";
+            aux += "</tr>";
+
+            for (let i = 0; i < listaPacientes.length; i++) {
+                aux += "<tr>";
+                aux += "<td>" + listaPacientes[i].id + "</td>";
+                aux += "<td>" + listaPacientes[i].nome + "</td>";
+                aux += "<td>" + listaPacientes[i].convenio + "</td>";
+                aux += "<td>" + listaPacientes[i].idade + "</td>";
+                aux += "<td>" + listaPacientes[i].peso + "</td>";
+                aux += "<td>" + listaPacientes[i].altura + "</td>";
+                aux += "</tr>";
+            }
+
+            aux += "</table>";
+            document.getElementById("resp").innerHTML = aux;
+        }
+
+        function NomeIdade() {
+            let aux = "";
+
+            for (let i = 0; i < listaPacientes.length; i++) {
+                aux += "Nome: " + listaPacientes[i].nome + "<br>";
+                aux += "Idade: " + listaPacientes[i].idade + "<br><br>";
+            }
+
+            document.getElementById("resp").innerHTML = aux;
+        }
+
+        function MaisVelho() {
+            let velho = listaPacientes[0].idade;
+            let aux = "";
+
+            for (let i = 0; i < listaPacientes.length; i++) {
+                if (listaPacientes[i].idade > velho) {
+                    velho = listaPacientes[i].idade;
+                    aux = "O paciente " + listaPacientes[i].nome + " é o mais velho, com " + velho + " anos.";
+                }
+            }
+
+            document.getElementById("resp").innerHTML = aux;
+        }
+
+        function MaisNovo() {
+            let novo = listaPacientes[0].idade;
+            let aux = "";
+
+            for (let i = 0; i < listaPacientes.length; i++) {
+                if (listaPacientes[i].idade < novo) {
+                    novo = listaPacientes[i].idade;
+                    aux = "O paciente " + listaPacientes[i].nome + " é o mais novo, com " + novo + " anos.";
+                }
+            }
+
+            document.getElementById("resp").innerHTML = aux;
+        }
+
+        function Pesado() {
+            let pesado = listaPacientes[0].peso;
+            let aux = "";
+
+            for (let i = 0; i < listaPacientes.length; i++) {
+                if (listaPacientes[i].peso > pesado) {
+                    pesado = listaPacientes[i].peso;
+                    aux = "O paciente " + listaPacientes[i].nome + " é o mais pesado, com " + pesado + " quilos.";
+                }
+            }
+
+            document.getElementById("resp").innerHTML = aux;
+        }
+
+        function Leve() {
+            let leve = listaPacientes[0].peso;
+            let aux = "";
+
+            for (let i = 0; i < listaPacientes.length; i++) {
+                if (listaPacientes[i].peso < leve) {
+                    leve = listaPacientes[i].peso;
+                    aux = "O paciente " + listaPacientes[i].nome + " é o mais leve, com " + leve + " quilos.";
+                }
+            }
+
+            document.getElementById("resp").innerHTML = aux;
+        }
+
+        function MediaIdades() {
+            let aux = 0;
+            let num = 0;
+
+            for (let i = 0; i < listaPacientes.length; i++) {
+                aux += listaPacientes[i].idade;
+                num++;
+            }
+
+            let media = aux / num;
+            document.getElementById("resp").innerHTML = media;
+        }
+
+        function MediaPesos() {
+            let aux = 0;
+            let num = 0;
+
+            for (let i = 0; i < listaPacientes.length; i++) {
+                aux += listaPacientes[i].peso;
+                num++;
+            }
+
+            let media = aux / num;
+            document.getElementById("resp").innerHTML = media.toFixed(2);
+        }
+
+        function acima50() {
+            let aux = "";
+
+            for (let i = 0; i < listaPacientes.length; i++) {
+                if (listaPacientes[i].idade > 50) {
+                    aux += listaPacientes[i].nome + " - " + listaPacientes[i].idade + "<br><br>";
+                }
+            }
+
+            document.getElementById("resp").innerHTML = aux;
+        }
+
+        function filtroConvenio() {
+            let convenio = document.getElementById("convenio").value;
+            let aux = "";
+
+            for (let i = 0; i < listaPacientes.length; i++) {
+                if (listaPacientes[i].convenio.toLowerCase() == convenio.toLowerCase()) {
+                    aux += "Nome: " + listaPacientes[i].nome + "<br>";
+                    aux += "Convênio: " + listaPacientes[i].convenio + "<br><br>";
+                }
+            }
+
+            document.getElementById("resp").innerHTML = aux;
+        }
+
+        function buscaNome() {
+            let nome = document.getElementById("nomebusc").value;
+            let aux = "";
+            let pacienteEncontrado;
+
+            for (let i = 0; i < listaPacientes.length; i++) {
+                if (listaPacientes[i].nome.toLowerCase() == nome.toLowerCase()) {
+                    pacienteEncontrado = listaPacientes[i];
+                }
+            }
+
+            if (pacienteEncontrado != undefined) {
+                aux += "Id: " + pacienteEncontrado.id + "<br>";
+                aux += "Nome: " + pacienteEncontrado.nome + "<br>";
+                aux += "Convênio: " + pacienteEncontrado.convenio + "<br>";
+                aux += "Idade: " + pacienteEncontrado.idade + "<br>";
+                aux += "Peso: " + pacienteEncontrado.peso + "<br>";
+                aux += "Altura: " + pacienteEncontrado.altura;
+            } else {
+                alert("ERRO, esse nome não está na tabela");
+            }
+
+            document.getElementById("resp").innerHTML = aux;
+        }
+
+        function IMC(peso, altura) {
+            return peso / altura ** 2;
+        }
+
+        function classificarPorIMC(imc) {
+            let resp = "";
+            if (imc < 18.5) {
+                resp = "Abaixo do peso";
+            } else if (imc >= 18.5 && imc <= 24.9) {
+                resp = "Peso normal";
+            } else if (imc >= 25 && imc <= 29.9) {
+                resp = "Sobrepeso";
+            } else if (imc >= 30 && imc <= 34.9) {
+                resp = "Obesidade grau 1";
+            } else if (imc >= 35 && imc <= 39.9) {
+                resp = "Obesidade grau 2";
+            } else if (imc >= 40) {
+                resp = "Obesidade grau 3";
+            }
+
+            return resp;
+        }
+
+        function IMCclass() {
+            let aux = "";
+            for (let i = 0; i < listaPacientes.length; i++) {
+                let imc = IMC(listaPacientes[i].peso, listaPacientes[i].altura);
+                let clsIMC = classificarPorIMC(imc);
+                aux += "Nome: " + listaPacientes[i].nome + "-" + " IMC: " + imc.toFixed(2) + " - " + clsIMC + "<br>";
+            }
+            document.getElementById("resp").innerHTML = aux;
+        }
+
+        function Sobrepeso() {
+            let aux = "Pacientes com sobrepeso <br><br>";
+
+            for (let i = 0; i < listaPacientes.length; i++) {
+                let imc = IMC(listaPacientes[i].peso, listaPacientes[i].altura);
+                if (imc >= 25 && imc <= 29.9) {
+                    aux += "Nome: " + listaPacientes[i].nome + "-" + " IMC: " + imc.toFixed(2) + "<br>";
+                }
+            }
+            document.getElementById("resp").innerHTML = aux;
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //função auxiliar
+        function bubbleSortConvenio(lista) {
+            // cópia  da lista - reservar o espaço e preservar a lista original
+            let novaLista = [];
+            for (let i = 0; i < lista.length; i++) {
+                novaLista[i] = lista[i];
+            }
+            let n = novaLista.length;
+
+            for (let i = 0; i < n - 1; i++) {
+                for (let j = 0; j < n - i - 1; j++) {
+                    if (novaLista[j].convenio > novaLista[j + 1].convenio) {
+                        let temp = novaLista[j];
+                        novaLista[j] = novaLista[j + 1];
+                        novaLista[j + 1] = temp;
+                    }
+                }
+            }
+            return novaLista;
+        }
+
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //função auxiliar
+
+        function conveniosNaLista(lista) {
+            let listaOrdenada = bubbleSortConvenio(lista);
+            let vetorConvenios = [];
+
+            if (listaOrdenada.length === 0) {
+                return vetorConvenios;
+            }
+
+            for (let i = 0; i < listaOrdenada.length; i++) {
+                // Se for o primeiro elemento OU for diferente do anterior, adiciona
+                if (i === 0 || listaOrdenada[i].convenio !== listaOrdenada[i - 1].convenio) {
+                    vetorConvenios.push(listaOrdenada[i].convenio);
+                }
+            }
+
+            return vetorConvenios;
+        }
+
+        function mostrarConvenios() {
+            let conv = conveniosNaLista(listaPacientes);
+            document.getElementById("resp").innerHTML = conv;
+        }
+
+     
+
+        function porcentagemConvenios() {
+            let vetorComConveniosNaLista = conveniosNaLista(listaPacientes);
+            let  aux  = vetorComConveniosNaLista + "<br><br>"
+            
+            for (let i = 0; i < vetorComConveniosNaLista.length; i++) {
+                //para cada um dos convenios
+                let cont = 0;
+                for (let k = 0; k < listaPacientes.length; k++) {
+                    if (listaPacientes[k].convenio==vetorComConveniosNaLista[i]) {
+                        cont++;
+                    }                    
+                }
+                aux+=vetorComConveniosNaLista[i]+" possui "+ cont + " pacientes <br>";                
+            }
+            document.getElementById("resp").innerHTML = aux;
+        }
+
+    </script>
+</body>
+
+</html>
