@@ -366,21 +366,28 @@
             document.getElementById("resp").innerHTML = aux;
         }
 
-
-        function contagemDePacientesPorFaixaEtaria() {
-            let vetorComFaixasEtarias = ["Jovem", "Adulto", "Idoso"]
+         function contarPorFaixa(lista) {
+            
             let contPorFaixa = [0, 0, 0];
 
+
             //para cada um dos convenios
-            for (let k = 0; k < listaPacientes.length; k++) {
-                if (listaPacientes[k].idade < 30) {
+            for (let k = 0; k < lista.length; k++) {
+                if (lista[k].idade < 30) {
                     contPorFaixa[0]++;
-                } else if (listaPacientes[k].idade < 60) {
+                } else if (lista[k].idade < 60) {
                     contPorFaixa[1]++;
                 } else {
                     contPorFaixa[2]++;
                 }
             }
+
+           return contPorFaixa;
+        }
+
+        function contagemDePacientesPorFaixaEtaria() {
+            let vetorComFaixasEtarias = ["Jovem", "Adulto", "Idoso"]
+            let contPorFaixa = contarPorFaixa(listaPacientes)          
 
             let aux = vetorComFaixasEtarias + "<br><br>";
             for (let i = 0; i < vetorComFaixasEtarias.length; i++) {
