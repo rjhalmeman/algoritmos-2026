@@ -21,33 +21,31 @@
     <button onclick="MediaIdades()">8 - Média das idades</button><br>
     <button onclick="MediaPesos()">9 - Média dos pesos</button><br>
     <button onclick="acima50()">10 - Pacientes acima de 50 anos</button><br>
-
+    
     <label>Digite o convênio:</label>
     <input type="text" id="convenio">
     <button onclick="filtroConvenio()">11 - Filtro por convênio</button><br>
     <br>
-
+    
     <label>Digite o nome:</label>
     <input type="text" id="nomebusc">
     <button onclick="buscaNome()">12 - Filtro por convênio</button>
-
+    
     <br><br>
-
+    
     <button onclick="IMCclass()">13 - IMC e classificação</button><br>
     <button onclick="Sobrepeso()">14 - Filtrar Pacientes Sobrepeso</button><br>
     <button onclick="contagemDePacientesPorConvenio()">15 - Contagem de pacientes por convênio</button><br>
     <button onclick="contagemDePacientesPorFaixaEtaria()">17 - Contagem de pacientes por faixa etária</button><br>
     <button onclick="ordenadoPorIdade()">18 - Ordenado por idade</button><br>
-
+    <button onclick="matrizConvenioFaixaEtaria()">21 - Matriz Convênio × Faixa Etária</button><br>
     
+
 
     <p id="resp"></p>
 
     <script>
         let listaPacientes = [];
-        let listaimc = [];
-     
-        let convenios = [];
 
         iniciar(); // inicia sem precisar clicar no botão
 
@@ -316,7 +314,7 @@
             return novaLista;
         }
 
-          ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //função auxiliar
         function bubbleSortIdade(lista) {
             // cópia  da lista - reservar o espaço e preservar a lista original
@@ -382,7 +380,7 @@
             document.getElementById("resp").innerHTML = aux;
         }
 
-         function contarPorFaixa(lista) {            
+        function contarPorFaixa(lista) {
             let contPorFaixa = [0, 0, 0];
             //para cada um dos convenios
             for (let k = 0; k < lista.length; k++) {
@@ -394,12 +392,12 @@
                     contPorFaixa[2]++;
                 }
             }
-           return contPorFaixa;
+            return contPorFaixa;
         }
 
         function contagemDePacientesPorFaixaEtaria() {
             let vetorComFaixasEtarias = ["Jovem", "Adulto", "Idoso"]
-            let contPorFaixa = contarPorFaixa(listaPacientes)          
+            let contPorFaixa = contarPorFaixa(listaPacientes)
 
             let aux = vetorComFaixasEtarias + "<br><br>";
             for (let i = 0; i < vetorComFaixasEtarias.length; i++) {
@@ -415,6 +413,44 @@
             for (let i = 0; i < lista.length; i++) {
                 aux += lista[i].nome + " - " + lista[i].idade + "<br>";
             }
+            document.getElementById("resp").innerHTML = aux;
+        }
+
+
+        function matrizConvenioFaixaEtaria() {
+            let convenios = conveniosNaLista(listaPacientes);
+            let M = [
+                [0, 0, 0],
+                [0, 0, 0],
+                [0, 0, 0],
+                [0, 0, 0]
+            ];
+
+            for (let k = 0; k < listaPacientes.length; k++) {
+                let p = listaPacientes[k];
+                let i = convenios.indexOf(p.convenio);
+                let j = p.idade < 30 ? 0 : (p.idade < 60 ? 1 : 2);
+
+                if (i !== -1) {
+                    M[i][j]++;
+                }
+            }
+
+            let aux = "<b>Matriz Convênio × Faixa Etária</b><br><br>";
+
+            let totalJovem = 0, totalAdulto = 0, totalIdoso = 0, totalGeral = 0;
+
+            for (let i = 0; i < convenios.length; i++) {
+                let totalLinha = M[i][0] + M[i][1] + M[i][2];
+                totalJovem += M[i][0];
+                totalAdulto += M[i][1];
+                totalIdoso += M[i][2];
+                totalGeral += totalLinha;
+
+                aux += "<b>" + convenios[i] + ":</b> Jovem: " + M[i][0] + " | Adulto: " + M[i][1] + " | Idoso: " + M[i][2] + " | Total: " + totalLinha + "<br>";
+            }
+
+            aux += "<br><b>Total Geral:</b> Jovem: " + totalJovem + " | Adulto: " + totalAdulto + " | Idoso: " + totalIdoso + " | Total: " + totalGeral;
 
             document.getElementById("resp").innerHTML = aux;
         }
