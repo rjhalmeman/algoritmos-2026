@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pelúcias</title>
+</head>
+
+<body>
+    <input type="button" value="Listar Pelúcias" onclick="mostrarTodosOsProdutos()"><br>
+    <label for="inputIdPelucia">Informe um id</label>
+    <input type="number" id="inputIdPelucia">
+    <input type="button" value="Buscar por ID" onclick="mostrarProdutoPorId()"><br>
+
+    <label for="inputCor">Qual cor?</label>
+    <input type="text" id="inputCor">
+
+    <label for="inputPorcentagemAcrescimo">Qual o valor do acréscimo?</label>
+    <input type="number" id="inputPorcentagemAcrescimo">
+
+    <input type="button" value="Aplicar acréscimo" onclick="mostrarComAcrescimo()"><br>
+
+    <input type="button" value="Lista ordenada por Nome" onclick="mostrarListaOrdenada()"><br>
+    <input type="button" value="Contar por Categoria" onclick="mostrarContagemPorCategoria()"><br>
+    <input type="button" value="Ordenar e Contar por Categoria" onclick="mostrarOrdenadoEContado()"><br>
+    <input type="button" value="Caro, barato e diferença" onclick="mostrarCaroBaratoEDiferenca()"><br>
+    <br>
+    <span id="resposta"></span>
+    <script src="produto.js"></script>
+    <script>
+        // CADASTRO DE PELÚCIAS       
+        let listaProdutos = [];
+
+        // Adicionando 5 pelúcias
+        let p = new Produto(1, "Teddy", 1.50, "Marrom", "Ursos", "2023-05-12", 105.90);
+        listaProdutos.push(p);
+
+        p = new Produto(2, "Uni", 0.40, "Rosa", "Mágicos", "2022-11-01", 79.90);
+        listaProdutos.push(p);
+
+        p = new Produto(3, "Arlo", 0.60, "Verde", "Dinossauros", "2023-08-20", 89.90);
+        listaProdutos.push(p);
+
+        p = new Produto(4, "Buck", 0.30, "Verde", "Dinossauros", "2024-02-10", 59.90);
+        listaProdutos.push(p);
+
+        p = new Produto(5, "Mila", 1.2, "Marrom", "Ursos", "2021-09-15", 135.00);
+        listaProdutos.push(p);
+
+        // Listar todos os atributos de todas as pelúcias       
+        function listarProdutos(lista) {
+            let listagem = "";
+            for (let i = 0; i < lista.length; i++) {
+                listagem += "ID: " + lista[i].id + " - ";
+                listagem += "Nome: " + lista[i].nome + " - ";
+                listagem += "Peso: " + lista[i].peso + "kg - ";
+                listagem += "Cor: " + lista[i].cor + " - ";
+                listagem += "Categoria: " + lista[i].categoria + " - ";
+                listagem += "Data de Lançamento: " + lista[i].dataLancamento + " - ";
+                listagem += "Preço: R$ " + lista[i].preco.toFixed(2);
+                listagem += "<br>";
+            }
+            return listagem;
+        }
+
+        function mostrarTodosOsProdutos() {
+            document.getElementById("resposta").innerHTML = listarProdutos(listaProdutos);
+        }
+
+        function mostrarCaroBaratoEDiferenca() {
+            // Verifica se a lista está vazia
+            if (listaProdutos.length == 0) {
+                document.getElementById("resposta").innerHTML = "Lista vazia.";
+                return;
+            }
+
+            // Inicializa com o primeiro produto
+            let maisCaro = listaProdutos[0];
+            let maisBarato = listaProdutos[0];
+
+            // Percorre a lista a partir do índice 1
+            for (let i = 1; i < listaProdutos.length; i++) {
+                if (listaProdutos[i].preco > maisCaro.preco) {
+                    maisCaro = listaProdutos[i];
+                }
+                if (listaProdutos[i].preco < maisBarato.preco) {
+                    maisBarato = listaProdutos[i];
+                }
+            }
+
+            // Calcula a diferença de preço
+            let diferenca = maisCaro.preco - maisBarato.preco;
+
+            // Monta a saída
+            let resultado = "";
+            resultado += "<strong>Produto mais caro:</strong><br>";
+            resultado += "Nome: " + maisCaro.nome + "<br>";
+            resultado += "Preço: R$ " + maisCaro.preco.toFixed(2) + "<br><br>";
+
+            resultado += "<strong>Produto mais barato:</strong><br>";
+            resultado += "Nome: " + maisBarato.nome + "<br>";
+            resultado += "Preço: R$ " + maisBarato.preco.toFixed(2) + "<br><br>";
+
+            resultado += "<strong>Diferença de preço:</strong> R$ " + diferenca.toFixed(2);
+
+            document.getElementById("resposta").innerHTML = resultado;
+        }
+
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        function aplicarAcrescimo(cor, porcentagem, lista) {
+            for (let i = 0; i < lista.length; i++) {
+                let p = lista[i];
+                if (p.cor == cor) {
+                    let novoPreco = p.preco + p.preco * porcentagem / 100;
+                    lista[i].preco = novoPreco;
+                }
+            }
+            return lista;
+        }
+
+        function mostrarComAcrescimo() {
+            let cor = document.getElementById("inputCor").value;
+            let porcentagemDeAcrescimo = parseFloat(document.getElementById("inputPorcentagemAcrescimo").value);
+            listarProdutos(aplicarAcrescimo(cor, porcentagemDeAcrescimo, listaProdutos));
+        }
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        // Recebe um ID e retorna a pelúcia correspondente       
+        function buscarProdutoPorId(lista, id) {
+            for (let i = 0; i < lista.length; i++) {
+                if (lista[i].id == id) {
+                    return lista[i];
+                }
+            }
+            return null;
+        }
+
+        function mostrarUmProduto(prod) {
+            if (prod != null) {
+                document.getElementById("resposta").innerHTML =
+                    "ID: " + prod.id + "<br>" +
+                    "Nome: " + prod.nome + "<br>" +
+                    "Peso: " + prod.peso + " kg<br>" +
+                    "Cor: " + prod.cor + "<br>" +
+                    "Categoria: " + prod.categoria + "<br>" +
+                    "Data de Lançamento: " + prod.dataLancamento + "<br>" +
+                    "Preço: R$ " + prod.preco.toFixed(2);
+            } else {
+                document.getElementById("resposta").innerHTML = "Pelúcia não encontrada.";
+            }
+        }
+
+        function mostrarProdutoPorId() {
+            let id = parseInt(document.getElementById("inputIdPelucia").value);
+            let produto = buscarProdutoPorId(listaProdutos, id);
+            mostrarUmProduto(produto);
+        }
+
+        // Bubble Sort melhorado para ordenar pelo Nome       
+        function bubbleSortNome(lista) {
+            // Cria uma cópia da lista para não alterar o vetor original
+            let novaLista = [];
+            for (let i = 0; i < lista.length; i++) {
+                novaLista[i] = lista[i];
+            }
+            let n = novaLista.length;
+
+            // Bubble Sort
+            for (let i = 0; i < n - 1; i++) {
+                let houveTroca = false;
+                for (let j = 0; j < n - i - 1; j++) {
+                    if (novaLista[j].nome > novaLista[j + 1].nome) {
+                        let temp = novaLista[j];
+                        novaLista[j] = novaLista[j + 1];
+                        novaLista[j + 1] = temp;
+                        houveTroca = true;
+                    }
+                }
+                // Bubble Sort melhorado: se não houve troca, a lista já está ordenada
+                if (houveTroca == false) { break; }
+            }
+            return novaLista;
+        }
+
+        function mostrarListaOrdenada() {
+            let listaOrdenada = bubbleSortNome(listaProdutos);
+            document.getElementById("resposta").innerHTML = listarProdutos(listaOrdenada);
+        }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        // Conta quantos produtos existem em cada categoria
+        function contarPorCategoria(lista) {
+            let categorias = [];
+            let contagens = [];
+
+            for (let i = 0; i < lista.length; i++) {
+                let categoriaAtual = lista[i].categoria;
+                let encontrou = false;
+
+                for (let j = 0; j < categorias.length; j++) {
+                    if (categorias[j] == categoriaAtual) {
+                        contagens[j]++;
+                        encontrou = true;
+                        break;
+                    }
+                }
+
+                if (encontrou == false) {
+                    categorias.push(categoriaAtual);
+                    contagens.push(1);
+                }
+            }
+
+            let resultado = "";
+            for (let i = 0; i < categorias.length; i++) {
+                resultado += categorias[i] + ": " + contagens[i] + " produto(s)<br>";
+            }
+            return resultado;
+        }
+
+        function mostrarContagemPorCategoria() {
+            document.getElementById("resposta").innerHTML = contarPorCategoria(listaProdutos);
+        }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        // Ordena a lista por nome e depois conta as categorias
+        function mostrarOrdenadoEContado() {
+            let listaOrdenada = bubbleSortNome(listaProdutos);
+            debugger;
+
+            let vetCategoria = [];
+            let vetCont = [];
+
+            let aux = listaOrdenada[0].categoria;
+            let cont = 1; // já contamos o primeiro elemento
+
+            // Começa do índice 1, pois o 0 já foi carregado em "aux"
+            for (let i = 1; i < listaOrdenada.length; i++) {
+                if (listaOrdenada[i].categoria == aux) {
+                    cont++;
+                } else {
+                    vetCategoria.push(aux);
+                    vetCont.push(cont);
+                    aux = listaOrdenada[i].categoria;
+                    cont = 1;
+                }
+            }
+
+            // salvar o ÚLTIMO grupo após o loop
+            vetCategoria.push(aux);
+            vetCont.push(cont);
+
+            // Monta a saída formatada (mais legível que concatenar arrays direto)
+            let resultado = "";
+            for (let i = 0; i < vetCategoria.length; i++) {
+                resultado += vetCategoria[i] + ": " + vetCont[i] + " produto(s)<br>";
+            }
+
+            document.getElementById("resposta").innerHTML = resultado;
+        }
+    </script>
+
+</body>
+
+</html>

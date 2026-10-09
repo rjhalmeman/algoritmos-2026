@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pelúcias</title>
+</head>
+
+<body>
+    <input type="button" value="Listar Pelúcias" onclick="mostrarTodosOsProdutos()"><br>
+    <input type="button" value="Caro, barato e diferença" onclick="mostrarCaroBaratoEDiferenca()"><br>
+    <label for="inputCor">Qual cor?</label>
+    <input type="text" id="inputCor">
+    <label for="inputPorcentagemAcrescimo">Qual o valor do acréscimo?</label>
+    <input type="number" id="inputPorcentagemAcrescimo">
+    <input type="button" value="Aplicar acréscimo" onclick="mostrarComAcrescimo()"><br>
+    <input type="button" value="Contar por Categoria" onclick="mostrarContagemPorCategoria()"><br>
+    <br>
+    <span id="resposta"></span>
+    <script src="produto.js"></script>
+    <script>      
+        let listaProdutos = [];
+        let p = new Produto(1, "Teddy", 1.50, "Marrom", "Ursos", "2023-05-12", 105.90);
+        listaProdutos.push(p);
+        p = new Produto(2, "Uni", 0.40, "Rosa", "Mágicos", "2022-11-01", 79.90);
+        listaProdutos.push(p);
+        p = new Produto(3, "Arlo", 0.60, "Verde", "Dinossauros", "2023-08-20", 89.90);
+        listaProdutos.push(p);
+        p = new Produto(4, "Buck", 0.30, "Verde", "Dinossauros", "2024-02-10", 59.90);
+        listaProdutos.push(p);
+        p = new Produto(5, "Mila", 1.2, "Marrom", "Ursos", "2021-09-15", 135.00);
+        listaProdutos.push(p);
+        // Listar todos os atributos de todas as pelúcias       
+        function listarProdutos(lista) {
+            let listagem = "";
+            for (let i = 0; i < lista.length; i++) {
+                listagem += "ID: " + lista[i].id + " - ";
+                listagem += "Nome: " + lista[i].nome + " - ";
+                listagem += "Peso: " + lista[i].peso + "kg - ";
+                listagem += "Cor: " + lista[i].cor + " - ";
+                listagem += "Categoria: " + lista[i].categoria + " - ";
+                listagem += "Data de Lançamento: " + lista[i].dataLancamento + " - ";
+                listagem += "Preço: R$ " + lista[i].preco.toFixed(2);
+                listagem += "<br>";
+            }
+            return listagem;
+        }
+        function mostrarTodosOsProdutos() {
+            document.getElementById("resposta").innerHTML = listarProdutos(listaProdutos);
+        }
+
+        // EXERCÍCIO 1: Identificar o produto mais caro, o mais barato e a diferença
+        function mostrarCaroBaratoEDiferenca() {
+            if (listaProdutos.length === 0) {
+                document.getElementById("resposta").innerHTML = "Nenhum produto cadastrado.";
+                return;
+            }
+
+            let maisCaro = listaProdutos[0];
+            let maisBarato = listaProdutos[0];
+
+            for (let i = 1; i < listaProdutos.length; i++) {
+                if (listaProdutos[i].preco > maisCaro.preco) {
+                    maisCaro = listaProdutos[i];
+                }
+                if (listaProdutos[i].preco < maisBarato.preco) {
+                    maisBarato = listaProdutos[i];
+                }
+            }
+
+            let diferenca = maisCaro.preco - maisBarato.preco;
+
+            let resultado = `<strong>Produto mais caro:</strong> ${maisCaro.nome} - R$ ${maisCaro.preco.toFixed(2)}<br>`;
+            resultado += `<strong>Produto mais barato:</strong> ${maisBarato.nome} - R$ ${maisBarato.preco.toFixed(2)}<br>`;
+            resultado += `<strong>Diferença de preço:</strong> R$ ${diferenca.toFixed(2)}`;
+
+            document.getElementById("resposta").innerHTML = resultado;
+        }
+
+        // EXERCÍCIO 2: Aplicar acréscimo por cor
+        function mostrarComAcrescimo() {
+            let corInformada = document.getElementById("inputCor").value.trim();
+            let porcentagem = parseFloat(document.getElementById("inputPorcentagemAcrescimo").value);
+
+            if (corInformada === "" || isNaN(porcentagem)) {
+                document.getElementById("resposta").innerHTML = "Por favor, preencha a cor e o valor do acréscimo.";
+                return;
+            }
+
+            let quantidadeAlterados = 0;
+
+            for (let i = 0; i < listaProdutos.length; i++) {
+                // Comparação insensível a maiúsculas/minúsculas
+                if (listaProdutos[i].cor.toLowerCase() === corInformada.toLowerCase()) {
+                    listaProdutos[i].preco += listaProdutos[i].preco * (porcentagem / 100);
+                    quantidadeAlterados++;
+                }
+            }
+
+            if (quantidadeAlterados > 0) {
+                document.getElementById("resposta").innerHTML =
+                    `<p>Acréscimo de ${porcentagem}% aplicado a ${quantidadeAlterados} produto(s) da cor "${corInformada}".</p>` +
+                    listarProdutos(listaProdutos);
+            } else {
+                document.getElementById("resposta").innerHTML = `Nenhuma pelúcia encontrada com a cor "${corInformada}".`;
+            }
+        }
+
+        // EXERCÍCIO 3: Contar produtos por categoria
+        function mostrarContagemPorCategoria() {
+            if (listaProdutos.length === 0) {
+                document.getElementById("resposta").innerHTML = "Nenhum produto cadastrado.";
+                return;
+            }
+
+            let categorias = [];
+            let quantidades = [];
+
+            for (let i = 0; i < listaProdutos.length; i++) {
+                let catAtual = listaProdutos[i].categoria;
+                let achou = false;
+
+                // Busca manual: percorre o vetor de categorias já cadastradas
+                for (let j = 0; j < categorias.length; j++) {
+                    if (categorias[j] === catAtual) {
+                        quantidades[j]++;
+                        achou = true;
+                        break; // Para o laço assim que encontrar a categoria
+                    }
+                }
+
+                // Se após percorrer todo o vetor a categoria não foi encontrada
+                if (!achou) {
+                    categorias.push(catAtual);
+                    quantidades.push(1);
+                }
+            }
+
+            // Monta o texto para exibição
+            let resultado = "<strong>Contagem por Categoria:</strong><br>";
+            for (let i = 0; i < categorias.length; i++) {
+                resultado += `${categorias[i]}: ${quantidades[i]} pelúcia(s)<br>`;
+            }
+
+            document.getElementById("resposta").innerHTML = resultado;
+        }
+
+    </script>
+</body>
+</html>

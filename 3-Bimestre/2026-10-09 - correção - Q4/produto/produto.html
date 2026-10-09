@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pelúcias</title>
+</head>
+
+<body>
+    <input type="button" value="Listar Pelúcias" onclick="mostrarTodosOsProdutos()"><br>     
+   
+    <br>
+    <span id="resposta"></span>
+    <script src="produto.js"></script>
+    <script>
+        // CADASTRO DE PELÚCIAS       
+        let listaProdutos = [];
+             let p = new Produto(1, "Teddy", 1.50, "Marrom", "Ursos", "2023-05-12", 105.90);
+        listaProdutos.push(p);
+        p = new Produto(2, "Uni", 0.40, "Rosa", "Mágicos", "2022-11-01", 79.90);
+        listaProdutos.push(p);
+        p = new Produto(3, "Arlo", 0.60, "Verde", "Dinossauros", "2023-08-20", 89.90);
+        listaProdutos.push(p);
+        p = new Produto(4, "Buck", 0.30, "Verde", "Dinossauros", "2024-02-10", 59.90);
+        listaProdutos.push(p);
+        p = new Produto(5, "Mila", 1.2, "Marrom", "Ursos", "2021-09-15", 135.00);
+        listaProdutos.push(p);   
+        function listarProdutos(lista) {
+            let listagem = "";
+            for (let i = 0; i < lista.length; i++) {
+                listagem += "ID: " + lista[i].id + " - ";
+                listagem += "Nome: " + lista[i].nome + " - ";
+                listagem += "Peso: " + lista[i].peso + "kg - ";
+                listagem += "Cor: " + lista[i].cor + " - ";
+                listagem += "Categoria: " + lista[i].categoria + " - ";
+                listagem += "Data de Lançamento: " + lista[i].dataLancamento + " - ";
+                listagem += "Preço: R$ " + lista[i].preco.toFixed(2);
+                listagem += "<br>";
+            }
+            return listagem;
+        }
+
+        function mostrarTodosOsProdutos() {
+            document.getElementById("resposta").innerHTML = listarProdutos(listaProdutos);
+        }
+   </script>
+</body>
+</html>
