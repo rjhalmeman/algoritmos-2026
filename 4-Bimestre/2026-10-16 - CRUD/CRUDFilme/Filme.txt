@@ -1,4 +1,0 @@
-int;id;10
-String;nome;50
-int;ano;10
-String;diretor;50
