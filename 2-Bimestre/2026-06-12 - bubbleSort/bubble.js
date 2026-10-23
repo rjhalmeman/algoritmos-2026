@@ -4,8 +4,7 @@
 
 
 
-function funcaoBubbleSort(conj) {
-    debugger;
+function funcaoBubbleSort(conj) {  
     for (let topo = conj.length - 1; topo > 0; topo--) {
         for (let i = 0; i < topo; i++) {
             if (conj[i] > conj[i + 1]) {
