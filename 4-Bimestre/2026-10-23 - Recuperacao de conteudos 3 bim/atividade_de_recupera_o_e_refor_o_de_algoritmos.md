@@ -58,13 +58,7 @@ console.log(resultado);
    * Quando $i = 1$ e $j = 2$, `matriz[1][2]` recebe: **____**
 
 2. **Representação Visual**: Desenhe a matriz resultante no **formato de matriz matemática**:
-   $$
-   \begin{bmatrix}
-   a_{00} & a_{01} & a_{02} \\
-   a_{10} & a_{11} & a_{12}
-   \end{bmatrix}
-   $$
-
+ 
 3. **Estrutura de Dados em Console**: Escreva exatamente o texto no formato de **array de arrays** que o comando `console.log(resultado)` exibirá na tela.
 
 ---
