@@ -46,6 +46,9 @@ console.log(resultado);
 ```
 
 #### 📋 Tarefas do Aluno:
+
+## considere o passo 2: Preenche a matriz com valores calculados
+
 1. **Rastreamento de Variáveis**: Preencha o valor atribuído a cada posição no teste de mesa:
    * Quando $i = 0$ e $j = 0$, `matriz[0][0]` recebe: **____**
    * Quando $i = 0$ e $j = 1$, `matriz[0][1]` recebe: **____**
