@@ -13,7 +13,7 @@ Esta atividade foi elaborada para reforçar e consolidar os conteúdos da avalia
 
 ---
 
-### 🟢 Exercício 1: Teste de Mesa Guiado
+### 🟢 Exercício 1: Teste de Mesa
 Analise o algoritmo em JavaScript abaixo, que cria e preenche uma matriz de dimensão $2 \times 3$:
 
 ```javascript
