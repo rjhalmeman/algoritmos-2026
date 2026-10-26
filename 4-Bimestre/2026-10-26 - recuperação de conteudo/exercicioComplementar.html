@@ -11,6 +11,7 @@
     <input type="button" value="Listar Pelúcias" onclick="mostrarTodosOsProdutos()"><br>
     <input type="button" value="Ordenar" onclick="mostrarOrdenado()"><br>
     <input type="button" value="Média de pesos" onclick="mostrarMediaDePesos()"><br>
+    <input type="button" value="Média de Peso por Categoria" onclick="mostrarMediaPesoPorCategoria()"><br>
     <br>
     <span id="resposta"></span>
     <script src="produto.js"></script>
@@ -82,17 +83,54 @@
         }
 
         function mostrarMediaDePesos() {
-
             let soma = 0;
             for (let i = 0; i < listaProdutos.length; i++) {
                 soma = soma + listaProdutos[i].peso;
             }
+            document.getElementById("resposta").innerHTML = "média = " + (soma / listaProdutos.length).toFixed(2) + " kg";
+        }
 
-            document.getElementById("resposta").innerHTML = "média = " + soma / listaProdutos.length;
+        function mostrarMediaPesoPorCategoria() {
+            let vetorCategorias = [];
+            let verificador = 0;
+
+            // Encontrar categorias únicas
+            for (let i = 0; i < listaProdutos.length; i++) {
+                for (let j = 0; j < vetorCategorias.length; j++) {
+                    if (listaProdutos[i].categoria == vetorCategorias[j]) {
+                        verificador++;
+                    }
+                }
+                if (verificador == 0) {
+                    vetorCategorias.push(listaProdutos[i].categoria);
+                }
+                verificador = 0;
+            }
+
+            let listagem = "<strong>Média de Peso por Categoria:</strong><br><br>";
+            let contador = 0;
+            let somaPeso = 0;
+
+            // Calcular a média
+            for (let k = 0; k < vetorCategorias.length; k++) {
+                listagem += vetorCategorias[k] + ": ";
+                for (let l = 0; l < listaProdutos.length; l++) {
+                    if (listaProdutos[l].categoria == vetorCategorias[k]) {
+                        somaPeso += listaProdutos[l].peso;
+                        contador++;
+                    }
+                }
+                
+                let media = somaPeso / contador;
+                listagem += media.toFixed(2) + " kg<br>";
+                contador = 0;
+                somaPeso = 0;
+            }
+            
+            document.getElementById("resposta").innerHTML = listagem;
         }
 
         function funcaoBubbleSort(conj) {
-            debugger;
             for (let topo = conj.length - 1; topo > 0; topo--) {
                 for (let i = 0; i < topo; i++) {
                     if (conj[i].nome > conj[i + 1].nome) {
