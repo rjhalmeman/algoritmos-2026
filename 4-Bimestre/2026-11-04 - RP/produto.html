@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pelúcias</title>
+</head>
+
+<body>
+    <input type="button" value="Listar Pelúcias" onclick="mostrarTodosOsProdutos()"><br><br>
+    
+    <!-- INÍCIO DAS INSERÇÕES DOS EXERCÍCIOS NO HTML -->
+    
+    <!-- Exercício 2: Input de cor e botão de busca -->
+    <label for="inputCor">Cor para busca: </label>
+    <input type="text" id="inputCor" placeholder="Digite uma cor (ex: Marrom)">
+    <input type="button" value="Buscar por Cor" onclick="mostrarProdutosPorCor()"><br><br>
+
+    <!-- Exercício 3: Botão para mostrar produtos acima da média de preço -->
+    <input type="button" value="Produtos Acima da Média de Preço" onclick="mostrarAcimaMediaPreco()"><br><br>
+
+    <!-- Exercício 4: Botão para calcular média de peso de cada cor -->
+    <input type="button" value="Média de Peso por Cor" onclick="mostrarMediaPesoPorCor()"><br><br>
+    
+    <!-- FIM DAS INSERÇÕES DOS EXERCÍCIOS NO HTML -->
+
+    <span id="resposta"></span>
+    <script src="produto.js"></script>
+    <script>
+        // CADASTRO DE PELÚCIAS       
+        let listaProdutos = [];
+        let p = new Produto(1, "Teddy", 1.50, "Marrom", "Ursos", "2023-05-12", 105.90);
+        listaProdutos.push(p);
+        p = new Produto(2, "Uni", 0.40, "Rosa", "Mágicos", "2022-11-01", 79.90);
+        listaProdutos.push(p);
+        p = new Produto(3, "Arlo", 0.60, "Verde", "Dinossauros", "2023-08-20", 89.90);
+        listaProdutos.push(p);
+        p = new Produto(4, "Buck", 0.30, "Verde", "Dinossauros", "2024-02-10", 59.90);
+        listaProdutos.push(p);
+        p = new Produto(5, "Mila", 1.2, "Marrom", "Ursos", "2021-09-15", 135.00);
+        listaProdutos.push(p);   
+
+        function listarProdutos(lista) {
+            let listagem = "";
+            for (let i = 0; i < lista.length; i++) {
+                listagem += "ID: " + lista[i].id + " - ";
+                listagem += "Nome: " + lista[i].nome + " - ";
+                listagem += "Peso: " + lista[i].peso + "kg - ";
+                listagem += "Cor: " + lista[i].cor + " - ";
+                listagem += "Categoria: " + lista[i].categoria + " - ";
+                listagem += "Data de Lançamento: " + lista[i].dataLancamento + " - ";
+                listagem += "Preço: R$ " + lista[i].preco.toFixed(2);
+                listagem += "<br>";
+            }
+            return listagem;
+        }
+
+        function mostrarTodosOsProdutos() {
+            document.getElementById("resposta").innerHTML = listarProdutos(listaProdutos);
+        }
+
+        // ==========================================
+        // SOLUÇÃO EXERCÍCIO 2
+        // ==========================================
+        function mostrarProdutosPorCor() {
+            // Pega o valor digitado no input
+            let corDigitada = document.getElementById("inputCor").value;
+            let listaFiltrada = [];
+
+            // Algoritmo de busca: percorre todos os produtos e compara a cor
+            for (let i = 0; i < listaProdutos.length; i++) {
+                // toLowerCase() usado apenas para evitar problemas com letras maiúsculas/minúsculas
+                if (listaProdutos[i].cor.toLowerCase() === corDigitada.toLowerCase()) {
+                    listaFiltrada.push(listaProdutos[i]);
+                }
+            }
+
+            // Exibe o resultado. Se a lista for vazia, avisa o usuário.
+            if (listaFiltrada.length > 0) {
+                document.getElementById("resposta").innerHTML = listarProdutos(listaFiltrada);
+            } else {
+                document.getElementById("resposta").innerHTML = "Nenhum produto encontrado com a cor: " + corDigitada;
+            }
+        }
+
+        // ==========================================
+        // SOLUÇÃO EXERCÍCIO 3
+        // ==========================================
+        function mostrarAcimaMediaPreco() {
+            let somaPrecos = 0;
+            let quantidade = listaProdutos.length;
+
+            // Algoritmo passo 1: Somar todos os preços
+            for (let i = 0; i < quantidade; i++) {
+                somaPrecos += listaProdutos[i].preco;
+            }
+
+            // Evitar divisão por zero caso a lista esteja vazia
+            let media = 0;
+            if (quantidade > 0) {
+                media = somaPrecos / quantidade;
+            }
+
+            let listaAcimaDaMedia = [];
+
+            // Algoritmo passo 2: Encontrar quem está acima da média
+            for (let i = 0; i < quantidade; i++) {
+                if (listaProdutos[i].preco > media) {
+                    listaAcimaDaMedia.push(listaProdutos[i]);
+                }
+            }
+
+            // Prepara a exibição mostrando qual é a média antes de listar
+            let htmlResultado = "<strong>Média geral de preço: R$ " + media.toFixed(2) + "</strong><br><br>";
+            htmlResultado += listarProdutos(listaAcimaDaMedia);
+            
+            document.getElementById("resposta").innerHTML = htmlResultado;
+        }
+
+        // ==========================================
+        // SOLUÇÃO EXERCÍCIO 4
+        // ==========================================
+        function mostrarMediaPesoPorCor() {
+            let coresEncontradas = [];
+
+            // Algoritmo passo 1: Descobrir todas as cores únicas que existem na lista
+            for (let i = 0; i < listaProdutos.length; i++) {
+                let corAtual = listaProdutos[i].cor;
+                let corJaExiste = false;
+
+                // Verifica se a cor atual já foi adicionada no array 'coresEncontradas'
+                for (let j = 0; j < coresEncontradas.length; j++) {
+                    if (coresEncontradas[j] === corAtual) {
+                        corJaExiste = true;
+                        break;
+                    }
+                }
+
+                if (!corJaExiste) {
+                    coresEncontradas.push(corAtual);
+                }
+            }
+
+            let resultadoHtml = "<strong>Média de peso agrupada por cor:</strong><br><br>";
+
+            // Algoritmo passo 2: Calcular a média de peso para cada cor encontrada
+            for (let c = 0; c < coresEncontradas.length; c++) {
+                let corExibicao = coresEncontradas[c];
+                let somaPeso = 0;
+                let qtdCor = 0;
+
+                // Percorre os produtos para somar os pesos apenas da cor atual do laço
+                for (let i = 0; i < listaProdutos.length; i++) {
+                    if (listaProdutos[i].cor === corExibicao) {
+                        somaPeso += listaProdutos[i].peso;
+                        qtdCor++;
+                    }
+                }
+
+                let mediaPeso = somaPeso / qtdCor;
+                resultadoHtml += "Cor: " + corExibicao + " - Média de Peso: " + mediaPeso.toFixed(2) + " kg<br>";
+            }
+
+            document.getElementById("resposta").innerHTML = resultadoHtml;
+        }
+   </script>
+</body>
+</html>
