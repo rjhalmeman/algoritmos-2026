@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor Simples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 250px;
+            margin-bottom: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Editor de Texto / JS</h2>
+    
+    <textarea id="meuTextArea" placeholder="Digite seu texto ou código aqui..."></textarea>
+    <br>
+    
+    <!-- Botão para salvar -->
+    <button onclick="salvarArquivo()">Salvar</button>
+    
+    <!-- Botão para abrir que aciona o input file escondido -->
+    <button onclick="document.getElementById('fileInput').click()">Abrir</button>
+    
+    <!-- Input file escondido que aceita .txt e .js -->
+    <input type="file" id="fileInput" accept=".txt, .js" style="display: none;" onchange="abrirArquivo()">
+
+    <script>
+        // Função para abrir o arquivo e ler o conteúdo para o textarea
+        function abrirArquivo() {
+            const fileInput = document.getElementById('fileInput');
+            const textarea = document.getElementById('meuTextArea');
+
+            // Verifica se um arquivo foi selecionado
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+
+                // Lê o conteúdo do arquivo
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    textarea.value = e.target.result; // Coloca o conteúdo no textarea
+                };
+                reader.readAsText(file); // Lê o arquivo como texto
+            }
+            
+            // Limpa o valor do input para permitir abrir o mesmo arquivo novamente
+            fileInput.value = '';
+        }
+
+        // Função para salvar o conteúdo do textarea em um arquivo
+        function salvarArquivo() {
+            const conteudo = document.getElementById("meuTextArea").value;
+            
+            if (!conteudo.trim()) {
+                alert("O campo está vazio. Escreva algo antes de salvar.");
+                return;
+            }
+
+            // Pede ao usuário o nome do arquivo, sugerindo a extensão txt
+            let nomeArq = prompt("Digite o nome do arquivo para salvar (ex: meuarquivo.txt ou script.js):", "arquivo.txt");
+            
+            if (nomeArq) { // Se o usuário não cancelar o prompt
+                // Cria um blob com o conteúdo em formato de texto
+                const blob = new Blob([conteudo], { type: 'text/plain' });
+
+                // Cria um link temporário para o download
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = nomeArq; // Nome do arquivo de download
+
+                // Simula o clique no link para iniciar o download
+                link.click();
+
+                // Libera o objeto URL
+                URL.revokeObjectURL(link.href);
+            }
+        }
+    </script>
+</body>
+</html>
