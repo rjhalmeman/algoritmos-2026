@@ -1,14 +1,14 @@
-let listaFilme = []; //conjunto de dados
+let listaVeiculo = []; //conjunto de dados
 let oQueEstaFazendo = ''; //variável global de controle
-let filme = null; //variavel global 
+let veiculo = null; //variavel global 
 bloquearAtributos(true);
 //backend (não interage com o html)
 function procurePorChavePrimaria(chave) {
-    for (let i = 0; i < listaFilme.length; i++) {
-        const filme = listaFilme[i];
-        if (filme.id == chave) {
-            filme.posicaoNaLista = i;
-            return listaFilme[i];
+    for (let i = 0; i < listaVeiculo.length; i++) {
+        const veiculo = listaVeiculo[i];
+        if (veiculo.placa == chave) {
+            veiculo.posicaoNaLista = i;
+            return listaVeiculo[i];
         }
     }
     return null;//não achou
@@ -16,17 +16,17 @@ function procurePorChavePrimaria(chave) {
 
 // Função para procurar um elemento pela chave primária   -------------------------------------------------------------
 function procure() {
-    const id = document.getElementById("inputId").value;
+    const id = document.getElementById("inputPlaca").value;
     if (isNaN(id) || !Number.isInteger(Number(id))) {
         mostrarAviso("Precisa ser um número inteiro");
-        document.getElementById("inputId").focus();
+        document.getElementById("inputPlaca").focus();
         return;
     }
 
     if (id) { // se digitou um Id
-        filme = procurePorChavePrimaria(id);
-        if (filme) { //achou na lista
-            mostrarDadosFilme(filme);
+        veiculo = procurePorChavePrimaria(id);
+        if (veiculo) { //achou na lista
+            mostrarDadosVeiculo(veiculo);
             visibilidadeDosBotoes('inline', 'none', 'inline', 'inline', 'none'); // Habilita botões de alterar e excluir
             mostrarAviso("Achou na lista, pode alterar ou excluir");
         } else { //não achou na lista
@@ -35,7 +35,7 @@ function procure() {
             mostrarAviso("Não achou na lista, pode inserir");
         }
     } else {
-        document.getElementById("inputId").focus();
+        document.getElementById("inputPlaca").focus();
         return;
     }
 }
@@ -46,7 +46,7 @@ function inserir() {
     visibilidadeDosBotoes('none', 'none', 'none', 'none', 'inline'); //visibilidadeDosBotoes(procure,inserir,alterar,excluir,salvar)
     oQueEstaFazendo = 'inserindo';
     mostrarAviso("INSERINDO - Digite os atributos e clic o botão salvar");
-    document.getElementById("inputId").focus();
+    document.getElementById("inputPlaca").focus();
 
 }
 
@@ -76,37 +76,37 @@ function salvar() {
 
     // obter os dados a partir do html
 
-    let id;
-    if (filme == null) {
-        id = parseInt(document.getElementById("inputId").value);
+    let placa;
+    if (veiculo == null) {
+        placa = parseInt(document.getElementById("inputPlaca").value);
     } else {
-        id = filme.id;
+        placa = veiculo.placa;
     }
 
-    const nome = document.getElementById("inputNome").value;
+    const nome = document.getElementById("inputMarca").value;
+    const modelo = document.getElementById("inputModelo").value;
     const ano = parseInt(document.getElementById("inputAno").value);
-    const diretor = document.getElementById("inputDiretor").value;
     //verificar se o que foi digitado pelo USUÁRIO está correto
-    if (id && nome && ano && diretor) {// se tudo certo 
+    if (placa && nome && modelo && ano) {// se tudo certo 
         switch (oQueEstaFazendo) {
             case 'inserindo':
-                filme = new Filme(id, nome, ano, diretor);
-                listaFilme.push(filme);
+                veiculo = new Veiculo(placa, nome, modelo, ano);
+                listaVeiculo.push(veiculo);
                 mostrarAviso("Inserido na lista");
                 break;
             case 'alterando':
-                filmeAlterado = new Filme(id, nome, ano, diretor);
-                listaFilme[filme.posicaoNaLista] = filmeAlterado;
+                veiculoAlterado = new Veiculo(placa, nome, modelo, ano);
+                listaVeiculo[veiculo.posicaoNaLista] = veiculoAlterado;
                 mostrarAviso("Alterado");
                 break;
             case 'excluindo':
                 let novaLista = [];
-                for (let i = 0; i < listaFilme.length; i++) {
-                    if (filme.posicaoNaLista != i) {
-                        novaLista.push(listaFilme[i]);
+                for (let i = 0; i < listaVeiculo.length; i++) {
+                    if (veiculo.posicaoNaLista != i) {
+                        novaLista.push(listaVeiculo[i]);
                     }
                 }
-                listaFilme = novaLista;
+                listaVeiculo = novaLista;
                 mostrarAviso("EXCLUIDO");
                 break;
             default:
@@ -116,7 +116,7 @@ function salvar() {
         visibilidadeDosBotoes('inline', 'none', 'none', 'none', 'none');
         limparAtributos();
         listar();
-        document.getElementById("inputId").focus();
+        document.getElementById("inputPlaca").focus();
     } else {
         alert("Erro nos dados digitados");
         return;
@@ -129,17 +129,17 @@ function preparaListagem(vetor) {
     for (let i = 0; i < vetor.length; i++) {
         const linha = vetor[i];
         texto +=
-            linha.id + " - " +
-            linha.nome + " - " +
-            linha.ano + " - " +
-            linha.diretor + "<br>";
+            linha.placa + " - " +
+            linha.marca + " - " +
+            linha.modelo + " - " +
+            linha.ano + "<br>";
     }
     return texto;
 }
 
 //backend->frontend (interage com html)
 function listar() {
-    document.getElementById("outputSaida").innerHTML = preparaListagem(listaFilme);
+    document.getElementById("outputSaida").innerHTML = preparaListagem(listaVeiculo);
 }
 
 function cancelarOperacao() {
@@ -154,12 +154,12 @@ function mostrarAviso(mensagem) {
     document.getElementById("divAviso").innerHTML = mensagem;
 }
 
-// Função para mostrar os dados do Filme nos campos
-function mostrarDadosFilme(filme) {
-    document.getElementById("inputId").value = filme.id;
-    document.getElementById("inputNome").value = filme.nome;
-    document.getElementById("inputAno").value = filme.ano;
-    document.getElementById("inputDiretor").value = filme.diretor;
+// Função para mostrar os dados do Veiculo nos campos
+function mostrarDadosVeiculo(veiculo) {
+    document.getElementById("inputPlaca").value = veiculo.placa;
+    document.getElementById("inputMarca").value = veiculo.marca;
+    document.getElementById("inputModelo").value = veiculo.modelo;
+    document.getElementById("inputAno").value = veiculo.ano;
 
     // Define os campos como readonly
     bloquearAtributos(true);
@@ -167,19 +167,19 @@ function mostrarDadosFilme(filme) {
 
 // Função para limpar os dados dos campos
 function limparAtributos() {
-    document.getElementById("inputNome").value = "";
+    document.getElementById("inputMarca").value = "";
+    document.getElementById("inputModelo").value = "";
     document.getElementById("inputAno").value = "";
-    document.getElementById("inputDiretor").value = "";
 
     bloquearAtributos(true);
 }
 
 function bloquearAtributos(soLeitura) {
     //quando a chave primaria possibilita edicao, tranca (readonly) os outros e vice-versa
-    document.getElementById("inputId").readOnly = !soLeitura;
-    document.getElementById("inputNome").readOnly = soLeitura;
+    document.getElementById("inputPlaca").readOnly = !soLeitura;
+    document.getElementById("inputMarca").readOnly = soLeitura;
+    document.getElementById("inputModelo").readOnly = soLeitura;
     document.getElementById("inputAno").readOnly = soLeitura;
-    document.getElementById("inputDiretor").readOnly = soLeitura;
 }
 
 // Função para deixar visível ou invisível os botões
@@ -194,7 +194,7 @@ function visibilidadeDosBotoes(btProcure, btInserir, btAlterar, btExcluir, btSal
     document.getElementById("btExcluir").style.display = btExcluir;
     document.getElementById("btSalvar").style.display = btSalvar;
     document.getElementById("btCancelar").style.display = btSalvar; // o cancelar sempre aparece junto com o salvar
-    document.getElementById("inputId").focus();
+    document.getElementById("inputPlaca").focus();
 }
 
 
