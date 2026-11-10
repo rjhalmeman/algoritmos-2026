@@ -7,4 +7,4 @@ Data 30/11/2026. Não pode usar IA. A internet do computador usado durante a ava
 
 2º) No papel, vai desenvolver filtros e/ou outras funcionalidades solicitadas. Data 04/12/2026.
 
-3º) Aula de fechamento da disciplina 18/12/2026. 
+3º) Aula de feedback sobre a disciplina 14/12/2026. 
