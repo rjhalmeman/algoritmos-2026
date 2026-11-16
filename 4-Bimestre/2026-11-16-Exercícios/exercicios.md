@@ -1,5 +1,10 @@
 Atividade autoavaliativa
 
+Vídeo mostrando como eu costumo fazer esses exercícios
+https://youtu.be/yrdV3kfNPsU?si=Q0HTNKQBUe4NLygt
+
+
+
 CRUD's com persistência.
 
 Faça cada um dos exercícios, cronometre o tempo.
