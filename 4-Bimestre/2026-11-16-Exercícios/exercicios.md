@@ -1,3 +1,16 @@
+Atividade autoavaliativa
+
+CRUD's com persistência.
+
+Faça cada um dos exercícios, cronometre o tempo.
+
+No dia da avaliação, sem acesso à internet, você deverá fazer 1 CRUD em 50 minutos (no máximo).
+
+https://github.com/rjhalmeman/algoritmos-2026/tree/main/4-Bimestre/2026-11-16-Exerc%C3%ADcios
+
+Os filtros, serão feitos no papel. 
+
+
 ### 01) Tênis Colecionável
 * **Atributos e Tipos**:
   * `int` **idTenis** (Identificador único do calçado)
